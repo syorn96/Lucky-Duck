@@ -1,8 +1,27 @@
 .title {
-    color: red;
+    color: rgb(223, 0, 30);
+    font-family: 'Shrikhand', cursive;
+    font-size: 65px;
+    margin: 10px;
+}
+
+#game-screen {
+    border: 1px solid black;
+    width: 80vw;
+    height: 70vh;
+    margin: 0;
+    background-color: black;
+}
+
+.center {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Aboreto', cursive;
-
+    text-align: center;
 }
+
+body {
+    background-image: url(https://media4.giphy.com/media/8OJDtYWKV566rI0kTv/giphy.gif?cid=ecf05e47kpmss52lze8fijp1ikm2s3z7r9nu8vh22oy0c59x&rid=giphy.gif&ct=g);
+    background-size: cover;
+}
+
