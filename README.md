@@ -11,7 +11,7 @@ The winner is the player with the highest value adjudicated by subtracting the P
 Ex: Total Luck = Present - Past + Future
 
 The player and computer will take turns and decide their fate.
-The player and computer will each have 3 turns. One for their past card, present card, and finally their future card.
+The player and computer will each have 3 turns; one for their past card, present card, and finally their future card.
 During each turn, the player will decide if they want to switch their card with a random card from the deck, or keep the card they currently have.
 Once a turn has passed the player can no longer trade their card and the turn's card will be revealed.
 
