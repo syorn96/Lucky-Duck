@@ -12,7 +12,7 @@ Ex: Total Luck = Present - Past + Future
 
 Players will take turns and decide their fate.
 
-Decide if they want to change their card with a random card from the deck
+Decide if they want to change their card with a random card from the deck.
 Keep the card they currently have.
 Once a turn has passed the player can no longer trade their card.
 Player’s card will be revealed.
@@ -40,7 +40,7 @@ There is a total of 26 fortunes that can be given based on the total luck a play
 
 ### Tech Stack
 * DOM Manipulation. 
-* Arrays to receive Duck Tarot Card, description, and number value. 
+* Arrays to retreive Duck Tarot Card, description, and number value.
 * Game logic to shuffle remaining cards, and retrieve one. 
 * Winning logic to give fortune with total luck value. 
 * Possibly use Canvas, but I think all of this can be achieved with just DOM.
