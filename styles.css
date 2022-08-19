@@ -1,12 +1,12 @@
 .title {
-    color: rgb(223, 0, 30);
-    font-family: 'Shrikhand', cursive;
+    color: rgba(223, 0, 30, .75);
+    font-family: 'Shrikhand', sans-serif;
     font-size: 65px;
     margin: 10px;
 }
 
 #playertitle, #computertitle {
-    color: red;
+    color: rgba(20, 163, 234, .7);
     text-decoration: underline;
     text-align: center;
     margin: 35px;
@@ -17,33 +17,70 @@
     width: 80vw;
     height: 80vh;
     margin: 0;
-    /* background-color: black; */
     display: grid;
-    grid-template-columns: 280px 1fr 280px;
-    grid-template-rows: 125px;
-    /* grid-template-rows: 100px 1fr; */
-    /* grid-area: "top1 middle top2" */
-                /* "bot1 middle bot2"; */
+    grid-template-columns: 15vw 15vw 20vw 15vw 15vw;
+    grid-template-rows: 10vh 23vh 23vh 23vh;
 }
 
 .top1 {
     grid-column: 0 / 2;
 }
+.botL1 {
+    grid-column: 0 / 2;
+    grid-row: 2 / 3;
+}
+.botL2 {
+    grid-column: 0 / 2;
+    grid-row: 3 / 4;
+}
+.botL3 {
+    grid-column: 0 / 2;
+    grid-row: 4 / 5;
+}
 .top2 {
-    grid-column: 3 / 4;
+    grid-column: 5 / 6;
+}
+.botR1 {
+    grid-column: 5 / 6;
+    grid-row: 2 / 3;
+}
+.botR2 {
+    grid-column: 5 / 6;
+    grid-row: 3 / 4;
+}
+.botR3 {
+    grid-column: 5 / 6;
+    grid-row: 4 / 5;
 }
 .middle {
-    grid-column: 2 / 3;
-    grid-row: 2;
-}
-.bot1 {
-    grid-column: 0 / 2;
-    grid-row: 2; 
-}
-.bot2 {
     grid-column: 3 / 4;
-    grid-row: 2; 
+    grid-row: 3 / 4;
 }
+.MidR1 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+.MidR2 {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+}
+.MidR3 {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+}
+.MidL1 {
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+}
+.MidL2 {
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+}
+.MidL3 {
+    grid-column: 4 / 5;
+    grid-row: 4 / 5;
+}
+
 .center {
     display: flex;
     justify-content: center;
@@ -54,8 +91,8 @@
 body {
     background-image: url(https://acegif.com/wp-content/uploads/2022/4hv9xm/dancing-duck-acegifcom-29.gif);
     background-size: 100vw 100vh;
-    color: blue;
-    font-family: 'Shrikhand', cursive;
+    color:black;
+    font-family: 'Shrikhand', sans-serif;
     font-style: normal;
 }
 
