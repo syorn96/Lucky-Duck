@@ -15,12 +15,12 @@
 #game-screen {
     border: 1px solid black;
     width: 80vw;
-    height: 70vh;
+    height: 80vh;
     margin: 0;
     /* background-color: black; */
     display: grid;
     grid-template-columns: 280px 1fr 280px;
-    grid-template-rows: 100px;
+    grid-template-rows: 125px;
     /* grid-template-rows: 100px 1fr; */
     /* grid-area: "top1 middle top2" */
                 /* "bot1 middle bot2"; */
@@ -53,10 +53,12 @@
 
 body {
     background-image: url(https://acegif.com/wp-content/uploads/2022/4hv9xm/dancing-duck-acegifcom-29.gif);
-    /* background-repeat:; */
     background-size: 100vw 100vh;
     color: blue;
     font-family: 'Shrikhand', cursive;
     font-style: normal;
 }
 
+.cardstyle {
+    border-radius: 10px;
+}

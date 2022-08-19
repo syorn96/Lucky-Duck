@@ -1,16 +1,16 @@
-// let body = document.getElementById('body')
+
+
 document.addEventListener('DOMContentLoaded', () => {
     let gamescreen = document.querySelector('#game-screen')
-    // let body = document.querySelector('body')
     let vw = 100
     let vh = 100
-    console.log(document.body)
-    console.log(gamescreen)
-    
+    let clickcounter = 0 
     gamescreen.addEventListener('click', ()=> {
-        
+        clickcounter ++
+        if (clickcounter % 2) {
         vw -= 25
         vh -= 25
+        }
         if (vw == 0) {
             vw = 100
         }
