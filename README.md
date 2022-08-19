@@ -32,7 +32,7 @@ There will be 8 Earth Duck cards: 6 Earth Ducks (Cute memes) + 1 Earth Duck King
 
 Based on the number of cards and their possible values, a player's total luck can range from -42 to 85. 
 Each fortune is tied to an interval of set values. 
-Ex: (-45 to -43), (28 to 32), or (-2 to 2).
+Ex: (-42 to -38), (28 to 32), or (-2 to 2).
 There are a total of 26 fortunes that can be given based on the total luck a player has.
 
 ### Tech Stack
