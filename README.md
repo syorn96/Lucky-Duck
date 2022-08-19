@@ -15,11 +15,12 @@ The player and computer will each have 3 turns; one for their past card, present
 During each turn, the player will decide if they want to switch their card with a random card from the deck, or keep the card they currently have.
 Once a turn has passed the player can no longer trade their card and the turn's card will be revealed.
 
-At the end of the game, players will also be given a Lucky Duck Fortune reading based on their Total Luck.
+At the end of the game, if the player won they will be given a Lucky Duck Fortune reading based on their Total Luck.
+If the player loses, they will have to play the game again.
 
 The deck will consists of 44 cards. Each card will be a Duck meme with it's type, number, and a description.
 
-There are 12 major arcana cards representing a Duck’s life.
+There will be 12 Major Arcana cards representing a Duck’s life.
 
 There will be 8 Fire Duck cards: 6 Fire Ducks (Popular memes) + 1 Fire Duck King + 1 Fire Duck Queen
 
