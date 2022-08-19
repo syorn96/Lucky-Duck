@@ -49,11 +49,20 @@ There are a total of 26 fortunes that can be given based on the total luck a pla
 ![Wireframe 4](https://i.imgur.com/4gGc9Tc.png)
 
 ### MVP Goals
-* Use 20-30 cards
+* Create 20-30 cards
+* Create 2 turns: one for the player and one for the computer.
+* Create a button to shuffle cards.
+* Render a start screen with game title, instructions and start button.
+* Render game screen displaying the deck of cards in the center of screen and 3 cards each for the player and computer.
+* Render another game screen for comparing cards and results.
+* Render a final game screen with a player's total luck and a fortune.
+
 
 ### Stretch Goals
 * Animation between user interface?
 * Create all 44 Tarot Cards from stratch.
+* Create 6 turns alternating player and computer
+* Each card will display their description once the card is revealed.
 
 ### Potential Roadblocks
 * Not able to create all Tarot cards?
