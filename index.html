@@ -7,117 +7,91 @@
     <link rel="stylesheet" href="./styles.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <script src="./script.js"></script>
+    <script src="./screen1.js"></script>
     <title>Lucky Duck</title>
 </head>
 <body id="body">
-    <iframe width="0" height="0" src="https://www.youtube.com/embed/8YGlzSl6cxU?" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <audio autoplay loop controls>
+        <source src="./media/lobby-classic-game.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
     <!--autoplay=1&-->
     <h1 class="title center">Lucky Duck</h1>
     <container class="center">
-        <div id="game-screen">
+        <div id="game-screen2">
             <h2 id="playertitle" class="top1">Your Cards</h2>
             <h2 id="computertitle" class="top2">Computer Cards</h2>
 
             <container class="botL1">
                 <div>Past
-                    <div id="playercard1"> <img class="cardstyle" src="./media/LuckyDuckCard.jpeg" height='200px' width="100px"/></div>
+                    <div id="playercard1"> <img class="cardstyle" src="./media/./12.jpeg" height='200px' width="150px"/></div>
                 </div>
             </container>
             <container class="MidL1">
-                <div id="card1info" class="cardinfo">Card Description...</div>
+                <div id="PlayerCard1info" class="cardinfo">Card Description...</div>
             </container>
 
             <container class="botL2">
                 <div>Present
-                    <div id="playercard2"> <img class="cardstyle" src="./media/LuckyDuckCard.jpeg" height='200px' width="100px"/></div>
+                    <div id="playercard2"> <img class="cardstyle" src="./media/13.jpeg" height='200px' width="150px"/></div>
                 </div>
             </container>
             <container class="MidL2">
-                <div id="card1info" class="cardinfo">Card Description...</div>
+                <div id="PlayerCard2info" class="cardinfo">Card Description...</div>
             </container>
 
             <container class="botL3">
                 <div>Future
-                    <div id="playercard3"> <img class="cardstyle" src="./media/LuckyDuckCard.jpeg" height='200px' width="100px"/></div>
+                    <div id="playercard3"> <img class="cardstyle" src="./media/14.jpg" height='200px' width="150px"/></div>
                 </div>
             </container>
             <container class="MidL3">
-                <div id="card1info" class="cardinfo">Card Description...</div>
+                <div id="PlayerCard3info" class="cardinfo">Card Description...</div>
             </container>
 
             <container class="middle">
                 <div>Tarot Duck Deck
-                    <div id="TarotDeck"> <img class="cardstyle" src="./media/LuckyDuckCard.jpeg" height='200px' width="100px"/></div>
+                    <div id="TarotDeck"> <img class="cardstyle" src="./media/15.jpg" height='200px' width="150px"/></div>
                 </div>
             </container>
-
+            <container id="turntracker">
+                <span id="turncounter"></span> <span id="turndisplay">Turn</span>
+            </container>
             <container class="botR1">
                 <div>Past
-                    <div id="computercard1"> <img class="cardstyle" src="./media/LuckyDuckCard.jpeg" height='200px' width="100px"/></div>
+                    <div id="computercard1"> <img class="cardstyle" src="./media/15.jpg" height='200px' width="150px"/></div>
                 </div>
             </container>
             <container class="MidR1">
-                <div id="card1info" class="cardinfo">Card Description...</div>
+                <div id="CompCard1info" class="cardinfo">Card Description...</div>
             </container>
 
             <container class="botR2">
                 <div>Present
-                    <div id="computercard2"> <img class="cardstyle" src="./media/LuckyDuckCard.jpeg" height='200px' width="100px"/></div>
+                    <div id="computercard2"> <img class="cardstyle" src="./media/16.jpg" height='200px' width="150px"/></div>
                 </div>
             </container>
             <container class="MidR2">
-                <div id="card1info" class="cardinfo">Card Description...</div>
+                <div id="CompCard2info" class="cardinfo">Card Description...</div>
             </container>
 
             <container class="botR3">
-                <div>Futre
-                    <div id="computercard3"> <img class="cardstyle" src="./media/LuckyDuckCard.jpeg" height='200px' width="100px"/></div>
+                <div>Future
+                    <div id="computercard3"> <img class="cardstyle" src="./media/17.jpg" height='200px' width="150px"/></div>
                 </div>
             </container>
             <container class="MidR3">
-                <div id="card1info" class="cardinfo">Card Description...</div>
+                <div id="CompCard3info" class="cardinfo">Card Description...</div>
             </container>
 
-                <!-- <div>Present
-                    <div id="playercard2">
-                        <img class="cardstyle" src="./media/LuckyDuckCard.jpeg" height='200px' width="100px"/>
-                    </div>
-                    <div id="card1info" class="cardinfo"></div>
-                </div>
-                <div>Future
-                    <div id="playercard3">
-                        <img class="cardstyle" src="./media/LuckyDuckCard.jpeg" height='200px' width="100px"/>
-                    </div>
-                        <div id="card1info" class="cardinfo"></div>
-                </div>
+            <container class="BotR3">
+                <button id="shufflebtn">Shuffle</button>
+                <button id="keepbtn">Keep</button>
             </container>
-            <container class="middle">
-                <div>Duck Tarot Deck
-                    <div id="TarotDeck"> 
-                        <img class="cardstyle" src="./media/LuckyDuckCard.jpeg" height='200px' width="100px"/> </div>
-                </div>
-                    <div id="card1info" class="cardinfo"></div>
-            </container>
-            <container class="bot2">
-                <div>Past
-                    <div id="playercard1">
-                        <img class="cardstyle" src="./media/LuckyDuckCard.jpeg" height='200px' width="100px"/>
-                    </div>
-                </div>
-                <div>Present
-                    <div id="playercard2">
-                        <img class="cardstyle" src="./media/LuckyDuckCard.jpeg" height='200px' width="100px"/>
-                    </div>
-                </div>
-                <div>Future
-                    <div id="playercard3">
-                        <img class="cardstyle" src="./media/LuckyDuckCard.jpeg" height='200px' width="100px"/>
-                    </div>
-                </div>
-            </container>
-        </div> -->
     </container>
-
+    <div class="PopUpCard">
+    </div>
 </body>
 </html>
