@@ -1,18 +1,63 @@
-// let popup = document.getElementById(playercard1)
-
-let luckyduckdeck = {[],[],[],[]}
-
+let luckyDuckDeckArray = [
+    {
+      number: 12,
+      img: './media/./12.jpeg',
+      description:`Are you diving into your passions? Follow your desires. Don't be afraid - be like Duck Fieri!`,
+    },
+    {
+      number: 13,
+      img: './media/./13.jpeg',
+      description:`Are your needs being met? Sometimes you have to fight for what you quackin' want.`,
+    },
+    {
+      number: 14,
+      img: './media/./14.jpg',
+      description:`It's not that duckin' serious. Learn to take a step back and laugh out loud. Strive to be above the other birds.`,
+    },
+    {
+      number: 15,
+      img: './media/./15.jpg',
+      description:`Clearly you know what you duckin' want. It's just a matter of quacking it verbally into existence.`,
+    },
+    {
+      number: 16,
+      img: './media/./16.jpg',
+      description:`Do you find yourself not fitting in? Or is there someone that rubs you the wrong way? Don't let your anger or disappointment be the cause of your downfall.`,
+    },
+    {
+      number: 17,
+      img: './media/./17.jpg',
+      description:'Conflicts between other ducks may arise. Reconsider before the consequences are dire.',
+    },
+  ]
 
 document.addEventListener('DOMContentLoaded', () => {
-    let gamescreen = document.querySelector('#game-screen2')
-    let selectpastcard = document.querySelector('#playercard1')
-    let selectpresentcard = document.querySelector('#playercard2')
-    let selectfuturecard = document.querySelector('#playercard3')
+    let body = document.querySelector('#body')
+    let gamescreen1 = document.querySelector('#game-screen1')
+    let startgame = document.querySelector('#startbtn')
+    let howtoplaybtn = document.querySelector('#HTPbtn')
+    let howtoplayscreen = document.querySelector('#howtoplay')
+    let exitHTP = document.querySelector('#exith2p')
+    let return2start = document.querySelector('#return2start') 
+    let gamescreen2 = document.querySelector('#game-screen2')
+    let playerpastcard = document.querySelector('#playercard1')
+    let playerpastcardinfo = document.querySelector('#PlayerCard1info')
+    let playerpresentcard = document.querySelector('#playercard2')
+    let playerpresentcardinfo = document.querySelector('#PlayerCard2info')
+    let playerfuturecard = document.querySelector('#playercard3')
+    let playerfuturecardinfo = document.querySelector('#PlayerCard3info')
+    let computerpastcard = document.querySelector('#computercard1')
+    let computerpastcardinfo = document.querySelector('#CompCard1info')
+    let computerpresentcard = document.querySelector('#computercard2')
+    let computerpresentcardinfo = document.querySelector('#CompCard2info')
+    let computerfuturecard = document.querySelector('#computercard3')
+    let computerfuturecardinfo = document.querySelector('#CompCard3info')
     let popupbox = document.querySelector('.PopUpCard')
+    let ShuffledDuckArray = luckyDuckDeckArray.sort(() => 0.5 - Math.random())
     let vw = 100
     let vh = 100
-    let clickcounter = 0 
-    gamescreen.addEventListener('click', ()=> {
+    let clickcounter = 0
+    body.addEventListener('click', ()=> {
         clickcounter ++
         if (clickcounter % 2) {
         vw -= 10
@@ -26,28 +71,80 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         console.log(vw, vh)
         body.setAttribute('style', `background-size: ${vw}vw ${vh}vh;`)
-        console.log(body.style.backgroundSize)
+    }) 
+    startgame.addEventListener('click', ()=> {
+        gamescreen1.setAttribute('style', `display: none`)
+        gamescreen2.setAttribute('style', `display: grid`)
+        playerpastcard.innerHTML = `<img class="cardstyle" src="${ShuffledDuckArray[0].img}" height='200px' width="150px"/>`
+        playerpresentcard.innerHTML = `<img class="cardstyle" src="${ShuffledDuckArray[1].img}" height='200px' width="150px"/>`
+        playerfuturecard.innerHTML = `<img class="cardstyle" src="${ShuffledDuckArray[2].img}" height='200px' width="150px"/>`
+        computerpastcard.innerHTML = `<img class="cardstyle" src="${ShuffledDuckArray[3].img}" height='200px' width="150px"/>`
+        computerpresentcard.innerHTML = `<img class="cardstyle" src="${ShuffledDuckArray[4].img}" height='200px' width="150px"/>`
+        computerfuturecard.innerHTML = `<img class="cardstyle" src="${ShuffledDuckArray[5].img}" height='200px' width="150px"/>`
+        console.log(ShuffledDuckArray)
+        playerpastcardinfo.innerText = ShuffledDuckArray[0].description
+        playerpresentcardinfo.innerText = ShuffledDuckArray[1].description
+        playerfuturecardinfo.innerText = ShuffledDuckArray[2].description
+        computerpastcardinfo.innerText = ShuffledDuckArray[3].description
+        computerpresentcardinfo.innerText = ShuffledDuckArray[4].description
+        computerfuturecardinfo.innerText = ShuffledDuckArray[5].description
+        console.log(ShuffledDuckArray[4].description)
     })
-    selectpastcard.addEventListener(('click'), ()=> {
-        popupbox.innerHTML = ('<img src="./media/./12.jpeg" height="800px" width="550px"/><button id="returnbtn">Return</button>')
+    howtoplaybtn.addEventListener('click', ()=> {
+        gamescreen1.setAttribute('style', `display: none`)
+        howtoplayscreen.setAttribute('style', `display: block`)
+    })
+    exitHTP.addEventListener('click', ()=> {
+        gamescreen1.setAttribute('style', `display: block`)
+        howtoplayscreen.setAttribute('style', `display: none`)
+    })
+    return2start.addEventListener('click', () => {
+        gamescreen1.setAttribute('style', `display: block`)
+        gamescreen2.setAttribute('style', `display: none`)
+    })
+    
+    playerpastcard.addEventListener(('click'), ()=> {
+        popupbox.innerHTML = (`<img src="${ShuffledDuckArray[0].img}" height="800px" width="550px"/><button id="returnbtn">Return</button>`)
         let returnbtn = document.querySelector('#returnbtn')
         returnbtn.addEventListener(('click'), ()=> {
         popupbox.innerHTML = ""
         })
     })
-    selectpresentcard.addEventListener(('click'), ()=> {
-        popupbox.innerHTML = ('<img src="./media/LuckyDuckCard.jpeg" height="800px" width="550px"/><button id="returnbtn">Return</button>')
+    playerpresentcard.addEventListener(('click'), ()=> {
+        popupbox.innerHTML = (`<img src="${ShuffledDuckArray[1].img}" height="800px" width="550px"/><button id="returnbtn">Return</button>`)
         let returnbtn = document.querySelector('#returnbtn')
         returnbtn.addEventListener(('click'), ()=> {
         popupbox.innerHTML = ""
         })
     })
-    selectfuturecard.addEventListener(('click'), ()=> {
-        popupbox.innerHTML = ('<img src="./media/LuckyDuckCard.jpeg" height="800px" width="550px"/><button id="returnbtn">Return</button>')
+    playerfuturecard.addEventListener(('click'), ()=> {
+        popupbox.innerHTML = (`<img src="${ShuffledDuckArray[2].img}" height="800px" width="550px"/><button id="returnbtn">Return</button>`)
         let returnbtn = document.querySelector('#returnbtn')
         returnbtn.addEventListener(('click'), ()=> {
         popupbox.innerHTML = ""
+        })
     })
+    computerpastcard.addEventListener(('click'), ()=> {
+        popupbox.innerHTML = (`<img src="${ShuffledDuckArray[3].img}" height="800px" width="550px"/><button id="returnbtn">Return</button>`)
+        let returnbtn = document.querySelector('#returnbtn')
+        returnbtn.addEventListener(('click'), ()=> {
+        popupbox.innerHTML = ""
+        })
+    })
+    
+    computerpresentcard.addEventListener(('click'), ()=> {
+        popupbox.innerHTML = (`<img src="${ShuffledDuckArray[4].img}" height="800px" width="550px"/><button id="returnbtn">Return</button>`)
+        let returnbtn = document.querySelector('#returnbtn')
+        returnbtn.addEventListener(('click'), ()=> {
+        popupbox.innerHTML = ""
+        })
+    })
+    computerfuturecard.addEventListener(('click'), ()=> {
+        popupbox.innerHTML = (`<img src="${ShuffledDuckArray[5].img}" height="800px" width="550px"/><button id="returnbtn">Return</button>`)
+        let returnbtn = document.querySelector('#returnbtn')
+        returnbtn.addEventListener(('click'), ()=> {
+        popupbox.innerHTML = ""
+        })
     })
 })
 
