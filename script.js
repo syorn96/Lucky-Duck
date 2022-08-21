@@ -1,3 +1,4 @@
+//Deck of Lucky Duck Tarot Cards
 let luckyDuckDeckArray = [
     {
       number: 12,
@@ -7,12 +8,12 @@ let luckyDuckDeckArray = [
     {
       number: 13,
       img: './media/./13.jpeg',
-      description:`Are your needs being met? Sometimes you have to fight for what you quackin' want.`,
+      description:`Are your duckling needs being met? Sometimes you have to fight for what you quackin' want.`,
     },
     {
       number: 14,
       img: './media/./14.jpg',
-      description:`It's not that duckin' serious. Learn to take a step back and laugh out loud. Strive to be above the other birds.`,
+      description:`It's not that duckin' serious. Learn to take a waddle back and QOL! Strive to be above the other birds. QUACK OUT LOUD!`,
     },
     {
       number: 15,
@@ -30,11 +31,12 @@ let luckyDuckDeckArray = [
       description:'Conflicts between other ducks may arise. Reconsider before the consequences are dire.',
     },
   ]
-
+//Load HTML before retrieving data
 document.addEventListener('DOMContentLoaded', () => {
+    //variables for gameplay
     let body = document.querySelector('#body')
     let gamescreen1 = document.querySelector('#game-screen1')
-    let startgame = document.querySelector('#startbtn')
+    let startgamebtn = document.querySelector('#startbtn')
     let howtoplaybtn = document.querySelector('#HTPbtn')
     let howtoplayscreen = document.querySelector('#howtoplay')
     let exitHTP = document.querySelector('#exith2p')
@@ -57,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let vw = 100
     let vh = 100
     let clickcounter = 0
+    //each time the user clicks screen 2x, duplicate the background 
     body.addEventListener('click', ()=> {
         clickcounter ++
         if (clickcounter % 2) {
@@ -72,15 +75,16 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(vw, vh)
         body.setAttribute('style', `background-size: ${vw}vw ${vh}vh;`)
     }) 
-    startgame.addEventListener('click', ()=> {
+    startgamebtn.addEventListener('click', ()=> {
         gamescreen1.setAttribute('style', `display: none`)
         gamescreen2.setAttribute('style', `display: grid`)
-        playerpastcard.innerHTML = `<img class="cardstyle" src="${ShuffledDuckArray[0].img}" height='200px' width="150px"/>`
-        playerpresentcard.innerHTML = `<img class="cardstyle" src="${ShuffledDuckArray[1].img}" height='200px' width="150px"/>`
-        playerfuturecard.innerHTML = `<img class="cardstyle" src="${ShuffledDuckArray[2].img}" height='200px' width="150px"/>`
-        computerpastcard.innerHTML = `<img class="cardstyle" src="${ShuffledDuckArray[3].img}" height='200px' width="150px"/>`
-        computerpresentcard.innerHTML = `<img class="cardstyle" src="${ShuffledDuckArray[4].img}" height='200px' width="150px"/>`
-        computerfuturecard.innerHTML = `<img class="cardstyle" src="${ShuffledDuckArray[5].img}" height='200px' width="150px"/>`
+        playerpastcard.src = `${ShuffledDuckArray[0].img}`
+        console.log(playerpastcard.src)
+        playerpresentcard.src =`${ShuffledDuckArray[1].img}`
+        playerfuturecard.src =`${ShuffledDuckArray[2].img}`
+        computerpastcard.src = `${ShuffledDuckArray[3].img}`
+        computerpresentcard.src = `${ShuffledDuckArray[4].img}`
+        computerfuturecard.src = `${ShuffledDuckArray[5].img}`
         console.log(ShuffledDuckArray)
         playerpastcardinfo.innerText = ShuffledDuckArray[0].description
         playerpresentcardinfo.innerText = ShuffledDuckArray[1].description

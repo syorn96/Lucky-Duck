@@ -25,26 +25,27 @@
 #howtoplay {
     display: none;
     border-radius: 2rem;
-    background-color: rgba(255, 255, 255, .65);
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 2px solid black;
 }
 
 .gameinfo {
     /* background-color: rgba(255, 255, 255, .65); */
-    color: black;
+    color: white;
     width: 40vw;
     height: 8vh;
     text-align: left;
 }
 .gameinfo1 {
     /* background-color: rgba(255, 255, 255, .65); */
-    color: black;
+    color: white;
     width: 40vw;
     height: 7vh;
     text-align: center;
 }
 #H2PTitle {
     /* background-color: rgba(255, 255, 255, .65); */
-    color: black;
+    color: white;
     width: 13vw;
     height: 5vh;
     margin-left: 25vh;
@@ -64,7 +65,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 25px;
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .top1 {
@@ -151,7 +152,7 @@ body {
     font-family: 'Fredoka One', cursive;
     font-style: normal;
     font-size: 2vh;
-    font-weight: bold;
+    letter-spacing: 2.5px;
 }
 
 .cardstyle {
