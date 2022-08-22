@@ -244,3 +244,9 @@ audio {
     margin-top: -45vh;
     display: none;
 }
+#postgameviewimg {
+    border-radius: 25px;
+}
+#P1PresentCard, #P1PastCard, #P1FutureCard, #P2PresentCard, #P2PastCard, #P2FutureCard {
+    border-radius: 10px;
+}

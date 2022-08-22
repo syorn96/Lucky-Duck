@@ -212,6 +212,9 @@ document.addEventListener('DOMContentLoaded', () => {
         computerpresentcard.style.pointerEvents = 'none';
         computerfuturecard.style.pointerEvents = 'none';
         decideTurn.innerText = `Player 1's`
+        P1TotalLuck = 0
+        P2TotalLuck = 0
+
         moves -= 50
         if (moves < 0) {
             moves = 0
@@ -377,62 +380,98 @@ document.addEventListener('DOMContentLoaded', () => {
             popupboximage.src=`${ShuffledDuckArray[6].img}`
             playerpastcard.style.pointerEvents = 'auto';
             playerpastcardinfo.innerText = ShuffledDuckArray[6].description
-            decideTurn.innerText = 'Player 2'
+            decideTurn.innerText = `Player 2's`
             popupbox.setAttribute('style', `display: absolute`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Past'
+            P1PastCard.src = `${ShuffledDuckArray[6].img}`
+            P1PastValue.innerText = `${ShuffledDuckArray[6].number}`
+            P1PastResult =`${ShuffledDuckArray[6].number}`
+            P1TotalLuck -= ShuffledDuckArray[6].number
             
         } else if (moves == 2) {
             computerpastcard.src = `${ShuffledDuckArray[7].img}`
             popupboximage.src=`${ShuffledDuckArray[7].img}`
             computerpastcard.style.pointerEvents = 'auto';
             computerpastcardinfo.innerText = ShuffledDuckArray[7].description
-            decideTurn.innerText = 'Player 1'
+            decideTurn.innerText = `Player 1's`
             popupbox.setAttribute('style', `display: absolute;`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Present'
+            P2PastCard.src = `${ShuffledDuckArray[7].img}`
+            P2PastValue.innerText = `${ShuffledDuckArray[7].number}`
+            P2PastResult =`${ShuffledDuckArray[7].number}`
+            P2TotalLuck -= ShuffledDuckArray[7].number
             
         } else if (moves == 3) {
-            playerpresentcard.src = `${ShuffledDuckArray[2].img}`
-            popupboximage.src=`${ShuffledDuckArray[2].img}`
+            playerpresentcard.src = `${ShuffledDuckArray[8].img}`
+            popupboximage.src=`${ShuffledDuckArray[8].img}`
             playerpresentcard.style.pointerEvents = 'auto';
-            playerpresentcardinfo.innerText = ShuffledDuckArray[2].description
-            decideTurn.innerText = 'Player 2'
+            playerpresentcardinfo.innerText = ShuffledDuckArray[8].description
+            decideTurn.innerText = `Player 2's`
             popupbox.setAttribute('style', `display: absolute`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Present'
+            P1PresentCard.src = `${ShuffledDuckArray[8].img}`
+            P1PresentValue.innerText = `${ShuffledDuckArray[8].number}`
+            P1PresentResult =`${ShuffledDuckArray[8].number}`
+            P1TotalLuck += ShuffledDuckArray[8].number
             
         } else if (moves == 4) {
-            computerpresentcard.src = `${ShuffledDuckArray[3].img}`
-            popupboximage.src=`${ShuffledDuckArray[3].img}`
+            computerpresentcard.src = `${ShuffledDuckArray[9].img}`
+            popupboximage.src=`${ShuffledDuckArray[9].img}`
             computerpresentcard.style.pointerEvents = 'auto';
-            computerpresentcardinfo.innerText = ShuffledDuckArray[3].description
-            decideTurn.innerText = 'Player 1'
+            computerpresentcardinfo.innerText = ShuffledDuckArray[9].description
+            decideTurn.innerText = `Player 1's`
             popupbox.setAttribute('style', `display: absolute`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Future'
+            P2PresentCard.src = `${ShuffledDuckArray[9].img}`
+            P2PresentValue.innerText = `${ShuffledDuckArray[9].number}`
+            P2PresentResult =`${ShuffledDuckArray[9].number}`
+            P2TotalLuck +=ShuffledDuckArray[9].number
             
         } else if (moves == 5) {
-            playerfuturecard.src = `${ShuffledDuckArray[4].img}`
-            popupboximage.src=`${ShuffledDuckArray[4].img}`
+            playerfuturecard.src = `${ShuffledDuckArray[10].img}`
+            popupboximage.src=`${ShuffledDuckArray[10].img}`
             playerfuturecard.style.pointerEvents = 'auto';
-            playerfuturecardinfo.innerText = ShuffledDuckArray[4].description
-            decideTurn.innerText = 'Player 2'
+            playerfuturecardinfo.innerText = ShuffledDuckArray[10].description
+            decideTurn.innerText = `Player 2's`
             popupbox.setAttribute('style', `display: absolute`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Future'
+            P1FutureCard.src = `${ShuffledDuckArray[10].img}`
+            P1FutureValue.innerText = `${ShuffledDuckArray[10].number}`
+            P1FutureResult =`${ShuffledDuckArray[10].number}`
+            P1TotalLuck += ShuffledDuckArray[10].number
             
         } else if (moves == 6) {
-            computerfuturecard.src = `${ShuffledDuckArray[5].img}`
-            popupboximage.src=`${ShuffledDuckArray[5].img}`
+            computerfuturecard.src = `${ShuffledDuckArray[11].img}`
+            popupboximage.src=`${ShuffledDuckArray[11].img}`
             computerfuturecard.style.pointerEvents = 'auto';
-            computerfuturecardinfo.innerText = ShuffledDuckArray[5].description
+            computerfuturecardinfo.innerText = ShuffledDuckArray[11].description
             decideTurn.innerText = 'Game Over'
             decideTurn2.innerText = 'Ducks'
-            popupbox.setAttribute('style', `display: absolute`)
-            popupboximage.setAttribute('style', `display: inline-block`)
-            resultsbtn.setAttribute('style', `display: block`)
-        
+            movedisplay.innerText = ""
+            placeholdercard.innerText = ""
+            P2FutureCard.src = `${ShuffledDuckArray[11].img}`
+            P2FutureValue.innerText = `${ShuffledDuckArray[11].number}`
+            P2FutureResult =`${ShuffledDuckArray[11].number}`
+            P2TotalLuck += ShuffledDuckArray[11].number
+
+            P2TotalValue.innerText = P2TotalLuck
+            P1TotalValue.innerText = P1TotalLuck
+            if (P1TotalLuck > P2TotalLuck) {
+                GameResults.innerText = "Player 1 is a Luckier Duck!"
+            } else if (P1TotalLuck < P2TotalLuck) {
+                GameResults.innerText = "Player 2 is a Luckier Duck!"
+            } else if (P1TotalLuck == P2TotalLuck){
+                GameResults.innerText = `It's a Draw. Must be fate!`
+            }
+            popupbox.setAttribute('style', 'display: absolute')
+            resultsbtn.setAttribute('style', `display: inline-block`)
+            shufflebtn.setAttribute('style', `display: none`)
+            keepbtn.setAttribute('style', `display: none`)
         } else {
             decideTurn.innerText = 'Game Over'
             decideTurn2.innerText = 'Ducks'
@@ -443,6 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
     resultsbtn.addEventListener('click', ()=> {
         gamescreen2.setAttribute('style', `display: none`)
         gamescreen3.setAttribute('style', `display: block`)
+        postgameview.setAttribute('style', `display: block`)
     })
     return2menu.addEventListener('click',()=> {
         gamescreen1.setAttribute('style', `display: absolute`)
