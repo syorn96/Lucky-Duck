@@ -109,10 +109,44 @@ document.addEventListener('DOMContentLoaded', () => {
     let moves = 0
     let shufflebtn = document.querySelector('#shufflebtn')
     let keepbtn = document.querySelector('#keepbtn')
+
+    // variables for post-game results & screen 3 usage
     let resultsbtn = document.querySelector('#resultsbtn')
+    let P1PresentCard = document.querySelector('#P1PresentCard')
+    let P1PastCard = document.querySelector('#P1PastCard')
+    let P1FutureCard = document.querySelector('#P1FutureCard')
+    let P2PresentCard = document.querySelector('#P2PresentCard')
+    let P2PastCard = document.querySelector('#P2PastCard')
+    let P2FutureCard = document.querySelector('#P2FutureCard')
+
+    let P1PresentValue = document.querySelector('#P1PresentValue')
+    let P1PastValue = document.querySelector('#P1PastValue')
+    let P1FutureValue = document.querySelector('#P1FutureValue')
+    let P1TotalValue = document.querySelector('#P1TotalValue')
+
+    let P2PresentValue = document.querySelector('#P2PresentValue')
+    let P2PastValue = document.querySelector('#P2PastValue')
+    let P2FutureValue = document.querySelector('#P2FutureValue')
+    let P2TotalValue = document.querySelector('#P2TotalValue')
+
+    let P1PastResult = null
+    let P1PresentResult = null
+    let P1FutureResult = null
+    let P1TotalLuck = 0
+
+    let P2PastResult = null
+    let P2PresentResult = null
+    let P2FutureResult = null
+    let P2TotalLuck = 0
+
+    let GameResults = document.querySelector('#GameResults')
+
+    // function to shuffle array on restart
     function shuffle(array) {
         array.sort(() => Math.random() - 0.5);
       }
+    
+
     // console.log(ShuffledDuckArray)
      //each time the user clicks screen 2x, duplicate the background 
     let vw = 100
@@ -225,6 +259,10 @@ document.addEventListener('DOMContentLoaded', () => {
             popupbox.setAttribute('style', `display: absolute`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Past'
+            P1PastCard.src = `${ShuffledDuckArray[0].img}`
+            P1PastValue.innerText = `${ShuffledDuckArray[0].number}`
+            P1PastResult =`${ShuffledDuckArray[0].number}`
+            P1TotalLuck -= ShuffledDuckArray[0].number
             
         } else if (moves == 2) {
             computerpastcard.src = `${ShuffledDuckArray[1].img}`
@@ -235,6 +273,10 @@ document.addEventListener('DOMContentLoaded', () => {
             popupbox.setAttribute('style', `display: absolute`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Present'
+            P2PastCard.src = `${ShuffledDuckArray[1].img}`
+            P2PastValue.innerText = `${ShuffledDuckArray[1].number}`
+            P2PastResult =`${ShuffledDuckArray[1].number}`
+            P2TotalLuck -= ShuffledDuckArray[1].number
             
         } else if (moves == 3) {
             playerpresentcard.src = `${ShuffledDuckArray[2].img}`
@@ -245,6 +287,10 @@ document.addEventListener('DOMContentLoaded', () => {
             popupbox.setAttribute('style', `display: absolute`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Present'
+            P1PresentCard.src = `${ShuffledDuckArray[2].img}`
+            P1PresentValue.innerText = `${ShuffledDuckArray[2].number}`
+            P1PresentResult =`${ShuffledDuckArray[2].number}`
+            P1TotalLuck += ShuffledDuckArray[2].number
             
         } else if (moves == 4) {
             computerpresentcard.src = `${ShuffledDuckArray[3].img}`
@@ -255,6 +301,10 @@ document.addEventListener('DOMContentLoaded', () => {
             popupbox.setAttribute('style', `display: absolute`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Future'
+            P2PresentCard.src = `${ShuffledDuckArray[3].img}`
+            P2PresentValue.innerText = `${ShuffledDuckArray[3].number}`
+            P2PresentResult =`${ShuffledDuckArray[3].number}`
+            P2TotalLuck +=ShuffledDuckArray[3].number
             
         } else if (moves == 5) {
             playerfuturecard.src = `${ShuffledDuckArray[4].img}`
@@ -265,7 +315,10 @@ document.addEventListener('DOMContentLoaded', () => {
             popupbox.setAttribute('style', `display: absolute`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Future'
-            
+            P1FutureCard.src = `${ShuffledDuckArray[4].img}`
+            P1FutureValue.innerText = `${ShuffledDuckArray[4].number}`
+            P1FutureResult =`${ShuffledDuckArray[4].number}`
+            P1TotalLuck += ShuffledDuckArray[4].number
         } else if (moves == 6) {
             computerfuturecard.src = `${ShuffledDuckArray[5].img}`
             popupboximage.src=`${ShuffledDuckArray[5].img}`
@@ -273,8 +326,19 @@ document.addEventListener('DOMContentLoaded', () => {
             computerfuturecardinfo.innerText = ShuffledDuckArray[5].description
             decideTurn.innerText = 'Game Over'
             decideTurn2.innerText = 'Ducks'
-            popupbox.setAttribute('style', `display: absolute`)
-            popupboximage.setAttribute('style', `display: inline-block`)
+            P2FutureCard.src = `${ShuffledDuckArray[5].img}`
+            P2FutureValue.innerText = `${ShuffledDuckArray[5].number}`
+            P2FutureResult =`${ShuffledDuckArray[5].number}`
+            P2TotalLuck += ShuffledDuckArray[5].number
+
+            P2TotalValue.innerText = P2TotalLuck
+            P1TotalValue.innerText = P1TotalLuck
+            if (P1TotalLuck > P2TotalLuck) {
+                GameResults.innerText = "Player 1 Won!"
+            } else if (P1TotalLuck < P2TotalLuck) {
+                GameResults.innerText = "Player 2 Won!"
+            }
+            popupbox.setAttribute('style', 'display: absolute')
             resultsbtn.setAttribute('style', `display: block`)
         } else {
             decideTurn.innerText = 'Game Over'

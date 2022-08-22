@@ -74,10 +74,11 @@
     display: none;
     margin-top: 10vh;
     margin-left: 25vw;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.8);
     text-align: center;
     width: 50vw;
-    height: 52vh
+    height: 52vh;
+    border-radius: 15px;
 }
 
 .top1 {
