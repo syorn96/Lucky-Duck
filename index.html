@@ -30,17 +30,17 @@
         <div id="howtoplay">
             <h2 id="H2PTitle">How To Play</h2>
             <p id="disclosure">***Use Fullscreen mode for optimal alignment***</p>
-            <li class="gameinfo1">At the start of the game, the player and computer are given 3 random Lucky Duck Tarot cards faced down.</li> 
-            <li class="gameinfo1">Each card represents their past, present, and future respectively.</li>
-            <li class="gameinfo1">
-                The winner is the player with the highest value adjudicated by subtracting the Present's card value with the Past's card value, and adding the Future's card value.</li> 
+            <div class="gameinfo1">At the start of the game, two players are given 3 random Lucky Duck Tarot cards faced down.</div> 
+            <div class="gameinfo1">Each card represents their past, present, and future respectively.</div>
+            <div class="gameinfo1">
+                The Luckier Duck is the player with the highest Total Luck calculated by subtracting the Present's card value with the Past's card value, and adding the Future's card value.</div> 
             <div class="gameinfo1">Ex: Total Luck = Present - Past + Future</div>
-            <div class="gameinfo"> 1. The player and computer will take turns and decide their fate.</div>
-            <div class="gameinfo"> 2. The player and computer will each have 3 turns; one for their past card, present card, and finally their future card.</div>
+            <div class="gameinfo"> 1. Player 1 and Player 2 will take turns and decide their fate.</div>
+            <div class="gameinfo"> 2. Both Players will each have 3 turns; one for their past card, present card, and finally their future card.</div>
             <div class="gameinfo"> 3. During each turn, the player will decide if they want to switch their card with a random card from the deck, or keep the card they currently have.</div>
             <div class="gameinfo"> 4. Once a turn has passed the player can no longer trade their card and the turn's card will be revealed.</div>
             <div class="gameinfo">
-                5. At the end of the game, if the player won they will be given a Lucky Duck Fortune reading based on their Total Luck. If the player loses, they will have to play the game again.</div>
+                5. The player with the highest Total Luck is the Luckier Duck!</div>
             <button id="exith2p" class="btn">Return to Duck Menu</button>
         </div>
         <div id="game-screen2">
@@ -74,7 +74,7 @@
                 <div id="PlayerCard3info" class="cardinfo"></div>
             </container>
 
-            <container class="middle">
+            <container id="TarotDeckContainer" class="middle">
                 <div>Tarot Duck Deck
                     <div id="TarotDeck"> <img class="cardstyle pointer" src="./media/LuckyDuckCardBack.jpeg" height='200px' width="150px"/></div>
                 </div>
@@ -128,15 +128,14 @@
     <div id="howtoplay2">
         <h2 id="H2PTitle2">How To Play</h2>
         <p id="disclosure">***Use Fullscreen mode for optimal alignment***</p>
-        <li class="gameinfo2">
-            The winner is the player with the highest value adjudicated by subtracting the Present's card value with the Past's card value, and adding the Future's card value.</li> 
+        <div class="gameinfo2"> The Luckier Duck is the player with the highest Total Luck.</div> 
         <div class="gameinfo2">Ex: Total Luck = Present - Past + Future</div>
-        <div class="gameinfo3"> 1. The player and computer will take turns and decide their fate.</div>
-        <div class="gameinfo3"> 2. The player and computer will each have 3 turns; one for their past card, present card, and finally their future card.</div>
+        <div class="gameinfo3"> 1. Player 1 and Player 2 will take turns and decide their fate.</div>
+        <div class="gameinfo3"> 2. Both Players will each have 3 turns; one for their past card, present card, and finally their future card.</div>
         <div class="gameinfo3"> 3. During each turn, the player will decide if they want to switch their card with a random card from the deck, or keep the card they currently have.</div>
         <div class="gameinfo3"> 4. Once a turn has passed the player can no longer trade their card and the turn's card will be revealed.</div>
         <div class="gameinfo3">
-            5. At the end of the game, if the player won they will be given a Lucky Duck Fortune reading based on their Total Luck. If the player loses, they will have to play the game again.</div>
+            5. The player with the highest Total Luck is the Luckier Duck!</div>
         <div class="exith2p2"> <button id="exith2p2"class="btn">Return to Game</button ></div>
     </div>
     <div id="game-screen3">

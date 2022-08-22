@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let exitHTP2 = document.querySelector('#exith2p2')
     let return2start = document.querySelector('#return2start') 
     let menu2 = document.querySelector('.BotR3')
+    let TarotDeckContainer = document.querySelector('#TarotDeckContainer')
     let luckyducktarotdeck = document.querySelector('#TarotDeck')
     let luckyDuckDeckCardBack = [
         {
@@ -228,14 +229,17 @@ document.addEventListener('DOMContentLoaded', () => {
         keepbtn.setAttribute('style', `display: inline-block`)
 
     })
+    // How to play on screen 1
     howtoplaybtn.addEventListener('click', ()=> {
         gamescreen1.setAttribute('style', `display: none`)
         howtoplayscreen.setAttribute('style', `display: block`)
     })
+    // Exit button for How to play on screen 1
     exitHTP.addEventListener('click', ()=> {
         gamescreen1.setAttribute('style', `display: block`)
         howtoplayscreen.setAttribute('style', `display: none`)
     })
+    // How to play button on screen 2
     howtoplaybtn2.addEventListener('click', ()=> {
         howtoplayscreen2.setAttribute('style', `display: block`)
         playerpastcardinfo.setAttribute('style', `display: none`)
@@ -247,8 +251,10 @@ document.addEventListener('DOMContentLoaded', () => {
         luckyducktarotdeck.setAttribute('style', `display: none`)
         turncontainer.setAttribute('style', `display: none`)
         menu2.setAttribute('style', `display: none`)
+        TarotDeckContainer.setAttribute('style', `display: none`)
 
     })
+    // exit how to play on screen 2
     exitHTP2.addEventListener('click', ()=> {
         howtoplayscreen2.setAttribute('style', `display: none`)
         gamescreen2.setAttribute('style', `display: grid`)
@@ -261,15 +267,19 @@ document.addEventListener('DOMContentLoaded', () => {
         luckyducktarotdeck.setAttribute('style', `display: block`)
         turncontainer.setAttribute('style', `display: block`)
         menu2.setAttribute('style', `display: block`)
+        TarotDeckContainer.setAttribute('style', `display: block`)
     })
+    // return to screen 1
     return2start.addEventListener('click', () => {
         gamescreen1.setAttribute('style', `display: block`)
         gamescreen2.setAttribute('style', `display: none`)
     })
+    // return button for the PopUpcard viewer
     returnbtn.addEventListener(('click'), ()=> {
         popupbox.setAttribute('style', `display: none`)
     })
-    // game logic dependent on keep or shuffle button
+
+    // game logic dependent on keep button
     // cards are only clickable once loaded
     keepbtn.addEventListener(('click'), ()=> {
         moves +=1
@@ -374,6 +384,8 @@ document.addEventListener('DOMContentLoaded', () => {
             decideTurn2.innerText = 'Ducks'
         }
     })
+    // game logic dependent on shuffle button
+    // cards are only clickable once loaded
     shufflebtn.addEventListener(('click'), ()=> {
         moves +=1
         console.log(moves)
@@ -480,25 +492,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-    //game results
+    //game results btn
     resultsbtn.addEventListener('click', ()=> {
         gamescreen2.setAttribute('style', `display: none`)
         gamescreen3.setAttribute('style', `display: block`)
         postgameview.setAttribute('style', `display: block`)
         postgameviewimg.src = luckyDuckDeckCardBack[0].img
     })
+    // return to screen 1 from screen 3
     return2menu.addEventListener('click',()=> {
         gamescreen1.setAttribute('style', `display: absolute`)
         gamescreen3.setAttribute('style', `display: none`)
         postgameview.setAttribute('style', `display: none`)
     })
+    // return to screen 2 from screen 3
     return2game.addEventListener('click', ()=> {
         gamescreen3.setAttribute('style', `display: none`)
         gamescreen2.setAttribute('style', `display: grid`)
         postgameview.setAttribute('style', `display: none`)
     })
     
-    //on click, set the popupbox to the image selected
+    //on click, set the popupbox view to the image selected
     luckyducktarotdeck.addEventListener('click', ()=> {
         popupboximage.src =`${luckyDuckDeckCardBack[0].img}`
         popupbox.setAttribute('style', `display: block`)
@@ -527,7 +541,7 @@ document.addEventListener('DOMContentLoaded', () => {
         popupboximage.src = computerfuturecard.src
         popupbox.setAttribute('style', `display: block`)
     })
-    //Postgame click images
+    //Postgame click images to view in displayer
     P1PastCard.addEventListener('click', ()=> {
         postgameviewimg.src = playerpastcard.src
         postgameview.setAttribute('style', `display: block`)
