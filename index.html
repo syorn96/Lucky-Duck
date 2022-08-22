@@ -79,10 +79,11 @@
             </container>
             <container id="turntracker">
                 <span id="turncounter">Your</span> <span id="turncounter2">Turn</span>
-                <div id="turndisplay">0</div>
-                <div>Move(s)</div>
+                <div id="turndisplay">Past</div>
+                <div>Card</div>
                 <button id="shufflebtn">Shuffle Card</button>
                 <button id="keepbtn">Keep Card</button>
+                <button id="resultsbtn">Game Results</button>
             </container>
             <container class="botR1">
                 <div>Past
@@ -115,6 +116,7 @@
                 <button id="HTPbtn2" class="btn">How To Play ❓</button>
                 <button id="return2start">Return to Main Menu</button>
             </container>
+            </div>
     </container>
     <div id="PopUpCard">
         <img id="PopUpCardImg" src="./media/LuckyDuckCardBack.jpeg" height="800px" width="550px"/> 
@@ -122,8 +124,6 @@
     </div>
     <div id="howtoplay2">
         <h2 id="H2PTitle">How To Play</h2>
-        <!-- <li class="gameinfo1">At the start of the game, the player and computer are given 3 random Lucky Duck Tarot cards faced down.</li> 
-        <li class="gameinfo1">Each card represents their past, present, and future respectively.</li> -->
         <li class="gameinfo1">
             The winner is the player with the highest value adjudicated by subtracting the Present's card value with the Past's card value, and adding the Future's card value.</li> 
         <div class="gameinfo1">Ex: Total Luck = Present - Past + Future</div>
@@ -134,6 +134,37 @@
         <div class="gameinfo">
             5. At the end of the game, if the player won they will be given a Lucky Duck Fortune reading based on their Total Luck. If the player loses, they will have to play the game again.</div>
         <button id="exith2p2">Return to Game</button>
+    </div>
+    <div id="game-screen3">
+        <h2>Results</h2>
+        <div>Player 1 Cards :
+            <img id="P1PresentCard" src="./media/LuckyDuckCardBack.jpeg" height='200px' width="150px"/>
+            <img id="P1PastCard" src="./media/LuckyDuckCardBack.jpeg" height='200px' width="150px"/>
+            <img id="P1FutureCard" src="./media/LuckyDuckCardBack.jpeg" height='200px' width="150px"/>
+            <div>Total Luck = 
+                <span id="P1PresentValue">Present</span>
+                <span>-</span>
+                <span id="P1PastValue" >Past</span>
+                <span>+</span>
+                <span id="P1FutureValue" >Future</span>
+                <span>-20</span>
+            </div>
+        </div>
+        <div>Player 2 Cards :
+            <img id="P2PresentCard" src="./media/LuckyDuckCardBack.jpeg" height='200px' width="150px"/>
+            <img id="P2PastCard" src="./media/LuckyDuckCardBack.jpeg" height='200px' width="150px"/>
+            <img id="P2FutureCard" src="./media/LuckyDuckCardBack.jpeg" height='200px' width="150px"/>
+            <div>Total Luck = 
+                <span id="P2PresentValue" >Present</span>
+                <span>-</span>
+                <span id="P2PastValue" >Past</span>
+                <span>+</span>
+                <span id="P2FutureValue" >Future</span>
+                <span>-20</span>
+            </div>
+        </div>
+        <h1>Player 1 Won!</h1>
+
     </div>
 </body>
 </html>

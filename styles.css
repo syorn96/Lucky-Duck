@@ -67,6 +67,18 @@
     border-radius: 25px;
     background-color: rgba(0, 0, 0, 0.9);
 }
+#resultsbtn {
+    display: none;
+}
+#game-screen3 {
+    display: none;
+    margin-top: 10vh;
+    margin-left: 25vw;
+    background-color: black;
+    text-align: center;
+    width: 50vw;
+    height: 52vh
+}
 
 .top1 {
     grid-column: 0 / 2;
@@ -165,9 +177,9 @@ audio {
 }
 
 #PopUpCard {
-    display: absolute;
-    margin-top: -82vh;
-    margin-right: -67vw;
+    display: block;
+    margin-top: -76vh;
+    margin-left: 39vw;
 }
 #PopUpCardImg {
     display: inline-block;
@@ -176,9 +188,10 @@ audio {
 }
 #howtoplay2 {
     display: none;
-    margin-top: -79vh;
-    margin-left: 20vw;
-    width: 40vw ;
-    height: 80vh ;
+    margin-top: -80vh;
+    margin-left: 30vw;
+    width: 40vw;
+    height: 80vh;
     background-color: black;
+    z-index: 10;
 }
