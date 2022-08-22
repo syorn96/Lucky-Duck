@@ -172,6 +172,7 @@ audio {
 #PopUpCardImg {
     display: inline-block;
     align-items: center;
+    border-radius: 15px;
 }
 #howtoplay2 {
     display: none;
