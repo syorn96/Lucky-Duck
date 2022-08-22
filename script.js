@@ -65,6 +65,11 @@ let luckyDuckDeckArray = [
         img: './media/./24.jpeg',
         description:`Who said ducks can't chill? It's time to consider that trip.`,
       },
+      {
+        number: 25,
+        img: './media/./25.jpeg',
+        description:`A happy duck is the best kind of duck.`,
+      },
   ]
 //Load HTML before retrieving data
 document.addEventListener('DOMContentLoaded', () => {
