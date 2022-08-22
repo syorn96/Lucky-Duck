@@ -159,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let postgameview = document.querySelector('#postgameview')
     let postgameviewimg = document.querySelector('#postgameviewimg')
     let return2menu = document.querySelector('#return2menu')
+    let return2game = document.querySelector('#return2game')
     // function to shuffle array on restart
     function shuffle(array) {
         array.sort(() => Math.random() - 0.5);
@@ -189,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
     startgamebtn.addEventListener('click', ()=> {
         gamescreen1.setAttribute('style', `display: none;`)
         gamescreen2.setAttribute('style', `display: grid;`)
-        popupbox.setAttribute('style', `display: none;`)
+        // popupbox.setAttribute('style', `display: block;`)
     })
     // on restart reset game to default settings
     restartgamebtn.addEventListener('click', ()=>{
@@ -220,6 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
             moves = 0
         }
         movedisplay.innerText = 'Past';
+        placeholdercard.innerText = "Card"
         shuffle(ShuffledDuckArray)
         resultsbtn.setAttribute('style', `display: none`)
         shufflebtn.setAttribute('style', `display: inline-block`)
@@ -277,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
             playerpastcard.style.pointerEvents = 'auto';
             playerpastcardinfo.innerText = ShuffledDuckArray[0].description
             decideTurn.innerText = `Player 2's`
-            popupbox.setAttribute('style', `display: absolute`)
+            popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Past'
             P1PastCard.src = `${ShuffledDuckArray[0].img}`
@@ -291,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
             computerpastcard.style.pointerEvents = 'auto';
             computerpastcardinfo.innerText = ShuffledDuckArray[1].description
             decideTurn.innerText = `Player 1's`
-            popupbox.setAttribute('style', `display: absolute`)
+            popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Present'
             P2PastCard.src = `${ShuffledDuckArray[1].img}`
@@ -305,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
             playerpresentcard.style.pointerEvents = 'auto';
             playerpresentcardinfo.innerText = ShuffledDuckArray[2].description
             decideTurn.innerText = `Player 2's`
-            popupbox.setAttribute('style', `display: absolute`)
+            popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Present'
             P1PresentCard.src = `${ShuffledDuckArray[2].img}`
@@ -319,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
             computerpresentcard.style.pointerEvents = 'auto';
             computerpresentcardinfo.innerText = ShuffledDuckArray[3].description
             decideTurn.innerText = `Player 1's`
-            popupbox.setAttribute('style', `display: absolute`)
+            popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Future'
             P2PresentCard.src = `${ShuffledDuckArray[3].img}`
@@ -333,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
             playerfuturecard.style.pointerEvents = 'auto';
             playerfuturecardinfo.innerText = ShuffledDuckArray[4].description
             decideTurn.innerText = `Player 2's`
-            popupbox.setAttribute('style', `display: absolute`)
+            popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Future'
             P1FutureCard.src = `${ShuffledDuckArray[4].img}`
@@ -363,7 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (P1TotalLuck == P2TotalLuck){
                 GameResults.innerText = `It's a Draw. Must be fate!`
             }
-            popupbox.setAttribute('style', 'display: absolute')
+            popupbox.setAttribute('style', 'display: block')
             resultsbtn.setAttribute('style', `display: inline-block`)
             shufflebtn.setAttribute('style', `display: none`)
             keepbtn.setAttribute('style', `display: none`)
@@ -381,7 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
             playerpastcard.style.pointerEvents = 'auto';
             playerpastcardinfo.innerText = ShuffledDuckArray[6].description
             decideTurn.innerText = `Player 2's`
-            popupbox.setAttribute('style', `display: absolute`)
+            popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Past'
             P1PastCard.src = `${ShuffledDuckArray[6].img}`
@@ -395,7 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
             computerpastcard.style.pointerEvents = 'auto';
             computerpastcardinfo.innerText = ShuffledDuckArray[7].description
             decideTurn.innerText = `Player 1's`
-            popupbox.setAttribute('style', `display: absolute;`)
+            popupbox.setAttribute('style', `display: block;`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Present'
             P2PastCard.src = `${ShuffledDuckArray[7].img}`
@@ -409,7 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
             playerpresentcard.style.pointerEvents = 'auto';
             playerpresentcardinfo.innerText = ShuffledDuckArray[8].description
             decideTurn.innerText = `Player 2's`
-            popupbox.setAttribute('style', `display: absolute`)
+            popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Present'
             P1PresentCard.src = `${ShuffledDuckArray[8].img}`
@@ -423,7 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
             computerpresentcard.style.pointerEvents = 'auto';
             computerpresentcardinfo.innerText = ShuffledDuckArray[9].description
             decideTurn.innerText = `Player 1's`
-            popupbox.setAttribute('style', `display: absolute`)
+            popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Future'
             P2PresentCard.src = `${ShuffledDuckArray[9].img}`
@@ -437,7 +439,7 @@ document.addEventListener('DOMContentLoaded', () => {
             playerfuturecard.style.pointerEvents = 'auto';
             playerfuturecardinfo.innerText = ShuffledDuckArray[10].description
             decideTurn.innerText = `Player 2's`
-            popupbox.setAttribute('style', `display: absolute`)
+            popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Future'
             P1FutureCard.src = `${ShuffledDuckArray[10].img}`
@@ -468,7 +470,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (P1TotalLuck == P2TotalLuck){
                 GameResults.innerText = `It's a Draw. Must be fate!`
             }
-            popupbox.setAttribute('style', 'display: absolute')
+            popupbox.setAttribute('style', 'display: block')
             resultsbtn.setAttribute('style', `display: inline-block`)
             shufflebtn.setAttribute('style', `display: none`)
             keepbtn.setAttribute('style', `display: none`)
@@ -483,40 +485,47 @@ document.addEventListener('DOMContentLoaded', () => {
         gamescreen2.setAttribute('style', `display: none`)
         gamescreen3.setAttribute('style', `display: block`)
         postgameview.setAttribute('style', `display: block`)
+        postgameviewimg.src = luckyDuckDeckCardBack[0].img
     })
     return2menu.addEventListener('click',()=> {
         gamescreen1.setAttribute('style', `display: absolute`)
         gamescreen3.setAttribute('style', `display: none`)
         postgameview.setAttribute('style', `display: none`)
     })
+    return2game.addEventListener('click', ()=> {
+        gamescreen3.setAttribute('style', `display: none`)
+        gamescreen2.setAttribute('style', `display: grid`)
+        postgameview.setAttribute('style', `display: none`)
+    })
+    
     //on click, set the popupbox to the image selected
     luckyducktarotdeck.addEventListener('click', ()=> {
         popupboximage.src =`${luckyDuckDeckCardBack[0].img}`
-        popupbox.setAttribute('style', `display: absolute`)
+        popupbox.setAttribute('style', `display: block`)
     })
     playerpastcard.addEventListener('click', ()=> {
         popupboximage.src = playerpastcard.src
-        popupbox.setAttribute('style', `display: absolute`)
+        popupbox.setAttribute('style', `display: block`)
     })
     playerpresentcard.addEventListener('click', ()=> {
         popupboximage.src = playerpresentcard.src
-        popupbox.setAttribute('style', `display: absolute`)
+        popupbox.setAttribute('style', `display: block`)
     })
     playerfuturecard.addEventListener('click', ()=> {
         popupboximage.src = playerfuturecard.src
-        popupbox.setAttribute('style', `display: absolute`)
+        popupbox.setAttribute('style', `display: block`)
     })
     computerpastcard.addEventListener('click', ()=> {
         popupboximage.src = computerpastcard.src
-        popupbox.setAttribute('style', `display: absolute`)
+        popupbox.setAttribute('style', `display: block`)
     })
     computerpresentcard.addEventListener('click', ()=> {
         popupboximage.src = computerpresentcard.src
-        popupbox.setAttribute('style', `display: absolute`)
+        popupbox.setAttribute('style', `display: block`)
     })
     computerfuturecard.addEventListener('click', ()=> {
         popupboximage.src = computerfuturecard.src
-        popupbox.setAttribute('style', `display: absolute`)
+        popupbox.setAttribute('style', `display: block`)
     })
     //Postgame click images
     P1PastCard.addEventListener('click', ()=> {
