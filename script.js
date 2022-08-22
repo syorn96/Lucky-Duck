@@ -88,6 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let exitHTP2 = document.querySelector('#exith2p2')
     let return2start = document.querySelector('#return2start') 
     let menu2 = document.querySelector('.BotR3')
+
+    // variable to showcase card design
     let TarotDeckContainer = document.querySelector('#TarotDeckContainer')
     let luckyducktarotdeck = document.querySelector('#TarotDeck')
     let luckyDuckDeckCardBack = [
@@ -95,7 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
             img: './media/./LuckyDuckCardBack.jpeg'
         }
     ]
-    //variables for card selection + move gameplay
+    
+    //variables for card selection + set cards to no click function
     let playerpastcard = document.querySelector('#playercard1')
     playerpastcard.style.pointerEvents = 'none';
     let playerpastcardinfo = document.querySelector('#PlayerCard1info')
@@ -114,48 +117,63 @@ document.addEventListener('DOMContentLoaded', () => {
     let computerfuturecard = document.querySelector('#computercard3')
     computerfuturecard.style.pointerEvents = 'none';
     let computerfuturecardinfo = document.querySelector('#CompCard3info')
+
+    // variables for pop-up box
     let popupbox = document.querySelector('#PopUpCard')
     let popupboximage = document.querySelector('#PopUpCardImg')
     let returnbtn = document.getElementById('returnbtn')
     ShuffledDuckArray = luckyDuckDeckArray.sort(() => 0.5 - Math.random());
+
+    // variables for turn display
     let turncontainer = document.querySelector('#turntracker')
     let decideTurn = document.querySelector('#turncounter')
     let decideTurn2 = document.querySelector('#turncounter2')
     let movedisplay = document.querySelector('#turndisplay')
     let placeholdercard = document.querySelector('#placeholdercard')
+    // move tracker
     let moves = 0
+    // shuffle and keep button
     let shufflebtn = document.querySelector('#shufflebtn')
     let keepbtn = document.querySelector('#keepbtn')
 
     // variables for post-game results & screen 3 usage
     let resultsbtn = document.querySelector('#resultsbtn')
+
+    // player 1 card's
     let P1PresentCard = document.querySelector('#P1PresentCard')
     let P1PastCard = document.querySelector('#P1PastCard')
     let P1FutureCard = document.querySelector('#P1FutureCard')
+
+    // player 2 card's
     let P2PresentCard = document.querySelector('#P2PresentCard')
     let P2PastCard = document.querySelector('#P2PastCard')
     let P2FutureCard = document.querySelector('#P2FutureCard')
 
+    // player 1 values from card
     let P1PresentValue = document.querySelector('#P1PresentValue')
     let P1PastValue = document.querySelector('#P1PastValue')
     let P1FutureValue = document.querySelector('#P1FutureValue')
     let P1TotalValue = document.querySelector('#P1TotalValue')
 
+    // player 2 values from card
     let P2PresentValue = document.querySelector('#P2PresentValue')
     let P2PastValue = document.querySelector('#P2PastValue')
     let P2FutureValue = document.querySelector('#P2FutureValue')
     let P2TotalValue = document.querySelector('#P2TotalValue')
 
+    // varibles for player 1 to use for total luck calculation
     let P1PastResult = null
     let P1PresentResult = null
     let P1FutureResult = null
     let P1TotalLuck = 0
 
+    // varibles for player 2 to use for total luck calculation
     let P2PastResult = null
     let P2PresentResult = null
     let P2FutureResult = null
     let P2TotalLuck = 0
 
+    // post game 
     let GameResults = document.querySelector('#GameResults')
     let postgameview = document.querySelector('#postgameview')
     let postgameviewimg = document.querySelector('#postgameviewimg')
@@ -195,24 +213,29 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     // on restart reset game to default settings
     restartgamebtn.addEventListener('click', ()=>{
+        //  on restart set the cards to default
         playerpastcard.src = `${luckyDuckDeckCardBack[0].img}` 
         playerpresentcard.src = `${luckyDuckDeckCardBack[0].img}` 
         playerfuturecard.src = `${luckyDuckDeckCardBack[0].img}` 
         computerpastcard.src = `${luckyDuckDeckCardBack[0].img}` 
         computerpresentcard.src = `${luckyDuckDeckCardBack[0].img}` 
         computerfuturecard.src = `${luckyDuckDeckCardBack[0].img}`
+        // on restart set the descriptions to default
         playerpastcardinfo.innerText = ""
         playerpresentcardinfo.innerText = ""
         playerfuturecardinfo.innerText = ""
         computerpastcardinfo.innerText = ""
         computerpresentcardinfo.innerText = ""
         computerfuturecardinfo.innerText = ""
+        // on restart reset the ability to view cards
         playerpastcard.style.pointerEvents = 'none';
         playerpresentcard.style.pointerEvents = 'none';
         playerfuturecard.style.pointerEvents = 'none';
         computerpastcard.style.pointerEvents = 'none';
         computerpresentcard.style.pointerEvents = 'none';
         computerfuturecard.style.pointerEvents = 'none';
+
+        // on restart set the player1 and player 2 TotalLuck to 0
         decideTurn.innerText = `Player 1's`
         P1TotalLuck = 0
         P2TotalLuck = 0
@@ -357,6 +380,8 @@ document.addEventListener('DOMContentLoaded', () => {
             popupboximage.src=`${ShuffledDuckArray[5].img}`
             computerfuturecard.style.pointerEvents = 'auto';
             computerfuturecardinfo.innerText = ShuffledDuckArray[5].description
+
+            // on player 2's last turn display game over ducks
             decideTurn.innerText = 'Game Over'
             decideTurn2.innerText = 'Ducks'
             movedisplay.innerText = ""
@@ -366,8 +391,11 @@ document.addEventListener('DOMContentLoaded', () => {
             P2FutureResult =`${ShuffledDuckArray[5].number}`
             P2TotalLuck += ShuffledDuckArray[5].number
 
+            // display each players total luck on screen 3
             P2TotalValue.innerText = P2TotalLuck
             P1TotalValue.innerText = P1TotalLuck
+
+            // condition for win/loss/draw
             if (P1TotalLuck > P2TotalLuck) {
                 GameResults.innerText = "Player 1 is a Luckier Duck!"
             } else if (P1TotalLuck < P2TotalLuck) {
@@ -375,14 +403,12 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (P1TotalLuck == P2TotalLuck){
                 GameResults.innerText = `It's a Draw. Must be fate!`
             }
+            // only display game results, get rid of shuffle and keep btn
             popupbox.setAttribute('style', 'display: block')
             resultsbtn.setAttribute('style', `display: inline-block`)
             shufflebtn.setAttribute('style', `display: none`)
             keepbtn.setAttribute('style', `display: none`)
-        } else {
-            decideTurn.innerText = 'Game Over'
-            decideTurn2.innerText = 'Ducks'
-        }
+        } 
     })
     // game logic dependent on shuffle button
     // cards are only clickable once loaded
@@ -464,6 +490,8 @@ document.addEventListener('DOMContentLoaded', () => {
             popupboximage.src=`${ShuffledDuckArray[11].img}`
             computerfuturecard.style.pointerEvents = 'auto';
             computerfuturecardinfo.innerText = ShuffledDuckArray[11].description
+
+            // on player 2's last turn set display to game over
             decideTurn.innerText = 'Game Over'
             decideTurn2.innerText = 'Ducks'
             movedisplay.innerText = ""
@@ -473,8 +501,11 @@ document.addEventListener('DOMContentLoaded', () => {
             P2FutureResult =`${ShuffledDuckArray[11].number}`
             P2TotalLuck += ShuffledDuckArray[11].number
 
+            // set each players total value
             P2TotalValue.innerText = P2TotalLuck
             P1TotalValue.innerText = P1TotalLuck
+
+            // win conditions
             if (P1TotalLuck > P2TotalLuck) {
                 GameResults.innerText = "Player 1 is a Luckier Duck!"
             } else if (P1TotalLuck < P2TotalLuck) {
@@ -486,9 +517,6 @@ document.addEventListener('DOMContentLoaded', () => {
             resultsbtn.setAttribute('style', `display: inline-block`)
             shufflebtn.setAttribute('style', `display: none`)
             keepbtn.setAttribute('style', `display: none`)
-        } else {
-            decideTurn.innerText = 'Game Over'
-            decideTurn2.innerText = 'Ducks'
         }
     })
 
@@ -517,6 +545,8 @@ document.addEventListener('DOMContentLoaded', () => {
         popupboximage.src =`${luckyDuckDeckCardBack[0].img}`
         popupbox.setAttribute('style', `display: block`)
     })
+
+    // on click, display the selected image in the pop-up box
     playerpastcard.addEventListener('click', ()=> {
         popupboximage.src = playerpastcard.src
         popupbox.setAttribute('style', `display: block`)
@@ -541,6 +571,7 @@ document.addEventListener('DOMContentLoaded', () => {
         popupboximage.src = computerfuturecard.src
         popupbox.setAttribute('style', `display: block`)
     })
+
     //Postgame click images to view in displayer
     P1PastCard.addEventListener('click', ()=> {
         postgameviewimg.src = playerpastcard.src
