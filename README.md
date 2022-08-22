@@ -1,5 +1,5 @@
 # Lucky-Duck
-### Test your luck vs a Computer with an original Duck Tarot Deck!
+### Test your Lucky-Ducky with an original Lucky Duck Tarot Deck!
 
 #### Game Idea
 Players: Two.
@@ -7,7 +7,7 @@ Players: Two.
 At the start of the game, two players are given 3 random Lucky Duck Tarot cards faced down.
 Each card represents their past, present, and future respectively.
 
-The Luckier Duck is the player with the highest value calculated by subtracting the Present's card value with the Past's card value, and adding the Future's card value.
+The Luckier Duck is the player with the highest Total Luck calculated by subtracting the Present's card value with the Past's card value, and adding the Future's card value.
 Ex: Total Luck = Present - Past + Future
 
 Player 1 and Player 2 will take turns and decide their fate.
