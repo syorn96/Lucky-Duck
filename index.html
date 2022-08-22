@@ -42,78 +42,98 @@
             <button id="exith2p">Return to Main Menu</button>
         </div>
         <div id="game-screen2">
-            <h2 id="playertitle" class="top1">Your Cards</h2>
-            <h2 id="computertitle" class="top2">Computer Cards</h2>
+            <h2 id="playertitle" class="top1">Player 1</h2>
+            <h2 id="computertitle" class="top2">Player 2</h2>
 
             <container class="botL1">
                 <div>Past
-                    <div id="playercard1"> <img class="cardstyle" src="" height='200px' width="150px"/></div>
+                    <div> <img id="playercard1" class="cardstyle" src="./media/LuckyDuckCardBack.jpeg" height='200px' width="150px"/></div>
                 </div>
             </container>
             <container class="MidL1">
-                <div id="PlayerCard1info" class="cardinfo">PlayerCard1Info</div>
+                <div id="PlayerCard1info" class="cardinfo"></div>
             </container>
 
             <container class="botL2">
                 <div>Present
-                    <div id="playercard2"> <img class="cardstyle" src="./media/13.jpeg" height='200px' width="150px"/></div>
+                    <div> <img id="playercard2" class="cardstyle" src="./media/LuckyDuckCardBack.jpeg" height='200px' width="150px"/></div>
                 </div>
             </container>
             <container class="MidL2">
-                <div id="PlayerCard2info" class="cardinfo">PlayerCard2Info</div>
+                <div id="PlayerCard2info" class="cardinfo"></div>
             </container>
 
             <container class="botL3">
                 <div>Future
-                    <div id="playercard3"> <img class="cardstyle" src="./media/14.jpg" height='200px' width="150px"/></div>
+                    <div> <img id="playercard3" class="cardstyle" src="./media/LuckyDuckCardBack.jpeg" height='200px' width="150px"/></div>
                 </div>
             </container>
             <container class="MidL3">
-                <div id="PlayerCard3info" class="cardinfo">PlayerCard3Info</div>
+                <div id="PlayerCard3info" class="cardinfo"></div>
             </container>
 
             <container class="middle">
                 <div>Tarot Duck Deck
-                    <div id="TarotDeck"> <img class="cardstyle" src="./media/15.jpg" height='200px' width="150px"/></div>
+                    <div id="TarotDeck"> <img class="cardstyle" src="./media/LuckyDuckCardBack.jpeg" height='200px' width="150px"/></div>
                 </div>
             </container>
             <container id="turntracker">
-                <span id="turncounter"></span> <span id="turndisplay">Turn</span>
+                <span id="turncounter">Your</span> <span id="turncounter2">Turn</span>
+                <div id="turndisplay">0</div>
+                <div>Move(s)</div>
+                <button id="shufflebtn">Shuffle Card</button>
+                <button id="keepbtn">Keep Card</button>
             </container>
             <container class="botR1">
                 <div>Past
-                    <div id="computercard1"> <img class="cardstyle" src="./media/15.jpg" height='200px' width="150px"/></div>
+                    <div> <img id="computercard1" class="cardstyle" src="./media/LuckyDuckCardBack.jpeg" height='200px' width="150px"/></div>
                 </div>
             </container>
             <container class="MidR1">
-                <div id="CompCard1info" class="cardinfo">CompCard1Info</div>
+                <div id="CompCard1info" class="cardinfo"></div>
             </container>
 
             <container class="botR2">
                 <div>Present
-                    <div id="computercard2"> <img class="cardstyle" src="./media/16.jpg" height='200px' width="150px"/></div>
+                    <div> <img id="computercard2" class="cardstyle" src="./media/LuckyDuckCardBack.jpeg" height='200px' width="150px"/></div>
                 </div>
             </container>
             <container class="MidR2">
-                <div id="CompCard2info" class="cardinfo">CompCard2Info</div>
+                <div id="CompCard2info" class="cardinfo"></div>
             </container>
 
             <container class="botR3">
                 <div>Future
-                    <div id="computercard3"> <img class="cardstyle" src="./media/17.jpg" height='200px' width="150px"/></div>
+                    <div> <img id="computercard3" class="cardstyle" src="./media/LuckyDuckCardBack.jpeg" height='200px' width="150px"/></div>
                 </div>
             </container>
             <container class="MidR3">
-                <div id="CompCard3info" class="cardinfo">CompCard3Info</div>
+                <div id="CompCard3info" class="cardinfo"></div>
             </container>
 
             <container class="BotR3">
-                <button id="shufflebtn">Shuffle</button>
-                <button id="keepbtn">Keep</button>
+                <button id="HTPbtn2" class="btn">How To Play ❓</button>
                 <button id="return2start">Return to Main Menu</button>
             </container>
     </container>
-    <div class="PopUpCard">
+    <div id="PopUpCard">
+        <img id="PopUpCardImg" src="./media/LuckyDuckCardBack.jpeg" height="800px" width="550px"/> 
+        <button id="returnbtn">Return</button>
+    </div>
+    <div id="howtoplay2">
+        <h2 id="H2PTitle">How To Play</h2>
+        <!-- <li class="gameinfo1">At the start of the game, the player and computer are given 3 random Lucky Duck Tarot cards faced down.</li> 
+        <li class="gameinfo1">Each card represents their past, present, and future respectively.</li> -->
+        <li class="gameinfo1">
+            The winner is the player with the highest value adjudicated by subtracting the Present's card value with the Past's card value, and adding the Future's card value.</li> 
+        <div class="gameinfo1">Ex: Total Luck = Present - Past + Future</div>
+        <div class="gameinfo"> 1. The player and computer will take turns and decide their fate.</div>
+        <div class="gameinfo"> 2. The player and computer will each have 3 turns; one for their past card, present card, and finally their future card.</div>
+        <div class="gameinfo"> 3. During each turn, the player will decide if they want to switch their card with a random card from the deck, or keep the card they currently have.</div>
+        <div class="gameinfo"> 4. Once a turn has passed the player can no longer trade their card and the turn's card will be revealed.</div>
+        <div class="gameinfo">
+            5. At the end of the game, if the player won they will be given a Lucky Duck Fortune reading based on their Total Luck. If the player loses, they will have to play the game again.</div>
+        <button id="exith2p2">Return to Game</button>
     </div>
 </body>
 </html>
