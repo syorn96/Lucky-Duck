@@ -4,10 +4,11 @@
 #### Game Idea
 Players: Two.
 
+Play against another person to see who is the Luckier Duck and receive a fortune.
 At the start of the game, two players are given 3 random Lucky Duck Tarot cards faced down.
 Each card represents their past, present, and future respectively.
-
 The Luckier Duck is the player with the highest Total Luck calculated by subtracting the Present's card value with the Past's card value, and adding the Future's card value.
+
 Ex: Total Luck = Present - Past + Future
 
 Player 1 and Player 2 will take turns and decide their fate.
@@ -15,7 +16,7 @@ Both Players will each have 3 turns; one for their past card, present card, and 
 During each turn, the current player will decide if they want to switch their card with a random card from the deck, or keep the card they currently have.
 Once a turn has passed the player can no longer trade their card and the turn's card will be revealed.
 
-The player with the highest Total Luck is the Luckier Duck!
+The player with the highest Total Luck is the Luckier Duck and will receive a fortune!
 
 The deck will consists of 44 cards. Each card will be a Duck meme with it's type, number, and a description.
 
@@ -45,15 +46,15 @@ There will be 8 Earth Duck cards: 6 Earth Ducks (Cute memes) + 1 Earth Duck King
 * Create 20-30 original cards from duck memes.
 * Create turns for Player 1 and Player 2.
 * Render a start game screen (1) with game title, start button, how to play button, deck gallery button and restart buton.
-* Render game screen (2) displaying the deck of cards in the center of screen and 3 cards each on left and right hand side of screen (player1 and player2)
+* Render game screen (2) displaying the deck of cards in the center of screen and 3 cards each on left and right hand side of screen (player1 and player2).
 * Render another game screen (3) for comparing cards and results.
 
 ### Stretch Goals
 * Animations for clicks.
+* Each card will display their artwork when clicked.
+* Render a game screen (4) that displays a fortune for the winning player.
 * Create all 44 Tarot Cards from stratch.
 * Create a vs computer game mode.
-* Each card will display their artwork when clicked.
-* create a fortune for the winning player
 
 ### Potential Roadblocks
 * Not able to create all Tarot cards?
