@@ -173,7 +173,14 @@ let luckyduckfortune = [
     `"Perfect is boring. Duck is beautiful"`,
     `"To the world, you're one Duck. But to one Duck, you're the world."`
 ]
+// cloneddeck used for deck gallery, so cards show up in chronological order
   let clonedLuckyDeck = luckyDuckDeckArray.slice()
+
+ // function to shuffle array on restart
+ function shuffle(array) {
+    array.sort(() => Math.random() - 0.5);
+  }
+
 //Load HTML before retrieving data
 document.addEventListener('DOMContentLoaded', () => {
     //variables for gameplay
@@ -234,11 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let popupbox = document.querySelector('#PopUpCard')
     let popupboximage = document.querySelector('#PopUpCardImg')
     let returnbtn = document.getElementById('returnbtn')
-    // let ShuffledDuckArray = luckyDuckDeckArray.sort(() => 0.5 - Math.random());
-    // function to shuffle array on restart
-    function shuffle(array) {
-        array.sort(() => Math.random() - 0.5);
-      }
+   
     // variables for turn display
     let turncontainer = document.querySelector('#turntracker')
     let decideTurn = document.querySelector('#turncounter')
@@ -334,6 +337,10 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(vw, vh)
         body.setAttribute('style', `background-size: ${vw}vw ${vh}vh;`)
     })
+
+    // shuffle the fortunes for gameplay
+    shuffle(luckyduckfortune)
+
     //on start default the cards to be set as the tarot deck back cover 
     startgamebtn.addEventListener('click', ()=> {
         gamescreen1.setAttribute('style', `display: none;`)
@@ -418,11 +425,10 @@ document.addEventListener('DOMContentLoaded', () => {
         decideTurn2.style.color = `rgb(255, 255, 255)`
         P1TotalLuck = 0
         P2TotalLuck = 0
-
         moves = 0
-        if (moves < 0) {
-            moves = 0
-        }
+        // if (moves < 0) {
+        //     moves = 0
+        // }
         decideTurn2.innerText = ''
         movedisplay.innerText = 'Past';
         placeholdercard.innerText = "Card"
@@ -817,7 +823,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (P2TotalLuck > P1TotalLuck){
             displaywinner.innerText = "Player 2 Fortune"
             displayloser.innerText = "Player 1 Fortune"
-            winningplayerfortune.innerText = luckyduckfortune[f]
+            winningplayerfortune.innerText = luckyduckfortune[0]
             winningplayerfortune.style.color = RandomRGB()
         }
     })
