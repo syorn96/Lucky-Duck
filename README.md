@@ -32,9 +32,8 @@ There will be 8 Earth Duck cards: 6 Earth Ducks (Cute memes) + 1 Earth Duck King
 ### Tech Stack
 * DOM Manipulation. 
 * Arrays to retreive Duck Tarot Card, description, and number value.
-* Game logic to shuffle remaining cards, and retrieve one. 
-* Winning logic to give fortune based on total luck value. 
-* Possibly use Canvas, but I think all of this can be achieved with just DOM.
+* Game logic to shuffle array and retrieve img, value or description based on array index. 
+* Winning logic to compare total luck value between players.
 
 ### WireFrames!
 ![Wireframe 1](https://i.imgur.com/mLKepDe.png)
@@ -43,21 +42,19 @@ There will be 8 Earth Duck cards: 6 Earth Ducks (Cute memes) + 1 Earth Duck King
 ![Wireframe 4](https://i.imgur.com/4gGc9Tc.png)
 
 ### MVP Goals
-* Create 20-30 cards
-* Create 2 turns: one for the player and one for the computer.
-* Create a button to shuffle cards.
-* Render a start screen with game title, instructions and start button.
-* Render game screen displaying the deck of cards in the center of screen and 3 cards each for the player and computer.
-* Render another game screen for comparing cards and results.
-* Render a final game screen with a player's total luck and a fortune.
-
+* Create 20-30 original cards from duck memes.
+* Create turns for Player 1 and Player 2.
+* Render a start game screen (1) with game title, start button, how to play button, deck gallery button and restart buton.
+* Render game screen (2) displaying the deck of cards in the center of screen and 3 cards each on left and right hand side of screen (player1 and player2)
+* Render another game screen (3) for comparing cards and results.
 
 ### Stretch Goals
-* Animation between user interface?
+* Animations for clicks.
 * Create all 44 Tarot Cards from stratch.
-* Create 6 turns alternating player and computer
-* Each card will display their description once the card is revealed.
+* Create a vs computer game mode.
+* Each card will display their artwork when clicked.
+* create a fortune for the winning player
 
 ### Potential Roadblocks
 * Not able to create all Tarot cards?
-* Smooth animation between user interface
+* Smooth animation between user interface.

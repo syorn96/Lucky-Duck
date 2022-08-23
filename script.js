@@ -136,6 +136,43 @@ let luckyDuckDeckArray = [
         description:`"Oh, ducky,you should go and love yourself..." - DUCKIN BEIBER. There's no need to compare yourself to other ducks, that's just quacktalk.`
       },
   ]
+// fortunes source: https://fortuneandframe.com/apps/fortunes/ff-originals
+// https://www.wisesayings.com/duck-quotes/
+// https://kidadl.com/funnies/puns/best-duck-puns-to-send-you-quacking
+let luckyduckfortune = [
+    `"Change comes from embracing the future, not fighting your past."`,
+    `"Set yourself up to experience what you love."`,
+    `"If you want to fly, you have to be willing to learn."`,
+    `"It's not your job to fix other ducks."`,
+    `"Be kind to other types of duck."`,
+    `"The egg laid by the duck is sometimes hatched by the hen."`,
+    `"Duck love is recognizable in any language."`,
+    `"A healthy duck will be bright and will try to get away from people."`,
+    `"Ducks are the happiest animals in the barnyard."`,
+    `"Some birds avoid water, the duck searches for it."`,
+    `"Ducks are really good at saving because they have their bills under control."`,
+    `"Stop saying yes to things you don't want to do."`,
+    `"The only duck who has to believe in you is you"`,
+    `"Trust the process."`,
+    `"A duck will not always dabble in the same gutter."`,
+    `"If you are going to breed a duck, breed a good one."`,
+    `"Ducks are often the most colorful waterfowl."`,
+    `"If it looks like a duck and sounds like a duck, it could be a really ugly swan."`,
+    `"Practice not-so-random acts of discipline"`,
+    `"If you're not where you want to be, don't waddle there for too long."`,
+    `"Everything that is was first a duck's dream."`,
+    `"If you don't like it change it. If you can't change it, change your attitude."`,
+    `"Learn to delay gratification."`,
+    `"Learn as much from joy as you do from pain."`,
+    `"Listen for quacks. Look for the signs."`,
+    `"Migrate with the change of seasons to survive. Be adaptable."`,
+    `"It's better to wait for the right duck than rush into it with the wrong one."`,
+    `"Be careful who you trust. Grass and sea-weed look the same."`,
+    `"Turn your duck wounds into widsom."`,
+    `"Breathe, Duckling, this is just a chapter, not your whole story."`,
+    `"Perfect is boring. Duck is beautiful"`,
+    `"To the world, you're one Duck. But to one Duck, you're the world."`
+]
   let clonedLuckyDeck = luckyDuckDeckArray.slice()
 //Load HTML before retrieving data
 document.addEventListener('DOMContentLoaded', () => {
@@ -181,6 +218,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let playerfuturecard = document.querySelector('#playercard3')
     playerfuturecard.style.pointerEvents = 'none';
     let playerfuturecardinfo = document.querySelector('#PlayerCard3info')
+
+    // originally game was meant to be played vs computer, computer is now variable for player 2***
     let computerpastcard = document.querySelector('#computercard1')
     computerpastcard.style.pointerEvents = 'none';
     let computerpastcardinfo = document.querySelector('#CompCard1info')
@@ -249,13 +288,23 @@ document.addEventListener('DOMContentLoaded', () => {
     let P2FutureResult = null
     let P2TotalLuck = 0
 
-    // post game 
+    // post game - results page/screen3 
     let GameResults = document.querySelector('#GameResults')
     let postgameview = document.querySelector('#postgameview')
     let postgameviewimg = document.querySelector('#postgameviewimg')
     let return2menu = document.querySelector('#return2menu')
     let return2game = document.querySelector('#return2game')
     
+    // fortune page, screen 4
+    let fortunebtn = document.querySelector('#fortunebtn')
+    let gamescreen4 = document.querySelector('#gamescreen4')
+    let escapefortunebtn = document.querySelector('#escapefortune')
+    let displaywinner = document.querySelector('#displaywinner')
+    let displayloser = document.querySelector('#displayloser')
+    let winningplayerfortune = document.querySelector('#winningplayerfortune')
+    let returntoresults = document.querySelector('#returntoresults')
+
+    //   player 1 and player 2, text-color change
     const RandomRGB = () => {
         let r = Math.floor(Math.random() * 255);
         let g = Math.floor(Math.random() * 255);
@@ -378,6 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
         movedisplay.innerText = 'Past';
         placeholdercard.innerText = "Card"
         shuffle(luckyDuckDeckArray)
+        shuffle(luckyduckfortune)
         resultsbtn.setAttribute('style', `display: none`)
         shufflebtn.setAttribute('style', `display: inline-block`)
         keepbtn.setAttribute('style', `display: inline-block`)
@@ -752,6 +802,34 @@ document.addEventListener('DOMContentLoaded', () => {
     P2FutureCard.addEventListener('click', ()=> {
         postgameviewimg.src = computerfuturecard.src
         postgameview.setAttribute('style', `display: block`)
+    })
+
+    // Fortunes Page
+    fortunebtn.addEventListener('click', ()=>{
+        gamescreen4.setAttribute('style', `display: block`)
+        gamescreen3.setAttribute('style', `display: none`)
+        postgameview.setAttribute('style', `display: none`)
+        if (P1TotalLuck > P2TotalLuck) {
+            displaywinner.innerText = "Player 1 Fortune"
+            displayloser.innerText = "Player 2 Fortune"
+            winningplayerfortune.innerText = luckyduckfortune[0]
+            winningplayerfortune.style.color = RandomRGB()
+        } else if (P2TotalLuck > P1TotalLuck){
+            displaywinner.innerText = "Player 2 Fortune"
+            displayloser.innerText = "Player 1 Fortune"
+            winningplayerfortune.innerText = luckyduckfortune[f]
+            winningplayerfortune.style.color = RandomRGB()
+        }
+    })
+
+    returntoresults.addEventListener('click', ()=> {
+        gamescreen4.setAttribute('style', `display: none`)
+        gamescreen3.setAttribute('style', `display: block`)
+    })
+
+    escapefortunebtn.addEventListener('click', ()=> {
+        gamescreen4.setAttribute('style', `display: none`)
+        gamescreen1.setAttribute('style', `display: absolute`)
     })
 })
 

@@ -421,3 +421,18 @@ audio {
 .yellow {
     color:rgb(255, 230, 0)
 }
+
+#gamescreen4 {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.852); 
+    width: 60vw;
+    margin-left: 16vw;
+    padding: 25px;
+    height: 72vh;
+    border-radius: 15px;
+    display: none;
+}
+
+#winningplayerfortune {
+    font-size: 3vh;
+}

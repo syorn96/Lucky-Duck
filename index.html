@@ -14,7 +14,7 @@
 </head>
 <body id="body">
     <!-- Audio Source https://joeybabcock.me/blog/music/kahoot-music-mp3s/ -->
-    <audio autoplay loop controls>
+    <audio loop controls>
         <source src="./media/lobby-classic-game.mp3" type="audio/mp3">
         Your browser does not support the audio element.
       </audio>
@@ -173,6 +173,7 @@
         <h1 id="GameResults"></h1>
         <button id="return2menu"class="btn">Return to Duck Menu</button>
         <button id="return2game"class="btn">Return to Duck Game</button>
+        <button id="fortunebtn"class="btn">View Fortunes</button>
 
     </div>
     <div id="postgameview"><img id="postgameviewimg" src="./media/LuckyDuckCardBack.jpeg" height="650px" width="450px"/>
@@ -184,6 +185,21 @@
         <div id="viewCardDescription">Lucky Duck Tarot Card Design</div>
         <!-- <button id="escViewDeckGallery" class="btn pointer">Return</button> -->
         <button id="escapeDeckGallery" class="btn">Return to Duck Menu</button>
+    </div>
+    <div id="gamescreen4">
+        <h1 id="displaywinner">Winning Player Fortune</h1>
+        <img src="./media/Happyduck.gif" width="300px" height ="150px"/>
+        <!-- SOURCE FOR GIF https://tenor.com/view/duck-nice-cute-duck-happy-gif-25974641-->
+        <p id="winningplayerfortune">"Don't hold onto things
+            that require a tight grip."</p>
+        <h1 id="displayloser">Loser Player Fortune</h1>
+        <img src="./media/Sadduck.gif" width="300px" height ="150px"/>
+        <!-- SOURCE FOR GIF https://tenor.com/view/n-letter-no-nope-no-way-duck-gif-4360335-->
+        <p>"You must play this game again." - Lucky Duck Tarot Deck</p>
+        <div>
+        <button id="escapefortune" class="btn">Return to Duck Menu</button>
+        <button id="returntoresults" class="btn">Return to Results</button>
+        </div>
     </div>
 </body>
 </html>
