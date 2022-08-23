@@ -53,7 +53,7 @@ let luckyDuckDeckArray = [
       {
         number: 22,
         img: './media/./22.jpeg',
-        description:`Big duck energy never quacks down`,
+        description:`Big duck energy never quacks down.`,
       },
       {
         number: 23,
@@ -295,6 +295,8 @@ document.addEventListener('DOMContentLoaded', () => {
         deckgallery.setAttribute('style', `display: block;`)
         gamescreen1.setAttribute('style', `display: none;`)
         viewDeckGallery.setAttribute('style', `display: block;`)
+        viewDeckGalleryImg.src = `${luckyDuckDeckCardBack[0].img}`
+        viewCardDescription.innerText = 'Lucky Duck Tarot Card Back Design'
         // run loop only once
         galleryclickcounter ++
         if (galleryclickcounter == 1){
