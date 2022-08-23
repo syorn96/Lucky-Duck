@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let escapeDeckGallery = document.querySelector('#escapeDeckGallery')
     let viewDeckGallery = document.querySelector('#viewDeckGallery')
     let viewDeckGalleryImg = document.querySelector('#viewDeckGalleryImg')
+    let viewCardDescription = document.querySelector('#viewCardDescription')
     let escViewDeckGallery = document.querySelector('#escViewDeckGallery')
 
     let return2start = document.querySelector('#return2start') 
@@ -235,11 +236,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const createImg = document.createElement('img')
             createImg.classList.add('cardsize')
             createImg.src = `${clonedLuckyDeck[i].img}`
+            createImg.alt = `${clonedLuckyDeck[i].description}`
             deckgallery.append(createImg)
             let newDeckGallery = document.querySelectorAll('.cardsize')
             newDeckGallery.forEach(e => {
                 e.addEventListener('click', ()=> {
                     viewDeckGalleryImg.src = e.src
+                    viewCardDescription.innerText = e.alt
                     viewDeckGallery.setAttribute('style', `display: block;`)
                 })
             })

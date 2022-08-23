@@ -323,5 +323,19 @@ audio {
 #viewDeckGallery {
     display: none;
     margin-left: 39vw;
-    margin-top: -10vh;
+    margin-top: -8vh;
+}
+#viewDeckGalleryImg {
+    border-radius: 25px;
+}
+#viewCardDescription {
+    margin-left: 24vw;
+    margin-top: -45vh;
+    width: 10vw;
+    background-color: black;
+    border-radius: 20px;
+    padding: 15px;
+}
+#escViewDeckGallery {
+    margin-left: 25.5vw;
 }
