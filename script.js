@@ -68,7 +68,7 @@ let luckyDuckDeckArray = [
       {
         number: 25,
         img: './media/./25.jpeg',
-        description:`A happy duck is the best kind of duck. Other's may appreciate your light-hearted feathers and loud quacks.`,
+        description:`A happy duck is the best kind of duck. Other's may appreciate your light-hearted presence and loud quacks.`,
       },
     //   {
     //     number: 26,
@@ -109,6 +109,31 @@ let luckyDuckDeckArray = [
         number: 33,
         img: './media/./33.jpeg',
         description:`A like minded duck will be entering your life. They'll appreciate your "quarkiness".`
+      },
+    //   {
+    //     number: 34,
+    //     img: './media/./34.jpeg',
+    //     description:``
+    //   },
+    //   {
+    //     number: 35,
+    //     img: './media/./35.jpeg',
+    //     description:``
+    //   },
+      {
+        number: 36,
+        img: './media/./36.jpeg',
+        description:`The river's current might be too strong, but just keep swimming duckling. The other side of the river bank is just a few more paddles.`
+      },
+      {
+        number: 37,
+        img: './media/./37.jpeg',
+        description:`This person may not be related by duck blood, but they're considered part of your nest. Let them know how much you appreciate their presence.`
+      },
+      {
+        number: 38,
+        img: './media/./38.jpeg',
+        description:`"Oh, ducky,you should go and love yourself..." - DUCKIN BEIBER. There's no need to compare yourself to other ducks, that's just quacktalk.`
       },
   ]
   let clonedLuckyDeck = luckyDuckDeckArray.slice()
@@ -269,6 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
     viewdeck.addEventListener('click', ()=> {
         deckgallery.setAttribute('style', `display: block;`)
         gamescreen1.setAttribute('style', `display: none;`)
+        viewDeckGallery.setAttribute('style', `display: block;`)
         // run loop only once
         galleryclickcounter ++
         if (galleryclickcounter == 1){
@@ -290,12 +316,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     })
     //return btn for popup when img is selected in lucky duck gallery
-    escViewDeckGallery.addEventListener('click', ()=> {
-        viewDeckGallery.setAttribute('style', `display: none;`)
-    })
+    // escViewDeckGallery.addEventListener('click', ()=> {
+    //     viewDeckGallery.setAttribute('style', `display: none;`)
+    // })
     // return btn to actual main menu
     escapeDeckGallery.addEventListener('click', ()=> {
         deckgallery.setAttribute('style', `display: none;`)
+        viewDeckGallery.setAttribute('style', `display: none;`)
         gamescreen1.setAttribute('style', `display: block;`)
     })
     
@@ -333,6 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (moves < 0) {
             moves = 0
         }
+        decideTurn2.innerText = ''
         movedisplay.innerText = 'Past';
         placeholdercard.innerText = "Card"
         shuffle(luckyDuckDeckArray)

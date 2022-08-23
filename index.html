@@ -25,7 +25,7 @@
         <div id="game-screen1" class="center">
             <button id="startbtn" class="menu">Start Game</button>
             <button id="HTPbtn" class="menu">How To Play</button>
-            <button id="viewdeck" class="menu">Lucky Deck Gallery</button>
+            <button id="viewdeck" class="menu">Lucky Duck Gallery</button>
             <button id="restartgame" class="menu">Restart the Game</button>
         </div>
         <div id="howtoplay">
@@ -34,10 +34,10 @@
             <div class="gameinfo1">At the start of the game, two players are given 3 random Lucky Duck Tarot cards faced down.</div> 
             <div class="gameinfo1">Each card represents their past, present, and future respectively.</div>
             <div class="gameinfo1">
-                The Luckier Duck is the player with the highest Total Luck calculated by subtracting the Present's card value with the Past's card value, and adding the Future's card value.</div> 
-            <div class="gameinfo1">Ex: Total Luck = Present - Past + Future</div>
+                The Luckier Duck is the player with the highest Total Luck.</div> 
+            <div class="gameinfo1">Total Luck = Present - Past + Future</div>
             <div class="gameinfo"> 1. Player 1 and Player 2 will take turns to decide their fate.</div>
-            <div class="gameinfo"> 2. Both Players will each have 3 turns; one for their past card, present card, and finally their future card.</div>
+            <div class="gameinfo"> 2. Both Players will each have 3 turns; one for their past card, present card and future card.</div>
             <div class="gameinfo"> 3. During each turn, the player will decide if they want to switch their card with a random card from the deck, or keep the card they currently have.</div>
             <div class="gameinfo"> 4. Once a turn has passed the player can no longer trade their card and the turn's card will be revealed.</div>
             <div class="gameinfo">
@@ -123,7 +123,7 @@
             </div>
     </container>
     <div id="PopUpCard">
-        <img id="PopUpCardImg" src="./media/LuckyDuckCardBack.jpeg" height="800px" width="550px"/> 
+        <img id="PopUpCardImg" src="./media/LuckyDuckCardBack.jpeg" height="600px" width="450px"/> 
         <button id="returnbtn" class="btn return">Return</button>
     </div>
     <div id="howtoplay2">
@@ -175,12 +175,15 @@
         <button id="return2game"class="btn">Return to Duck Game</button>
 
     </div>
-    <div id="postgameview"><img id="postgameviewimg" src="./media/LuckyDuckCardBack.jpeg" height="800px" width="500px"/>
+    <div id="postgameview"><img id="postgameviewimg" src="./media/LuckyDuckCardBack.jpeg" height="650px" width="450px"/>
     </div>
     <div id="deckgallery">
+        
+    </div>
+    <div id="viewDeckGallery"><img id="viewDeckGalleryImg" src="./media/LuckyDuckCardBack.jpeg" height="650px" width="450px"/>
+        <div id="viewCardDescription">Lucky Duck Tarot Card Back Design</div>
+        <!-- <button id="escViewDeckGallery" class="btn pointer">Return</button> -->
         <button id="escapeDeckGallery" class="btn">Return to Duck Menu</button>
     </div>
-    <div id="viewDeckGallery"><img id="viewDeckGalleryImg" src="./media/LuckyDuckCardBack.jpeg" height="800px" width="500px"/><div id="viewCardDescription"></div>
-        <button id="escViewDeckGallery" class="btn pointer">Return</button></div>
 </body>
 </html>
