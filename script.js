@@ -158,7 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let viewDeckGallery = document.querySelector('#viewDeckGallery')
     let viewDeckGalleryImg = document.querySelector('#viewDeckGalleryImg')
     let viewCardDescription = document.querySelector('#viewCardDescription')
-    let escViewDeckGallery = document.querySelector('#escViewDeckGallery')
 
     let return2start = document.querySelector('#return2start') 
     let menu2 = document.querySelector('.BotR3')
@@ -257,6 +256,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let return2menu = document.querySelector('#return2menu')
     let return2game = document.querySelector('#return2game')
     
+    const RandomRGB = () => {
+        let r = Math.floor(Math.random() * 255);
+        let g = Math.floor(Math.random() * 255);
+        let b = Math.floor(Math.random() * 255);
+        return `rgb(${r}, ${g}, ${b})`
+        }
 
     // console.log(ShuffledDuckArray)
      //each time the user clicks screen 2x, duplicate the background 
@@ -355,6 +360,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // on restart set the player1 and player 2 TotalLuck to 0
         decideTurn.innerText = `Player 1's`
+        decideTurn.style.color = `rgb(255, 255, 255)`
+        decideTurn2.style.color = `rgb(255, 255, 255)`
         P1TotalLuck = 0
         P2TotalLuck = 0
 
@@ -503,6 +510,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // on player 2's last turn display game over ducks
             decideTurn.innerText = 'Game Over'
             decideTurn2.innerText = 'Ducks'
+            decideTurn.style.color = RandomRGB()
+            decideTurn2.style.color = RandomRGB()
             movedisplay.innerText = ""
             placeholdercard.innerText = ""
             P2FutureCard.src = `${luckyDuckDeckArray[5].img}`
@@ -613,6 +622,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // on player 2's last turn set display to game over
             decideTurn.innerText = 'Game Over'
             decideTurn2.innerText = 'Ducks'
+            decideTurn.style.color = RandomRGB()
+            decideTurn2.style.color = RandomRGB()
             movedisplay.innerText = ""
             placeholdercard.innerText = ""
             P2FutureCard.src = `${luckyDuckDeckArray[11].img}`
