@@ -93,12 +93,22 @@ let luckyDuckDeckArray = [
       {
         number: 30,
         img: './media/./30.jpeg',
-        description:`Some things can only be learned through eggs-perience. A mentor duck of some sorts may fly into your life.`,
+        description:`Some things can only be learned through eggs-perience. A mentor duck of some sorts will fly into your life.`,
       },
       {
         number: 31,
         img: './media/./31.jpeg',
         description:`Boundaries aren't meant to be waddled across. Show the other ducks that you're putting your flipper down.`
+      },
+      {
+        number: 32,
+        img: './media/./32.jpeg',
+        description:`Take time to consider if certain habits are supporting your duck goals or drowning you down...`
+      },
+      {
+        number: 33,
+        img: './media/./33.jpeg',
+        description:`A like minded duck will be entering your life. They'll appreciate your "quarkiness".`
       },
   ]
   let clonedLuckyDeck = luckyDuckDeckArray.slice()
