@@ -311,3 +311,12 @@ audio {
 #P1PresentCard, #P1PastCard, #P1FutureCard, #P2PresentCard, #P2PastCard, #P2FutureCard {
     border-radius: 10px;
 }
+
+.cardsize {
+    width: 150px;
+    height: 200px;
+}
+
+#deckgallery {
+    display: none;
+}

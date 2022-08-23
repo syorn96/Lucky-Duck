@@ -71,6 +71,7 @@ let luckyDuckDeckArray = [
         description:`A happy duck is the best kind of duck.`,
       },
   ]
+  let clonedLuckyDeck = luckyDuckDeckArray.slice(0)
 //Load HTML before retrieving data
 document.addEventListener('DOMContentLoaded', () => {
     //variables for gameplay
@@ -86,6 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let exitHTP = document.querySelector('#exith2p')
     let howtoplayscreen2 = document.querySelector('#howtoplay2')
     let exitHTP2 = document.querySelector('#exith2p2')
+    let viewdeck = document.querySelector('#viewdeck')
+    let deckgallery = document.querySelector('#deckgallery')
+    let escapeDeckGallery = document.querySelector('#escapeDeckGallery')
     let return2start = document.querySelector('#return2start') 
     let menu2 = document.querySelector('.BotR3')
 
@@ -97,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img: './media/./LuckyDuckCardBack.jpeg'
         }
     ]
-    
+
     //variables for card selection + set cards to no click function
     let playerpastcard = document.querySelector('#playercard1')
     playerpastcard.style.pointerEvents = 'none';
@@ -122,8 +126,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let popupbox = document.querySelector('#PopUpCard')
     let popupboximage = document.querySelector('#PopUpCardImg')
     let returnbtn = document.getElementById('returnbtn')
-    ShuffledDuckArray = luckyDuckDeckArray.sort(() => 0.5 - Math.random());
-
+    // let ShuffledDuckArray = luckyDuckDeckArray.sort(() => 0.5 - Math.random());
+    // function to shuffle array on restart
+    function shuffle(array) {
+        array.sort(() => Math.random() - 0.5);
+      }
     // variables for turn display
     let turncontainer = document.querySelector('#turntracker')
     let decideTurn = document.querySelector('#turncounter')
@@ -179,10 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let postgameviewimg = document.querySelector('#postgameviewimg')
     let return2menu = document.querySelector('#return2menu')
     let return2game = document.querySelector('#return2game')
-    // function to shuffle array on restart
-    function shuffle(array) {
-        array.sort(() => Math.random() - 0.5);
-      }
     
 
     // console.log(ShuffledDuckArray)
@@ -190,6 +193,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let vw = 100
     let vh = 100
     let clickcounter = 0
+    let startclickcounter = 0
+    let galleyclickcounter = 0
     body.addEventListener('click', ()=> {
         clickcounter ++
         if (clickcounter % 2) {
@@ -209,8 +214,32 @@ document.addEventListener('DOMContentLoaded', () => {
     startgamebtn.addEventListener('click', ()=> {
         gamescreen1.setAttribute('style', `display: none;`)
         gamescreen2.setAttribute('style', `display: grid;`)
+        startclickcounter ++
+        if (startclickcounter == 1){
+            shuffle(luckyDuckDeckArray)
+        }
         // popupbox.setAttribute('style', `display: block;`)
     })
+    viewdeck.addEventListener('click', ()=> {
+        deckgallery.setAttribute('style', `display: block;`)
+        gamescreen1.setAttribute('style', `display: none;`)
+        galleyclickcounter ++
+        if (galleyclickcounter == 1){
+            for (let i = 0; i <= clonedLuckyDeck.length; i++) {
+            const createImg = document.createElement('img')
+            createImg.classList.add('cardsize')
+            createImg.src = `${clonedLuckyDeck[i].img}`
+            deckgallery.append(createImg)
+            }
+        }
+    })
+    
+    escapeDeckGallery.addEventListener('click', ()=> {
+        deckgallery.setAttribute('style', `display: none;`)
+        gamescreen1.setAttribute('style', `display: block;`)
+    })
+    
+
     // on restart reset game to default settings
     restartgamebtn.addEventListener('click', ()=>{
         //  on restart set the cards to default
@@ -246,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         movedisplay.innerText = 'Past';
         placeholdercard.innerText = "Card"
-        shuffle(ShuffledDuckArray)
+        shuffle(luckyDuckDeckArray)
         resultsbtn.setAttribute('style', `display: none`)
         shufflebtn.setAttribute('style', `display: inline-block`)
         keepbtn.setAttribute('style', `display: inline-block`)
@@ -307,89 +336,89 @@ document.addEventListener('DOMContentLoaded', () => {
     keepbtn.addEventListener(('click'), ()=> {
         moves +=1
         if (moves == 1) {
-            playerpastcard.src = `${ShuffledDuckArray[0].img}`
-            popupboximage.src=`${ShuffledDuckArray[0].img}`
+            playerpastcard.src = `${luckyDuckDeckArray[0].img}`
+            popupboximage.src=`${luckyDuckDeckArray[0].img}`
             playerpastcard.style.pointerEvents = 'auto';
-            playerpastcardinfo.innerText = ShuffledDuckArray[0].description
+            playerpastcardinfo.innerText = luckyDuckDeckArray[0].description
             decideTurn.innerText = `Player 2's`
             popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Past'
-            P1PastCard.src = `${ShuffledDuckArray[0].img}`
-            P1PastValue.innerText = `${ShuffledDuckArray[0].number}`
-            P1PastResult =`${ShuffledDuckArray[0].number}`
-            P1TotalLuck -= ShuffledDuckArray[0].number
+            P1PastCard.src = `${luckyDuckDeckArray[0].img}`
+            P1PastValue.innerText = `${luckyDuckDeckArray[0].number}`
+            P1PastResult =`${luckyDuckDeckArray[0].number}`
+            P1TotalLuck -= luckyDuckDeckArray[0].number
             
         } else if (moves == 2) {
-            computerpastcard.src = `${ShuffledDuckArray[1].img}`
-            popupboximage.src=`${ShuffledDuckArray[1].img}`
+            computerpastcard.src = `${luckyDuckDeckArray[1].img}`
+            popupboximage.src=`${luckyDuckDeckArray[1].img}`
             computerpastcard.style.pointerEvents = 'auto';
-            computerpastcardinfo.innerText = ShuffledDuckArray[1].description
+            computerpastcardinfo.innerText = luckyDuckDeckArray[1].description
             decideTurn.innerText = `Player 1's`
             popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Present'
-            P2PastCard.src = `${ShuffledDuckArray[1].img}`
-            P2PastValue.innerText = `${ShuffledDuckArray[1].number}`
-            P2PastResult =`${ShuffledDuckArray[1].number}`
-            P2TotalLuck -= ShuffledDuckArray[1].number
+            P2PastCard.src = `${luckyDuckDeckArray[1].img}`
+            P2PastValue.innerText = `${luckyDuckDeckArray[1].number}`
+            P2PastResult =`${luckyDuckDeckArray[1].number}`
+            P2TotalLuck -= luckyDuckDeckArray[1].number
             
         } else if (moves == 3) {
-            playerpresentcard.src = `${ShuffledDuckArray[2].img}`
-            popupboximage.src=`${ShuffledDuckArray[2].img}`
+            playerpresentcard.src = `${luckyDuckDeckArray[2].img}`
+            popupboximage.src=`${luckyDuckDeckArray[2].img}`
             playerpresentcard.style.pointerEvents = 'auto';
-            playerpresentcardinfo.innerText = ShuffledDuckArray[2].description
+            playerpresentcardinfo.innerText = luckyDuckDeckArray[2].description
             decideTurn.innerText = `Player 2's`
             popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Present'
-            P1PresentCard.src = `${ShuffledDuckArray[2].img}`
-            P1PresentValue.innerText = `${ShuffledDuckArray[2].number}`
-            P1PresentResult =`${ShuffledDuckArray[2].number}`
-            P1TotalLuck += ShuffledDuckArray[2].number
+            P1PresentCard.src = `${luckyDuckDeckArray[2].img}`
+            P1PresentValue.innerText = `${luckyDuckDeckArray[2].number}`
+            P1PresentResult =`${luckyDuckDeckArray[2].number}`
+            P1TotalLuck += luckyDuckDeckArray[2].number
             
         } else if (moves == 4) {
-            computerpresentcard.src = `${ShuffledDuckArray[3].img}`
-            popupboximage.src=`${ShuffledDuckArray[3].img}`
+            computerpresentcard.src = `${luckyDuckDeckArray[3].img}`
+            popupboximage.src=`${luckyDuckDeckArray[3].img}`
             computerpresentcard.style.pointerEvents = 'auto';
-            computerpresentcardinfo.innerText = ShuffledDuckArray[3].description
+            computerpresentcardinfo.innerText = luckyDuckDeckArray[3].description
             decideTurn.innerText = `Player 1's`
             popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Future'
-            P2PresentCard.src = `${ShuffledDuckArray[3].img}`
-            P2PresentValue.innerText = `${ShuffledDuckArray[3].number}`
-            P2PresentResult =`${ShuffledDuckArray[3].number}`
-            P2TotalLuck +=ShuffledDuckArray[3].number
+            P2PresentCard.src = `${luckyDuckDeckArray[3].img}`
+            P2PresentValue.innerText = `${luckyDuckDeckArray[3].number}`
+            P2PresentResult =`${luckyDuckDeckArray[3].number}`
+            P2TotalLuck +=luckyDuckDeckArray[3].number
             
         } else if (moves == 5) {
-            playerfuturecard.src = `${ShuffledDuckArray[4].img}`
-            popupboximage.src=`${ShuffledDuckArray[4].img}`
+            playerfuturecard.src = `${luckyDuckDeckArray[4].img}`
+            popupboximage.src=`${luckyDuckDeckArray[4].img}`
             playerfuturecard.style.pointerEvents = 'auto';
-            playerfuturecardinfo.innerText = ShuffledDuckArray[4].description
+            playerfuturecardinfo.innerText = luckyDuckDeckArray[4].description
             decideTurn.innerText = `Player 2's`
             popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Future'
-            P1FutureCard.src = `${ShuffledDuckArray[4].img}`
-            P1FutureValue.innerText = `${ShuffledDuckArray[4].number}`
-            P1FutureResult =`${ShuffledDuckArray[4].number}`
-            P1TotalLuck += ShuffledDuckArray[4].number
+            P1FutureCard.src = `${luckyDuckDeckArray[4].img}`
+            P1FutureValue.innerText = `${luckyDuckDeckArray[4].number}`
+            P1FutureResult =`${luckyDuckDeckArray[4].number}`
+            P1TotalLuck += luckyDuckDeckArray[4].number
         } else if (moves == 6) {
-            computerfuturecard.src = `${ShuffledDuckArray[5].img}`
-            popupboximage.src=`${ShuffledDuckArray[5].img}`
+            computerfuturecard.src = `${luckyDuckDeckArray[5].img}`
+            popupboximage.src=`${luckyDuckDeckArray[5].img}`
             computerfuturecard.style.pointerEvents = 'auto';
-            computerfuturecardinfo.innerText = ShuffledDuckArray[5].description
+            computerfuturecardinfo.innerText = luckyDuckDeckArray[5].description
 
             // on player 2's last turn display game over ducks
             decideTurn.innerText = 'Game Over'
             decideTurn2.innerText = 'Ducks'
             movedisplay.innerText = ""
             placeholdercard.innerText = ""
-            P2FutureCard.src = `${ShuffledDuckArray[5].img}`
-            P2FutureValue.innerText = `${ShuffledDuckArray[5].number}`
-            P2FutureResult =`${ShuffledDuckArray[5].number}`
-            P2TotalLuck += ShuffledDuckArray[5].number
+            P2FutureCard.src = `${luckyDuckDeckArray[5].img}`
+            P2FutureValue.innerText = `${luckyDuckDeckArray[5].number}`
+            P2FutureResult =`${luckyDuckDeckArray[5].number}`
+            P2TotalLuck += luckyDuckDeckArray[5].number
 
             // display each players total luck on screen 3
             P2TotalValue.innerText = P2TotalLuck
@@ -416,90 +445,90 @@ document.addEventListener('DOMContentLoaded', () => {
         moves +=1
         console.log(moves)
         if (moves == 1) {
-            playerpastcard.src = `${ShuffledDuckArray[6].img}`
-            popupboximage.src=`${ShuffledDuckArray[6].img}`
+            playerpastcard.src = `${luckyDuckDeckArray[6].img}`
+            popupboximage.src=`${luckyDuckDeckArray[6].img}`
             playerpastcard.style.pointerEvents = 'auto';
-            playerpastcardinfo.innerText = ShuffledDuckArray[6].description
+            playerpastcardinfo.innerText = luckyDuckDeckArray[6].description
             decideTurn.innerText = `Player 2's`
             popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Past'
-            P1PastCard.src = `${ShuffledDuckArray[6].img}`
-            P1PastValue.innerText = `${ShuffledDuckArray[6].number}`
-            P1PastResult =`${ShuffledDuckArray[6].number}`
-            P1TotalLuck -= ShuffledDuckArray[6].number
+            P1PastCard.src = `${luckyDuckDeckArray[6].img}`
+            P1PastValue.innerText = `${luckyDuckDeckArray[6].number}`
+            P1PastResult =`${luckyDuckDeckArray[6].number}`
+            P1TotalLuck -= luckyDuckDeckArray[6].number
             
         } else if (moves == 2) {
-            computerpastcard.src = `${ShuffledDuckArray[7].img}`
-            popupboximage.src=`${ShuffledDuckArray[7].img}`
+            computerpastcard.src = `${luckyDuckDeckArray[7].img}`
+            popupboximage.src=`${luckyDuckDeckArray[7].img}`
             computerpastcard.style.pointerEvents = 'auto';
-            computerpastcardinfo.innerText = ShuffledDuckArray[7].description
+            computerpastcardinfo.innerText = luckyDuckDeckArray[7].description
             decideTurn.innerText = `Player 1's`
             popupbox.setAttribute('style', `display: block;`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Present'
-            P2PastCard.src = `${ShuffledDuckArray[7].img}`
-            P2PastValue.innerText = `${ShuffledDuckArray[7].number}`
-            P2PastResult =`${ShuffledDuckArray[7].number}`
-            P2TotalLuck -= ShuffledDuckArray[7].number
+            P2PastCard.src = `${luckyDuckDeckArray[7].img}`
+            P2PastValue.innerText = `${luckyDuckDeckArray[7].number}`
+            P2PastResult =`${luckyDuckDeckArray[7].number}`
+            P2TotalLuck -= luckyDuckDeckArray[7].number
             
         } else if (moves == 3) {
-            playerpresentcard.src = `${ShuffledDuckArray[8].img}`
-            popupboximage.src=`${ShuffledDuckArray[8].img}`
+            playerpresentcard.src = `${luckyDuckDeckArray[8].img}`
+            popupboximage.src=`${luckyDuckDeckArray[8].img}`
             playerpresentcard.style.pointerEvents = 'auto';
-            playerpresentcardinfo.innerText = ShuffledDuckArray[8].description
+            playerpresentcardinfo.innerText = luckyDuckDeckArray[8].description
             decideTurn.innerText = `Player 2's`
             popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Present'
-            P1PresentCard.src = `${ShuffledDuckArray[8].img}`
-            P1PresentValue.innerText = `${ShuffledDuckArray[8].number}`
-            P1PresentResult =`${ShuffledDuckArray[8].number}`
-            P1TotalLuck += ShuffledDuckArray[8].number
+            P1PresentCard.src = `${luckyDuckDeckArray[8].img}`
+            P1PresentValue.innerText = `${luckyDuckDeckArray[8].number}`
+            P1PresentResult =`${luckyDuckDeckArray[8].number}`
+            P1TotalLuck += luckyDuckDeckArray[8].number
             
         } else if (moves == 4) {
-            computerpresentcard.src = `${ShuffledDuckArray[9].img}`
-            popupboximage.src=`${ShuffledDuckArray[9].img}`
+            computerpresentcard.src = `${luckyDuckDeckArray[9].img}`
+            popupboximage.src=`${luckyDuckDeckArray[9].img}`
             computerpresentcard.style.pointerEvents = 'auto';
-            computerpresentcardinfo.innerText = ShuffledDuckArray[9].description
+            computerpresentcardinfo.innerText = luckyDuckDeckArray[9].description
             decideTurn.innerText = `Player 1's`
             popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Future'
-            P2PresentCard.src = `${ShuffledDuckArray[9].img}`
-            P2PresentValue.innerText = `${ShuffledDuckArray[9].number}`
-            P2PresentResult =`${ShuffledDuckArray[9].number}`
-            P2TotalLuck +=ShuffledDuckArray[9].number
+            P2PresentCard.src = `${luckyDuckDeckArray[9].img}`
+            P2PresentValue.innerText = `${luckyDuckDeckArray[9].number}`
+            P2PresentResult =`${luckyDuckDeckArray[9].number}`
+            P2TotalLuck +=luckyDuckDeckArray[9].number
             
         } else if (moves == 5) {
-            playerfuturecard.src = `${ShuffledDuckArray[10].img}`
-            popupboximage.src=`${ShuffledDuckArray[10].img}`
+            playerfuturecard.src = `${luckyDuckDeckArray[10].img}`
+            popupboximage.src=`${luckyDuckDeckArray[10].img}`
             playerfuturecard.style.pointerEvents = 'auto';
-            playerfuturecardinfo.innerText = ShuffledDuckArray[10].description
+            playerfuturecardinfo.innerText = luckyDuckDeckArray[10].description
             decideTurn.innerText = `Player 2's`
             popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Future'
-            P1FutureCard.src = `${ShuffledDuckArray[10].img}`
-            P1FutureValue.innerText = `${ShuffledDuckArray[10].number}`
-            P1FutureResult =`${ShuffledDuckArray[10].number}`
-            P1TotalLuck += ShuffledDuckArray[10].number
+            P1FutureCard.src = `${luckyDuckDeckArray[10].img}`
+            P1FutureValue.innerText = `${luckyDuckDeckArray[10].number}`
+            P1FutureResult =`${luckyDuckDeckArray[10].number}`
+            P1TotalLuck += luckyDuckDeckArray[10].number
             
         } else if (moves == 6) {
-            computerfuturecard.src = `${ShuffledDuckArray[11].img}`
-            popupboximage.src=`${ShuffledDuckArray[11].img}`
+            computerfuturecard.src = `${luckyDuckDeckArray[11].img}`
+            popupboximage.src=`${luckyDuckDeckArray[11].img}`
             computerfuturecard.style.pointerEvents = 'auto';
-            computerfuturecardinfo.innerText = ShuffledDuckArray[11].description
+            computerfuturecardinfo.innerText = luckyDuckDeckArray[11].description
 
             // on player 2's last turn set display to game over
             decideTurn.innerText = 'Game Over'
             decideTurn2.innerText = 'Ducks'
             movedisplay.innerText = ""
             placeholdercard.innerText = ""
-            P2FutureCard.src = `${ShuffledDuckArray[11].img}`
-            P2FutureValue.innerText = `${ShuffledDuckArray[11].number}`
-            P2FutureResult =`${ShuffledDuckArray[11].number}`
-            P2TotalLuck += ShuffledDuckArray[11].number
+            P2FutureCard.src = `${luckyDuckDeckArray[11].img}`
+            P2FutureValue.innerText = `${luckyDuckDeckArray[11].number}`
+            P2FutureResult =`${luckyDuckDeckArray[11].number}`
+            P2TotalLuck += luckyDuckDeckArray[11].number
 
             // set each players total value
             P2TotalValue.innerText = P2TotalLuck
@@ -598,5 +627,4 @@ document.addEventListener('DOMContentLoaded', () => {
         postgameview.setAttribute('style', `display: block`)
     })
 })
-
 
