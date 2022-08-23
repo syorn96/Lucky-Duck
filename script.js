@@ -365,7 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
         P1TotalLuck = 0
         P2TotalLuck = 0
 
-        moves -= 50
+        moves = 0
         if (moves < 0) {
             moves = 0
         }
@@ -670,9 +670,10 @@ document.addEventListener('DOMContentLoaded', () => {
         postgameview.setAttribute('style', `display: none`)
     })
     
-    //on click, set the popupbox view to the image selected
+    //on click, set the popupbox view to a random card from the tarot deck
     luckyducktarotdeck.addEventListener('click', ()=> {
-        popupboximage.src =`${luckyDuckDeckCardBack[0].img}`
+        x = Math.floor(Math.random() * 21)
+        popupboximage.src =`${luckyDuckDeckArray[x].img}`
         popupbox.setAttribute('style', `display: block`)
     })
 
