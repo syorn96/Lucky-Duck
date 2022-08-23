@@ -320,3 +320,8 @@ audio {
 #deckgallery {
     display: none;
 }
+#viewDeckGallery {
+    display: none;
+    margin-left: 39vw;
+    margin-top: -10vh;
+}

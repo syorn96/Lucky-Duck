@@ -90,6 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let viewdeck = document.querySelector('#viewdeck')
     let deckgallery = document.querySelector('#deckgallery')
     let escapeDeckGallery = document.querySelector('#escapeDeckGallery')
+    let viewDeckGallery = document.querySelector('#viewDeckGallery')
+    let viewDeckGalleryImg = document.querySelector('#viewDeckGalleryImg')
+    let escViewDeckGallery = document.querySelector('#escViewDeckGallery')
+
     let return2start = document.querySelector('#return2start') 
     let menu2 = document.querySelector('.BotR3')
 
@@ -220,20 +224,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         // popupbox.setAttribute('style', `display: block;`)
     })
+    // loop to create imgs of original deck in div so players can view artwork.
     viewdeck.addEventListener('click', ()=> {
         deckgallery.setAttribute('style', `display: block;`)
         gamescreen1.setAttribute('style', `display: none;`)
-        galleyclickcounter ++
-        if (galleyclickcounter == 1){
+        // run loop only once
+        galleryclickcounter ++
+        if (galleryclickcounter == 1){
             for (let i = 0; i <= clonedLuckyDeck.length; i++) {
             const createImg = document.createElement('img')
             createImg.classList.add('cardsize')
             createImg.src = `${clonedLuckyDeck[i].img}`
             deckgallery.append(createImg)
-            }
+            let newDeckGallery = document.querySelectorAll('.cardsize')
+            newDeckGallery.forEach(e => {
+                e.addEventListener('click', ()=> {
+                    viewDeckGalleryImg.src = e.src
+                    viewDeckGallery.setAttribute('style', `display: block;`)
+                })
+            })
         }
+    }
     })
-    
+    //return btn for popup when img is selected in lucky duck gallery
+    escViewDeckGallery.addEventListener('click', ()=> {
+        viewDeckGallery.setAttribute('style', `display: none;`)
+    })
+    // return btn to actual main menu
     escapeDeckGallery.addEventListener('click', ()=> {
         deckgallery.setAttribute('style', `display: none;`)
         gamescreen1.setAttribute('style', `display: block;`)
