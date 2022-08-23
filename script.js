@@ -12,7 +12,7 @@ let luckyDuckDeckArray = [
     },
     {
       number: 14,
-      img: './media/./14.jpg',
+      img: './media/./14.jpeg',
       description:`It's not that duckin' serious. Learn to take a waddle back and QOL! Strive to be above the other birds. QUACK OUT LOUD!`,
     },
     {
@@ -53,7 +53,7 @@ let luckyDuckDeckArray = [
       {
         number: 22,
         img: './media/./22.jpeg',
-        description:`A real duck only quacks when absolutely necessary.`,
+        description:`Big duck energy never quacks down`,
       },
       {
         number: 23,
@@ -68,25 +68,40 @@ let luckyDuckDeckArray = [
       {
         number: 25,
         img: './media/./25.jpeg',
-        description:`A happy duck is the best kind of duck.`,
+        description:`A happy duck is the best kind of duck. Other's may appreciate your light-hearted feathers and loud quacks.`,
       },
-      {
-        number: 26,
-        img: './media/./26.jpeg',
-        description:``,
-      },
-      {
-        number: 27,
-        img: './media/./27.jpeg',
-        description:``,
-      },
+    //   {
+    //     number: 26,
+    //     img: './media/./26.jpeg',
+    //     description:``,
+    //   },
+    //   {
+    //     number: 27,
+    //     img: './media/./27.jpeg',
+    //     description:``,
+    //   },
       {
         number: 28,
         img: './media/./28.jpeg',
         description:`The dive for survival, may leave your butt-quack vulnerable. Be wary of your pond environment.`,
       },
+      {
+        number: 29,
+        img: './media/./29.jpeg',
+        description:`Investment is just luck and some skill. That risk you've been pond-ering? It's time to take flight and make it happen.`,
+      },
+      {
+        number: 30,
+        img: './media/./30.jpeg',
+        description:`Some things can only be learned through eggs-perience. A mentor duck of some sorts may fly into your life.`,
+      },
+      {
+        number: 31,
+        img: './media/./31.jpeg',
+        description:`Boundaries aren't meant to be waddled across. Show the other ducks that you're putting your flipper down.`
+      },
   ]
-  let clonedLuckyDeck = luckyDuckDeckArray.slice(0)
+  let clonedLuckyDeck = luckyDuckDeckArray.slice()
 //Load HTML before retrieving data
 document.addEventListener('DOMContentLoaded', () => {
     //variables for gameplay
