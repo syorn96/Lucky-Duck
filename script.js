@@ -58,7 +58,7 @@ let luckyDuckDeckArray = [
       {
         number: 23,
         img: './media/./23.jpeg',
-        description:`A lover duck may be coming into your life!`,
+        description:`A lover duck may be waddling into your life!`,
       },
       {
         number: 24,
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let vh = 100
     let clickcounter = 0
     let startclickcounter = 0
-    let galleyclickcounter = 0
+    let galleryclickcounter = 0
     body.addEventListener('click', ()=> {
         clickcounter ++
         if (clickcounter % 2) {
