@@ -289,9 +289,13 @@ document.addEventListener('DOMContentLoaded', () => {
     startgamebtn.addEventListener('click', ()=> {
         gamescreen1.setAttribute('style', `display: none;`)
         gamescreen2.setAttribute('style', `display: grid;`)
+        decideTurn.style.color = RandomRGB()
         startclickcounter ++
         if (startclickcounter == 1){
             shuffle(luckyDuckDeckArray)
+            popupboximage.src=`${luckyDuckDeckCardBack[0].img}`
+            popupbox.setAttribute('style', `display: block`)
+
         }
         // popupbox.setAttribute('style', `display: block;`)
     })
@@ -336,6 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // on restart reset game to default settings
     restartgamebtn.addEventListener('click', ()=>{
+        startclickcounter = 0
         //  on restart set the cards to default
         playerpastcard.src = `${luckyDuckDeckCardBack[0].img}` 
         playerpresentcard.src = `${luckyDuckDeckCardBack[0].img}` 
@@ -383,11 +388,13 @@ document.addEventListener('DOMContentLoaded', () => {
         gamescreen1.setAttribute('style', `display: none`)
         howtoplayscreen.setAttribute('style', `display: block`)
     })
+
     // Exit button for How to play on screen 1
     exitHTP.addEventListener('click', ()=> {
         gamescreen1.setAttribute('style', `display: block`)
         howtoplayscreen.setAttribute('style', `display: none`)
     })
+
     // How to play button on screen 2
     howtoplaybtn2.addEventListener('click', ()=> {
         howtoplayscreen2.setAttribute('style', `display: block`)
@@ -417,11 +424,15 @@ document.addEventListener('DOMContentLoaded', () => {
         turncontainer.setAttribute('style', `display: block`)
         menu2.setAttribute('style', `display: block`)
         TarotDeckContainer.setAttribute('style', `display: block`)
+        decideTurn.style.color = RandomRGB()
+        decideTurn2.style.color = RandomRGB()
     })
     // return to screen 1
     return2start.addEventListener('click', () => {
         gamescreen1.setAttribute('style', `display: block`)
         gamescreen2.setAttribute('style', `display: none`)
+        decideTurn.style.color = RandomRGB()
+        decideTurn2.style.color = RandomRGB()
     })
     // return button for the PopUpcard viewer
     returnbtn.addEventListener(('click'), ()=> {
@@ -438,6 +449,7 @@ document.addEventListener('DOMContentLoaded', () => {
             playerpastcard.style.pointerEvents = 'auto';
             playerpastcardinfo.innerText = luckyDuckDeckArray[0].description
             decideTurn.innerText = `Player 2's`
+            decideTurn.style.color = RandomRGB()
             popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Past'
@@ -452,6 +464,7 @@ document.addEventListener('DOMContentLoaded', () => {
             computerpastcard.style.pointerEvents = 'auto';
             computerpastcardinfo.innerText = luckyDuckDeckArray[1].description
             decideTurn.innerText = `Player 1's`
+            decideTurn.style.color = RandomRGB()
             popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Present'
@@ -466,6 +479,7 @@ document.addEventListener('DOMContentLoaded', () => {
             playerpresentcard.style.pointerEvents = 'auto';
             playerpresentcardinfo.innerText = luckyDuckDeckArray[2].description
             decideTurn.innerText = `Player 2's`
+            decideTurn.style.color = RandomRGB()
             popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Present'
@@ -480,6 +494,7 @@ document.addEventListener('DOMContentLoaded', () => {
             computerpresentcard.style.pointerEvents = 'auto';
             computerpresentcardinfo.innerText = luckyDuckDeckArray[3].description
             decideTurn.innerText = `Player 1's`
+            decideTurn.style.color = RandomRGB()
             popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Future'
@@ -494,6 +509,7 @@ document.addEventListener('DOMContentLoaded', () => {
             playerfuturecard.style.pointerEvents = 'auto';
             playerfuturecardinfo.innerText = luckyDuckDeckArray[4].description
             decideTurn.innerText = `Player 2's`
+            decideTurn.style.color = RandomRGB()
             popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Future'
@@ -549,6 +565,7 @@ document.addEventListener('DOMContentLoaded', () => {
             playerpastcard.style.pointerEvents = 'auto';
             playerpastcardinfo.innerText = luckyDuckDeckArray[6].description
             decideTurn.innerText = `Player 2's`
+            decideTurn.style.color = RandomRGB()
             popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Past'
@@ -563,6 +580,7 @@ document.addEventListener('DOMContentLoaded', () => {
             computerpastcard.style.pointerEvents = 'auto';
             computerpastcardinfo.innerText = luckyDuckDeckArray[7].description
             decideTurn.innerText = `Player 1's`
+            decideTurn.style.color = RandomRGB()
             popupbox.setAttribute('style', `display: block;`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Present'
@@ -577,6 +595,7 @@ document.addEventListener('DOMContentLoaded', () => {
             playerpresentcard.style.pointerEvents = 'auto';
             playerpresentcardinfo.innerText = luckyDuckDeckArray[8].description
             decideTurn.innerText = `Player 2's`
+            decideTurn.style.color = RandomRGB()
             popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Present'
@@ -591,6 +610,7 @@ document.addEventListener('DOMContentLoaded', () => {
             computerpresentcard.style.pointerEvents = 'auto';
             computerpresentcardinfo.innerText = luckyDuckDeckArray[9].description
             decideTurn.innerText = `Player 1's`
+            decideTurn.style.color = RandomRGB()
             popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Future'
@@ -605,6 +625,7 @@ document.addEventListener('DOMContentLoaded', () => {
             playerfuturecard.style.pointerEvents = 'auto';
             playerfuturecardinfo.innerText = luckyDuckDeckArray[10].description
             decideTurn.innerText = `Player 2's`
+            decideTurn.style.color = RandomRGB()
             popupbox.setAttribute('style', `display: block`)
             popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Future'
@@ -662,12 +683,16 @@ document.addEventListener('DOMContentLoaded', () => {
         gamescreen1.setAttribute('style', `display: absolute`)
         gamescreen3.setAttribute('style', `display: none`)
         postgameview.setAttribute('style', `display: none`)
+        decideTurn.style.color = RandomRGB()
+        decideTurn2.style.color = RandomRGB()
     })
     // return to screen 2 from screen 3
     return2game.addEventListener('click', ()=> {
         gamescreen3.setAttribute('style', `display: none`)
         gamescreen2.setAttribute('style', `display: grid`)
         postgameview.setAttribute('style', `display: none`)
+        decideTurn.style.color = RandomRGB()
+        decideTurn2.style.color = RandomRGB()
     })
     
     //on click, set the popupbox view to a random card from the tarot deck
