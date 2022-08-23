@@ -32,13 +32,13 @@ let luckyDuckDeckArray = [
     },
     // {
     //     number: 18,
-    //     img: './media/./17.jpg',
-    //     description:'Conflicts between other ducks may arise. Reconsider before the consequences are dire.',
+    //     img: './media/./18.jpeg',
+    //     description:'',
     //   },
     //   {
     //     number: 19,
-    //     img: './media/./17.jpg',
-    //     description:'Conflicts between other ducks may arise. Reconsider before the consequences are dire.',
+    //     img: './media/./19.jpeg',
+    //     description:'',
     //   },
       {
         number: 20,
@@ -69,6 +69,21 @@ let luckyDuckDeckArray = [
         number: 25,
         img: './media/./25.jpeg',
         description:`A happy duck is the best kind of duck.`,
+      },
+      {
+        number: 26,
+        img: './media/./26.jpeg',
+        description:``,
+      },
+      {
+        number: 27,
+        img: './media/./27.jpeg',
+        description:``,
+      },
+      {
+        number: 28,
+        img: './media/./28.jpeg',
+        description:`The dive for survival, may leave your butt-quack vulnerable. Be wary of your pond environment.`,
       },
   ]
   let clonedLuckyDeck = luckyDuckDeckArray.slice(0)
