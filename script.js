@@ -595,8 +595,6 @@ document.addEventListener('DOMContentLoaded', () => {
             P2FutureValue.innerText = `${luckyDuckDeckArray[5].number}`
             P2FutureResult =`${luckyDuckDeckArray[5].number}`
             P2TotalLuck += luckyDuckDeckArray[5].number
-            P2TotalLuck = 0
-            P1TotalLuck = 0
             // display each players total luck on screen 3
             P2TotalValue.innerText = P2TotalLuck
             P1TotalValue.innerText = P1TotalLuck
