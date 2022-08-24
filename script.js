@@ -10,20 +10,20 @@ let luckyDuckDeckArray = [
         // IMG SOURCE: 
         number: 1,
         img: './media/./1.jpeg',
-        description:`Learn to hone your innate gifts to "break-free" and grow as an individual.`,
+        description:`Learn to take action and hone your innate gifts to "break-free" and grow as an individual.`,
       },
-    //   {
-    //     // IMG SOURCE: 
-    //     number: 2,
-    //     img: './media/./2.jpeg',
-    //     description:`Trust your instincts and intuition. Only you can determine what is right or wrong.`,
-    //   },
-    //   {
-    //     // IMG SOURCE: 
-    //     number: 3,
-    //     img: './media/./3.jpeg',
-    //     description:`A sign of major change or dfficulties...that will ultimately alter the direction of your life.`,
-    //   },
+      {
+        // IMG SOURCE: 
+        number: 2,
+        img: './media/./2.jpeg',
+        description:`Trust your instincts and intuition. Only you can determine what is right or wrong.`,
+      },
+      {
+        // IMG SOURCE: 
+        number: 3,
+        img: './media/./3.jpeg',
+        description:`A sign of major change or dfficulties...that will ultimately alter the direction of your life.`,
+      },
     //   {
     //     // IMG SOURCE: 
     //     number: 4,
@@ -46,7 +46,7 @@ let luckyDuckDeckArray = [
     //     // IMG SOURCE: 
     //     number: 7,
     //     img: './media/./7.jpeg',
-    //     description:`New or old relationships. They're meant to impart knowledge and different experiences.`,
+    //     description:`New or old relationships. They're meant to impart knowledge and different perspectives.`,
     //   },
     //   {
     //     // IMG SOURCE: 
