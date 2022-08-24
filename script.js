@@ -196,6 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let exitHTP = document.querySelector('#exith2p')
     let howtoplayscreen2 = document.querySelector('#howtoplay2')
     let exitHTP2 = document.querySelector('#exith2p2')
+
+    // variables for view deck gallery
     let viewdeck = document.querySelector('#viewdeck')
     let deckgallery = document.querySelector('#deckgallery')
     let escapeDeckGallery = document.querySelector('#escapeDeckGallery')
@@ -203,6 +205,27 @@ document.addEventListener('DOMContentLoaded', () => {
     let viewDeckGalleryImg = document.querySelector('#viewDeckGalleryImg')
     let viewCardDescription = document.querySelector('#viewCardDescription')
 
+    // function to create imgs of card variations
+    let createViewDeck = () => {
+    for (let i = 0; i < clonedLuckyDeck.length; i++) {
+        const createImg = document.createElement('img')
+        createImg.classList.add('cardsize')
+        createImg.src = `${clonedLuckyDeck[i].img}`
+        createImg.alt = `${clonedLuckyDeck[i].description}`
+        deckgallery.append(createImg)
+        let newDeckGallery = document.querySelectorAll('.cardsize')
+        newDeckGallery.forEach(e => {
+            e.addEventListener('click', ()=> {
+                viewDeckGalleryImg.src = e.src
+                viewCardDescription.innerText = e.alt
+                viewDeckGallery.setAttribute('style', `display: block;`)
+                })
+            })
+        }
+    }
+    // load library of card gallery before clicking viewdeckgallerybtn
+    createViewDeck();
+    // returning to screen 1 from viewdeck screen 
     let return2start = document.querySelector('#return2start') 
     let menu2 = document.querySelector('.BotR3')
 
@@ -315,7 +338,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return `rgb(${r}, ${g}, ${b})`
         }
 
-    // console.log(ShuffledDuckArray)
      //each time the user clicks screen 2x, duplicate the background 
     let vw = 100
     let vh = 100
@@ -334,7 +356,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (vh == 0) {
             vh = 100
         }
-        console.log(vw, vh)
         body.setAttribute('style', `background-size: ${vw}vw ${vh}vh;`)
     })
 
@@ -362,30 +383,8 @@ document.addEventListener('DOMContentLoaded', () => {
         viewDeckGallery.setAttribute('style', `display: block;`)
         viewDeckGalleryImg.src = `${luckyDuckDeckCardBack[0].img}`
         viewCardDescription.innerText = 'Lucky Duck Tarot Card Back Design'
-        // run loop only once
-        galleryclickcounter ++
-        if (galleryclickcounter == 1){
-            for (let i = 0; i <= clonedLuckyDeck.length; i++) {
-            const createImg = document.createElement('img')
-            createImg.classList.add('cardsize')
-            createImg.src = `${clonedLuckyDeck[i].img}`
-            createImg.alt = `${clonedLuckyDeck[i].description}`
-            deckgallery.append(createImg)
-            let newDeckGallery = document.querySelectorAll('.cardsize')
-            newDeckGallery.forEach(e => {
-                e.addEventListener('click', ()=> {
-                    viewDeckGalleryImg.src = e.src
-                    viewCardDescription.innerText = e.alt
-                    viewDeckGallery.setAttribute('style', `display: block;`)
-                })
-            })
-        }
-    }
     })
-    //return btn for popup when img is selected in lucky duck gallery
-    // escViewDeckGallery.addEventListener('click', ()=> {
-    //     viewDeckGallery.setAttribute('style', `display: none;`)
-    // })
+    
     // return btn to actual main menu
     escapeDeckGallery.addEventListener('click', ()=> {
         deckgallery.setAttribute('style', `display: none;`)
@@ -614,7 +613,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // cards are only clickable once loaded
     shufflebtn.addEventListener(('click'), ()=> {
         moves +=1
-        console.log(moves)
         if (moves == 1) {
             playerpastcard.src = `${luckyDuckDeckArray[6].img}`
             popupboximage.src=`${luckyDuckDeckArray[6].img}`
