@@ -160,7 +160,7 @@ let luckyDuckDeckArray = [
       {
         // IMG SOURCE: https://www.reddit.com/r/MadeMeSmile/comments/hp6q2i/day_2_of_posting_cute_ducks/
         number: 39,
-        img: './media/./38.jpeg',
+        img: './media/./39.jpeg',
         description:`Is there something you've been shy about? Ask and you shall receive. Muster up the courage to just qu-ask...`
       },
       {
@@ -195,19 +195,19 @@ let luckyDuckDeckArray = [
 // fortunes to give the luckier duck at the end of game.
 let luckyduckfortune = [
     `"Change comes from embracing the future, not fighting your past."`,
-    `"Set yourself up to experience what you love."`,
+    `"Set yourself up to eggs-perience what you love."`,
     `"If you want to fly, you have to be willing to learn."`,
     `"It's not your job to fix other ducks."`,
     `"Be kind to other types of duck."`,
     `"The egg laid by the duck is sometimes hatched by the hen."`,
     `"Duck love is recognizable in any language."`,
-    `"A healthy duck will be bright and will try to get away from people."`,
-    `"Ducks are the happiest animals in the barnyard."`,
-    `"Some birds avoid water, the duck searches for it."`,
+    `"A healthy duck will be bright and try to get away from toxic ducks."`,
+    `"Be like a duck; they're the happiest animals in the barnyard."`,
+    `"Some birds avoid water, while the duck searches for it."`,
     `"Ducks are really good at saving because they have their bills under control."`,
-    `"Stop saying yes to things you don't want to do."`,
-    `"The only duck who has to believe in you is you"`,
-    `"Trust the process."`,
+    `"Stop saying yes to things you don't want to duckin' do."`,
+    `"The only duck who has to believe in you is you."`,
+    `"Trust the process. You'll get there one day."`,
     `"A duck will not always dabble in the same gutter."`,
     `"If you are going to breed a duck, breed a good one."`,
     `"Ducks are often the most colorful waterfowl."`,
@@ -215,16 +215,16 @@ let luckyduckfortune = [
     `"Practice not-so-random acts of discipline"`,
     `"If you're not where you want to be, don't waddle there for too long."`,
     `"Everything that is was first a duck's dream."`,
-    `"If you don't like it change it. If you can't change it, change your attitude."`,
+    `"If you don't like it change it. If you can't change it, change your duckin' attitude."`,
     `"Learn to delay gratification."`,
-    `"Learn as much from joy as you do from pain."`,
+    `"Learn as much from joy as you do from pain..."`,
     `"Listen for quacks. Look for the signs."`,
     `"Migrate with the change of seasons to survive. Be adaptable."`,
-    `"It's better to wait for the right duck than rush into it with the wrong one."`,
-    `"Be careful who you trust. Grass and sea-weed look the same."`,
-    `"Turn your duck wounds into widsom."`,
+    `"It's better to wait for the right duck than rush into it with the wrong duck."`,
+    `"Be careful who you trust. Grass and sea-weed all look the same."`,
+    `"Turn your duck wounds into duck widsom."`,
     `"Breathe, Duckling, this is just a chapter, not your whole story."`,
-    `"Perfect is boring. Duck is beautiful"`,
+    `"Perfect is boring. Duck is beautiful."`,
     `"To the world, you're one Duck. But to one Duck, you're the world."`
 ]
 // cloneddeck used for deck gallery, so cards show up in chronological order
