@@ -4,7 +4,7 @@ let luckyDuckDeckArray = [
         // IMG SOURCE: 
         number: 0,
         img: './media/./0.jpeg',
-        description:`The start of a new journey ofen begins with naivety, beginner's luck and unlimited potential.`,
+        description:`The start of a new journey often begins with naivety, beginner's luck and unlimited potential.`,
       },
       {
         // IMG SOURCE: 
@@ -16,13 +16,13 @@ let luckyDuckDeckArray = [
         // IMG SOURCE: 
         number: 2,
         img: './media/./2.jpeg',
-        description:`Trust your instincts and intuition. Only you can determine what is right or wrong.`,
+        description:`Trust your instincts and intuition to determine what is right or wrong.`,
       },
       {
         // IMG SOURCE: 
         number: 3,
         img: './media/./3.jpeg',
-        description:`A sign of major change or dfficulties...that will ultimately alter the direction of your life.`,
+        description:`A sign of major change, conflict or dfficulties...that will ultimately alter the direction of your life.`,
       },
     //   {
     //     // IMG SOURCE: 
@@ -514,7 +514,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gamescreen1.setAttribute('style', `display: none;`)
         viewDeckGallery.setAttribute('style', `display: block;`)
         viewDeckGalleryImg.src = `${luckyDuckDeckCardBack[0].img}`
-        viewCardDescription.innerText = 'Lucky Duck Tarot Card Back Design'
+        viewCardDescription.innerText = 'Lucky Duck Tarot Card Design'
     })
     
     // return btn to actual main menu
