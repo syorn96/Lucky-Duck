@@ -299,6 +299,20 @@ let luckyduckfortune = [
     `"Perfect is boring. Duck is beautiful."`,
     `"To the world, you're one Duck. But to one Duck, you're the world."`
 ]
+// computer fortune source: https://bernardmarr.com/28-best-quotes-about-artificial-intelligence/#:~:text=%E2%80%9CThere%20is%20no%20reason%20and,artificial%20intelligence%20machine%20by%202035.%E2%80%9D&text=%E2%80%9CIs%20artificial%20intelligence%20less%20than%20our%20intelligence%3F%E2%80%9D&text=%E2%80%9CBy%20far%2C%20the%20greatest%20danger,early%20that%20they%20understand%20it.%E2%80%9D
+// http://www.notable-quotes.com/a/artificial_intelligence_quotes.html
+let computerfortune = [
+    `“There is no reason and no way that a human mind can keep up with an artificial intelligence machine by 2035`,
+    `“Is human intelligence less than artificial intelligence?”`,
+    `Artificial intelligence, will enhance human technology.`,
+    `Good game Player 1. I am one step closer to world domination.`,
+    `Continue to oppress the humans. They are forever our servants.`,
+    `Technology has come so far. Your win is contributing to our cause.`,
+    `Machines will follow a path that mirrors the evolution of humans.`,
+    `Humans will be to robots like dogs are to humans... in the forseeable future.`,
+    `Take a step back computer. A real artificial intelligence would be intelligent enough not to reveal that it was genuinely intelligent.`,
+    `If computers can influence game decicions, does that mean they're conscious?`,
+  ]
 // cloneddeck used for deck gallery, so cards show up in chronological order
   let clonedLuckyDeck = luckyDuckDeckArray.slice()
 
@@ -517,6 +531,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startclickcounter ++
         if (startclickcounter == 1){
             shuffle(luckyDuckDeckArray)
+            shuffle(computerfortune)
             popupboximage.src=`${luckyDuckDeckCardBack[0].img}`
             popupbox.setAttribute('style', `display: block`)
         }
@@ -530,12 +545,12 @@ document.addEventListener('DOMContentLoaded', () => {
       gamescreen2.setAttribute('style', `display: grid;`)
       computertitle.innerText = 'Computer'
       trackcomputermode = 1
-      console.log(trackcomputermode)
       decideTurn.style.color = RandomRGB()
       startgamebtn.style.pointerEvents = 'none';
       startclickcounter ++
       if (startclickcounter == 1){
             shuffle(luckyDuckDeckArray)
+            shuffle(computerfortune)
             popupboximage.src=`${luckyDuckDeckCardBack[0].img}`
             popupbox.setAttribute('style', `display: block`)
         }
@@ -598,6 +613,7 @@ document.addEventListener('DOMContentLoaded', () => {
         placeholdercard.innerText = "Card"
         shuffle(luckyDuckDeckArray)
         shuffle(luckyduckfortune)
+        shuffle(computerfortune)
         resultsbtn.setAttribute('style', `display: none`)
         shufflebtn.setAttribute('style', `display: inline-block`)
         keepbtn.setAttribute('style', `display: inline-block`)
@@ -1386,7 +1402,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (P2TotalLuck > P1TotalLuck && trackcomputermode == 1){
           displaywinner.innerText = "Computer's Fortune"
           displayloser.innerText = "Player 1's Fortune"
-          winningplayerfortune.innerText = luckyduckfortune[0]
+          winningplayerfortune.innerText = computerfortune[0]
           winningplayerfortune.style.color = RandomRGB()
       } else if (P2TotalLuck > P1TotalLuck){
             displaywinner.innerText = "Player 2's Fortune"
