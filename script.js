@@ -513,6 +513,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gamescreen2.setAttribute('style', `display: grid;`)
         decideTurn.style.color = RandomRGB()
         computertitle.innerText = 'Player 2'
+        vscomputerbtn.style.pointerEvents = 'none';
         startclickcounter ++
         if (startclickcounter == 1){
             shuffle(luckyDuckDeckArray)
@@ -531,13 +532,13 @@ document.addEventListener('DOMContentLoaded', () => {
       trackcomputermode = 1
       console.log(trackcomputermode)
       decideTurn.style.color = RandomRGB()
+      startgamebtn.style.pointerEvents = 'none';
       startclickcounter ++
       if (startclickcounter == 1){
             shuffle(luckyDuckDeckArray)
             popupboximage.src=`${luckyDuckDeckCardBack[0].img}`
             popupbox.setAttribute('style', `display: block`)
         }
-      
     })
 
     // loop to create imgs of original deck in div so players can view artwork.
@@ -601,7 +602,8 @@ document.addEventListener('DOMContentLoaded', () => {
         shufflebtn.setAttribute('style', `display: inline-block`)
         keepbtn.setAttribute('style', `display: inline-block`)
         fortunebtn.setAttribute('style', 'display: inline-block')
-
+        startgamebtn.style.pointerEvents = 'auto';
+        vscomputerbtn.style.pointerEvents = 'auto';
     })
     // How to play on screen 1
     howtoplaybtn.addEventListener('click', ()=> {
@@ -654,6 +656,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gamescreen2.setAttribute('style', `display: none`)
         decideTurn.style.color = RandomRGB()
         decideTurn2.style.color = RandomRGB()
+        trackcomputermode = 0
     })
 
     // return button for the PopUpcard viewer
@@ -754,7 +757,7 @@ document.addEventListener('DOMContentLoaded', () => {
           decideTurn.innerText = `Computer's`
           decideTurn.style.color = RandomRGB()
           popupbox.setAttribute('style', `display: block`)
-          movedisplay.innerText = 'Past'
+          movedisplay.innerText = 'Present'
           P1PresentCard.src = `${luckyDuckDeckArray[2].img}`
           P1PresentValue.innerText = `${luckyDuckDeckArray[2].number}`
           P1PresentResult =`${luckyDuckDeckArray[2].number}`
@@ -763,7 +766,7 @@ document.addEventListener('DOMContentLoaded', () => {
           shufflebtn.style.pointerEvents = 'none'
           if (c == 1) {
             let computerShuffle1 = setInterval(function() {
-              decideTurn.innerText = `Computer chose to shuffle card`;
+              decideTurn.innerText = `Computer chose to shuffle card.`;
               computerpresentcard.src = `${luckyDuckDeckArray[9].img}`;
               computerpresentcard.style.pointerEvents = 'auto';
               computerpresentcardinfo.innerText = luckyDuckDeckArray[9].description;
@@ -780,7 +783,7 @@ document.addEventListener('DOMContentLoaded', () => {
               }, 4000)
           } else if (c == 2) {
             let computerKeep1 = setInterval(function(){
-              decideTurn.innerText = `Computer chose to keep card`
+              decideTurn.innerText = `Computer chose to keep card.`
               computerpresentcard.src = `${luckyDuckDeckArray[3].img}`;
               computerpresentcard.style.pointerEvents = 'auto';
               computerpresentcardinfo.innerText = luckyDuckDeckArray[3].description;
@@ -826,54 +829,94 @@ document.addEventListener('DOMContentLoaded', () => {
             P2TotalLuck +=luckyDuckDeckArray[3].number
             
         } else if (moves == 5 && trackcomputermode == 1) {
-          playerfuturecard.src = `${luckyDuckDeckArray[2].img}`
-          popupboximage.src=`${luckyDuckDeckArray[2].img}`
+          playerfuturecard.src = `${luckyDuckDeckArray[4].img}`
+          popupboximage.src=`${luckyDuckDeckArray[4].img}`
           playerfuturecard.style.pointerEvents = 'auto';
-          playerfuturecardinfo.innerText = luckyDuckDeckArray[2].description
+          playerfuturecardinfo.innerText = luckyDuckDeckArray[4].description
           decideTurn.innerText = `Computer's`
           decideTurn.style.color = RandomRGB()
           popupbox.setAttribute('style', `display: block`)
-          movedisplay.innerText = 'Past'
-          P1FutureCard.src = `${luckyDuckDeckArray[2].img}`
-          P1FutureValue.innerText = `${luckyDuckDeckArray[2].number}`
-          P1FutureResult =`${luckyDuckDeckArray[2].number}`
-          P1TotalLuck += luckyDuckDeckArray[2].number
+          movedisplay.innerText = 'Future'
+          P1FutureCard.src = `${luckyDuckDeckArray[4].img}`
+          P1FutureValue.innerText = `${luckyDuckDeckArray[4].number}`
+          P1FutureResult =`${luckyDuckDeckArray[4].number}`
+          P1TotalLuck += luckyDuckDeckArray[4].number
           keepbtn.style.pointerEvents = 'none'
           shufflebtn.style.pointerEvents = 'none'
           if (c == 1) {
             let computerShuffle1 = setInterval(function() {
-              decideTurn.innerText = `Computer chose to shuffle card`;
+              decideTurn.innerText = `Computer chose to shuffle card.`;
               computerfuturecard.src = `${luckyDuckDeckArray[11].img}`;
               computerfuturecard.style.pointerEvents = 'auto';
               computerfuturecardinfo.innerText = luckyDuckDeckArray[11].description;
               decideTurn.style.color = RandomRGB();
-              movedisplay.innerText = `Player 1's Future`;
-              P1FutureCard.src = `${luckyDuckDeckArray[11].img}`;
+              movedisplay.innerText = ``;
+              placeholdercard.innerText = ""
+              P2FutureCard.src = `${luckyDuckDeckArray[11].img}`;
               P2FutureValue.innerText = `${luckyDuckDeckArray[11].number}`;
               P2FutureResult =`${luckyDuckDeckArray[11].number}`;
               P2TotalLuck += luckyDuckDeckArray[11].number;
-              keepbtn.style.pointerEvents = 'auto'
-              shufflebtn.style.pointerEvents = 'auto'
+              keepbtn.style.pointerEvents = 'none'
+              shufflebtn.style.pointerEvents = 'none'
               moves += 1
+              
+              let gameover = setInterval(function() {
+                P2TotalValue.innerText = P2TotalLuck
+                P1TotalValue.innerText = P1TotalLuck
+                
+                decideTurn.innerText = `Game Over`;
+                decideTurn.style.color = RandomRGB();
+                decideTurn2.innerText = 'Ducks'
+                decideTurn2.style.color = RandomRGB()
+                movedisplay.innerText = ""
+                placeholdercard.innerText = ""
+                resultsbtn.setAttribute('style', `display: inline-block`)
+                shufflebtn.setAttribute('style', `display: none`)
+                keepbtn.setAttribute('style', `display: none`)
+                clearInterval(gameover)
+              },3000)
               clearInterval(computerShuffle1)
               }, 4000)
           } else if (c == 2) {
             let computerKeep1 = setInterval(function(){
-              decideTurn.innerText = `Computer chose to keep card`
+              decideTurn.innerText = `Computer chose to keep card.`
               computerfuturecard.src = `${luckyDuckDeckArray[5].img}`;
               computerfuturecard.style.pointerEvents = 'auto';
               computerfuturecardinfo.innerText = luckyDuckDeckArray[5].description;
               decideTurn.style.color = RandomRGB();
-              movedisplay.innerText = `Player 1's Future`;
-              P1FutureCard.src = `${luckyDuckDeckArray[5].img}`;
+              movedisplay.innerText = ``;
+              placeholdercard.innerText = ""
+              P2FutureCard.src = `${luckyDuckDeckArray[5].img}`;
               P2FutureValue.innerText = `${luckyDuckDeckArray[5].number}`;
               P2FutureResult =`${luckyDuckDeckArray[5].number}`;
               P2TotalLuck += luckyDuckDeckArray[5].number;
-              keepbtn.style.pointerEvents = 'auto'
-              shufflebtn.style.pointerEvents = 'auto'
+              P2TotalValue.innerText = P2TotalLuck
+              P1TotalValue.innerText = P1TotalLuck
+              keepbtn.style.pointerEvents = 'none'
+              shufflebtn.style.pointerEvents = 'none'
               moves += 1
+              if (P1TotalLuck > P2TotalLuck && trackcomputermode == 1) {
+                  GameResults.innerText = "Player 1 is a Luckier Duck!"
+                } else if (P1TotalLuck < P2TotalLuck && trackcomputermode == 1) {
+                  GameResults.innerText = "Computer is a Luckier Duck!"
+                }
+              let gameover = setInterval(function() {
+                P2TotalValue.innerText = P2TotalLuck
+                P1TotalValue.innerText = P1TotalLuck
+                
+                decideTurn.innerText = `Game Over`;
+                decideTurn.style.color = RandomRGB();
+                decideTurn2.innerText = 'Ducks'
+                decideTurn2.style.color = RandomRGB()
+                movedisplay.innerText = ""
+                placeholdercard.innerText = ""
+                resultsbtn.setAttribute('style', `display: inline-block`)
+                shufflebtn.setAttribute('style', `display: none`)
+                keepbtn.setAttribute('style', `display: none`)
+                clearInterval(gameover)
+              },3000)
               clearInterval(computerKeep1)
-              }, 4000)
+              }, 4000) 
           }
           
       } else if (moves == 5) {
@@ -913,7 +956,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // condition for win/loss/draw
             if (P1TotalLuck > P2TotalLuck) {
                 GameResults.innerText = "Player 1 is a Luckier Duck!"
-            } else if (P1TotalLuck < P2TotalLuck) {
+            }else if (P1TotalLuck < P2TotalLuck) {
                 GameResults.innerText = "Player 2 is a Luckier Duck!"
             } else if (P1TotalLuck == P2TotalLuck){
                 GameResults.innerText = `It's a Draw. Must be fate! Play Again!`
@@ -930,7 +973,60 @@ document.addEventListener('DOMContentLoaded', () => {
     // cards are only clickable once loaded
     shufflebtn.addEventListener(('click'), ()=> {
         moves +=1
-        if (moves == 1) {
+        let c = computermode();
+        if (moves == 1 && trackcomputermode == 1) {
+          playerpastcard.src = `${luckyDuckDeckArray[6].img}`
+          popupboximage.src=`${luckyDuckDeckArray[6].img}`
+          playerpastcard.style.pointerEvents = 'auto';
+          playerpastcardinfo.innerText = luckyDuckDeckArray[6].description
+          decideTurn.innerText = `Computer's`
+          decideTurn.style.color = RandomRGB()
+          popupbox.setAttribute('style', `display: block`)
+          movedisplay.innerText = 'Past'
+          P1PastCard.src = `${luckyDuckDeckArray[6].img}`
+          P1PastValue.innerText = `${luckyDuckDeckArray[6].number}`
+          P1PastResult =`${luckyDuckDeckArray[6].number}`
+          P1TotalLuck -= luckyDuckDeckArray[6].number
+          keepbtn.style.pointerEvents = 'none'
+          shufflebtn.style.pointerEvents = 'none'
+          
+          if (c == 1) {
+            let computerShuffle1 = setInterval(function() {
+              decideTurn.innerText = `Computer chose to shuffle card.`;
+              computerpastcard.src = `${luckyDuckDeckArray[7].img}`;
+              computerpastcard.style.pointerEvents = 'auto';
+              computerpastcardinfo.innerText = luckyDuckDeckArray[7].description;
+              decideTurn.style.color = RandomRGB();
+              movedisplay.innerText = `Player 1's Present`;
+              P2PastCard.src = `${luckyDuckDeckArray[7].img}`;
+              P2PastValue.innerText = `${luckyDuckDeckArray[7].number}`;
+              P2PastResult =`${luckyDuckDeckArray[7].number}`;
+              P2TotalLuck -= luckyDuckDeckArray[7].number;
+              keepbtn.style.pointerEvents = 'auto'
+              shufflebtn.style.pointerEvents = 'auto'
+              moves += 1
+              clearInterval(computerShuffle1)
+              }, 4000)
+          } else if (c == 2) {
+            let computerKeep1 = setInterval(function() {
+              decideTurn.innerText = `Computer chose to keep card.`;
+              computerpastcard.src = `${luckyDuckDeckArray[1].img}`;
+              computerpastcard.style.pointerEvents = 'auto';
+              computerpastcardinfo.innerText = luckyDuckDeckArray[1].description;
+              decideTurn.style.color = RandomRGB();
+              movedisplay.innerText = `Player 1's Present`;
+              P2PastCard.src = `${luckyDuckDeckArray[1].img}`;
+              P2PastValue.innerText = `${luckyDuckDeckArray[1].number}`;
+              P2PastResult =`${luckyDuckDeckArray[1].number}`;
+              P2TotalLuck -= luckyDuckDeckArray[1].number;
+              keepbtn.style.pointerEvents = 'auto'
+              shufflebtn.style.pointerEvents = 'auto'
+              moves += 1
+              clearInterval(computerKeep1)
+              }, 4000)
+          }
+          
+      } else if (moves == 1) {
             playerpastcard.src = `${luckyDuckDeckArray[6].img}`
             popupboximage.src=`${luckyDuckDeckArray[6].img}`
             playerpastcard.style.pointerEvents = 'auto';
@@ -958,7 +1054,58 @@ document.addEventListener('DOMContentLoaded', () => {
             P2PastResult =`${luckyDuckDeckArray[7].number}`
             P2TotalLuck -= luckyDuckDeckArray[7].number
             
-        } else if (moves == 3) {
+        } else if (moves == 3 && trackcomputermode == 1) {
+          playerpresentcard.src = `${luckyDuckDeckArray[8].img}`
+          popupboximage.src=`${luckyDuckDeckArray[8].img}`
+          playerpresentcard.style.pointerEvents = 'auto';
+          playerpresentcardinfo.innerText = luckyDuckDeckArray[8].description
+          decideTurn.innerText = `Computer's`
+          decideTurn.style.color = RandomRGB()
+          popupbox.setAttribute('style', `display: block`)
+          movedisplay.innerText = 'Present'
+          P1PresentCard.src = `${luckyDuckDeckArray[8].img}`
+          P1PresentValue.innerText = `${luckyDuckDeckArray[8].number}`
+          P1PresentResult =`${luckyDuckDeckArray[8].number}`
+          P1TotalLuck += luckyDuckDeckArray[8].number
+          keepbtn.style.pointerEvents = 'none'
+          shufflebtn.style.pointerEvents = 'none'
+          if (c == 1) {
+            let computerShuffle1 = setInterval(function() {
+              decideTurn.innerText = `Computer chose to shuffle card.`;
+              computerpresentcard.src = `${luckyDuckDeckArray[9].img}`;
+              computerpresentcard.style.pointerEvents = 'auto';
+              computerpresentcardinfo.innerText = luckyDuckDeckArray[9].description;
+              decideTurn.style.color = RandomRGB();
+              movedisplay.innerText = `Player 1's Future`;
+              P2PresentCard.src = `${luckyDuckDeckArray[9].img}`;
+              P2PresentValue.innerText = `${luckyDuckDeckArray[9].number}`;
+              P2PresentResult =`${luckyDuckDeckArray[9].number}`;
+              P2TotalLuck += luckyDuckDeckArray[9].number;
+              keepbtn.style.pointerEvents = 'auto'
+              shufflebtn.style.pointerEvents = 'auto'
+              moves += 1
+              clearInterval(computerShuffle1)
+              }, 4000)
+          } else if (c == 2) {
+            let computerKeep1 = setInterval(function(){
+              decideTurn.innerText = `Computer chose to keep card.`
+              computerpresentcard.src = `${luckyDuckDeckArray[3].img}`;
+              computerpresentcard.style.pointerEvents = 'auto';
+              computerpresentcardinfo.innerText = luckyDuckDeckArray[3].description;
+              decideTurn.style.color = RandomRGB();
+              movedisplay.innerText = `Player 1's Future`;
+              P2PresentCard.src = `${luckyDuckDeckArray[3].img}`;
+              P2PresentValue.innerText = `${luckyDuckDeckArray[3].number}`;
+              P2PresentResult =`${luckyDuckDeckArray[3].number}`;
+              P2TotalLuck += luckyDuckDeckArray[3].number;
+              keepbtn.style.pointerEvents = 'auto'
+              shufflebtn.style.pointerEvents = 'auto'
+              moves += 1
+              clearInterval(computerKeep1)
+              }, 4000)
+          }
+          
+      } else if (moves == 3) {
             playerpresentcard.src = `${luckyDuckDeckArray[8].img}`
             popupboximage.src=`${luckyDuckDeckArray[8].img}`
             playerpresentcard.style.pointerEvents = 'auto';
@@ -986,7 +1133,98 @@ document.addEventListener('DOMContentLoaded', () => {
             P2PresentResult =`${luckyDuckDeckArray[9].number}`
             P2TotalLuck +=luckyDuckDeckArray[9].number
             
-        } else if (moves == 5) {
+        } else if (moves == 5 && trackcomputermode == 1) {
+          playerfuturecard.src = `${luckyDuckDeckArray[10].img}`
+          popupboximage.src=`${luckyDuckDeckArray[10].img}`
+          playerfuturecard.style.pointerEvents = 'auto';
+          playerfuturecardinfo.innerText = luckyDuckDeckArray[10].description
+          decideTurn.innerText = `Computer's`
+          decideTurn.style.color = RandomRGB()
+          popupbox.setAttribute('style', `display: block`)
+          movedisplay.innerText = 'Future'
+          P1FutureCard.src = `${luckyDuckDeckArray[10].img}`
+          P1FutureValue.innerText = `${luckyDuckDeckArray[10].number}`
+          P1FutureResult =`${luckyDuckDeckArray[10].number}`
+          P1TotalLuck += luckyDuckDeckArray[10].number
+          keepbtn.style.pointerEvents = 'none'
+          shufflebtn.style.pointerEvents = 'none'
+          if (c == 1) {
+            let computerShuffle1 = setInterval(function() {
+              decideTurn.innerText = `Computer chose to shuffle card.`;
+              computerfuturecard.src = `${luckyDuckDeckArray[11].img}`;
+              computerfuturecard.style.pointerEvents = 'auto';
+              computerfuturecardinfo.innerText = luckyDuckDeckArray[11].description;
+              decideTurn.style.color = RandomRGB();
+              movedisplay.innerText = ``;
+              placeholdercard.innerText = ""
+              P2FutureCard.src = `${luckyDuckDeckArray[11].img}`;
+              P2FutureValue.innerText = `${luckyDuckDeckArray[11].number}`;
+              P2FutureResult =`${luckyDuckDeckArray[11].number}`;
+              P2TotalLuck += luckyDuckDeckArray[11].number;
+              keepbtn.style.pointerEvents = 'none'
+              shufflebtn.style.pointerEvents = 'none'
+              moves += 1
+              
+              let gameover = setInterval(function() {
+                P2TotalValue.innerText = P2TotalLuck
+                P1TotalValue.innerText = P1TotalLuck
+                
+                decideTurn.innerText = `Game Over`;
+                decideTurn.style.color = RandomRGB();
+                decideTurn2.innerText = 'Ducks'
+                decideTurn2.style.color = RandomRGB()
+                movedisplay.innerText = ""
+                placeholdercard.innerText = ""
+                resultsbtn.setAttribute('style', `display: inline-block`)
+                shufflebtn.setAttribute('style', `display: none`)
+                keepbtn.setAttribute('style', `display: none`)
+                clearInterval(gameover)
+              },3000)
+              clearInterval(computerShuffle1)
+              }, 4000)
+          } else if (c == 2) {
+            let computerKeep1 = setInterval(function(){
+              decideTurn.innerText = `Computer chose to keep card.`
+              computerfuturecard.src = `${luckyDuckDeckArray[5].img}`;
+              computerfuturecard.style.pointerEvents = 'auto';
+              computerfuturecardinfo.innerText = luckyDuckDeckArray[5].description;
+              decideTurn.style.color = RandomRGB();
+              movedisplay.innerText = ``;
+              placeholdercard.innerText = ""
+              P2FutureCard.src = `${luckyDuckDeckArray[5].img}`;
+              P2FutureValue.innerText = `${luckyDuckDeckArray[5].number}`;
+              P2FutureResult =`${luckyDuckDeckArray[5].number}`;
+              P2TotalLuck += luckyDuckDeckArray[5].number;
+              P2TotalValue.innerText = P2TotalLuck
+              P1TotalValue.innerText = P1TotalLuck
+              keepbtn.style.pointerEvents = 'none'
+              shufflebtn.style.pointerEvents = 'none'
+              moves += 1
+              if (P1TotalLuck > P2TotalLuck && trackcomputermode == 1) {
+                  GameResults.innerText = "Player 1 is a Luckier Duck!"
+                } else if (P1TotalLuck < P2TotalLuck && trackcomputermode == 1) {
+                  GameResults.innerText = "Computer is a Luckier Duck!"
+                }
+              let gameover = setInterval(function() {
+                P2TotalValue.innerText = P2TotalLuck
+                P1TotalValue.innerText = P1TotalLuck
+                
+                decideTurn.innerText = `Game Over`;
+                decideTurn.style.color = RandomRGB();
+                decideTurn2.innerText = 'Ducks'
+                decideTurn2.style.color = RandomRGB()
+                movedisplay.innerText = ""
+                placeholdercard.innerText = ""
+                resultsbtn.setAttribute('style', `display: inline-block`)
+                shufflebtn.setAttribute('style', `display: none`)
+                keepbtn.setAttribute('style', `display: none`)
+                clearInterval(gameover)
+              },3000)
+              clearInterval(computerKeep1)
+              }, 4000) 
+          }
+          
+      } else if (moves == 5) {
             playerfuturecard.src = `${luckyDuckDeckArray[10].img}`
             popupboximage.src=`${luckyDuckDeckArray[10].img}`
             playerfuturecard.style.pointerEvents = 'auto';
@@ -1045,6 +1283,11 @@ document.addEventListener('DOMContentLoaded', () => {
         gamescreen2.setAttribute('style', `display: none`)
         gamescreen3.setAttribute('style', `display: block`)
         postgameview.setAttribute('style', `display: block`)
+        if (P1TotalLuck > P2TotalLuck && trackcomputermode == 1) {
+          GameResults.innerText = "Player 1 is a Luckier Duck!"
+        } else if (P1TotalLuck < P2TotalLuck && trackcomputermode == 1) {
+          GameResults.innerText = "Computer is a Luckier Duck!"
+        }
         postgameviewimg.src = luckyDuckDeckCardBack[0].img
     })
     // return to screen 1 from screen 3
@@ -1130,14 +1373,24 @@ document.addEventListener('DOMContentLoaded', () => {
         postgameview.setAttribute('style', `display: none`)
         fortuneaudio.play()
         mainaudio.pause()
-        if (P1TotalLuck > P2TotalLuck) {
-            displaywinner.innerText = "Player 1 Fortune"
-            displayloser.innerText = "Player 2 Fortune"
+        if (P1TotalLuck > P2TotalLuck && trackcomputermode == 1) {
+          displaywinner.innerText = "Player 1's Fortune"
+          displayloser.innerText = "Computer's Fortune"
+          winningplayerfortune.innerText = luckyduckfortune[0]
+          winningplayerfortune.style.color = RandomRGB()
+      } else if (P1TotalLuck > P2TotalLuck) {
+            displaywinner.innerText = "Player 1's Fortune"
+            displayloser.innerText = "Player 2's Fortune"
             winningplayerfortune.innerText = luckyduckfortune[0]
             winningplayerfortune.style.color = RandomRGB()
-        } else if (P2TotalLuck > P1TotalLuck){
-            displaywinner.innerText = "Player 2 Fortune"
-            displayloser.innerText = "Player 1 Fortune"
+        } else if (P2TotalLuck > P1TotalLuck && trackcomputermode == 1){
+          displaywinner.innerText = "Computer's Fortune"
+          displayloser.innerText = "Player 1's Fortune"
+          winningplayerfortune.innerText = luckyduckfortune[0]
+          winningplayerfortune.style.color = RandomRGB()
+      } else if (P2TotalLuck > P1TotalLuck){
+            displaywinner.innerText = "Player 2's Fortune"
+            displayloser.innerText = "Player 1's Fortune"
             winningplayerfortune.innerText = luckyduckfortune[0]
             winningplayerfortune.style.color = RandomRGB()
         }
