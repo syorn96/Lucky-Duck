@@ -307,6 +307,12 @@ let luckyduckfortune = [
     array.sort(() => Math.random() - 0.5);
   }
 
+  //function for computer mode
+  function computermode() {
+    c = Math.ceil(Math.random() * 2)
+    return c
+  }
+
 //Load HTML before retrieving data
 document.addEventListener('DOMContentLoaded', () => {
     //variables for gameplay
@@ -316,8 +322,15 @@ document.addEventListener('DOMContentLoaded', () => {
     let gamescreen1 = document.querySelector('#game-screen1')
     let gamescreen2 = document.querySelector('#game-screen2')
     let gamescreen3 = document.querySelector('#game-screen3')
+
+    // game modes
     let startgamebtn = document.querySelector('#startbtn')
-    let restartgamebtn = document.querySelector('#restartgame') 
+    let restartgamebtn = document.querySelector('#restartgame')
+    let vscomputerbtn = document.querySelector('#vscomputer')
+    let computertitle = document.querySelector('#computertitle')
+    let trackcomputermode = 0
+    
+    // how to play screens
     let howtoplaybtn = document.querySelector('#HTPbtn')
     let howtoplaybtn2 = document.querySelector('#HTPbtn2')
     let howtoplayscreen = document.querySelector('#howtoplay')
@@ -499,15 +512,34 @@ document.addEventListener('DOMContentLoaded', () => {
         gamescreen1.setAttribute('style', `display: none;`)
         gamescreen2.setAttribute('style', `display: grid;`)
         decideTurn.style.color = RandomRGB()
+        computertitle.innerText = 'Player 2'
         startclickcounter ++
         if (startclickcounter == 1){
             shuffle(luckyDuckDeckArray)
             popupboximage.src=`${luckyDuckDeckCardBack[0].img}`
             popupbox.setAttribute('style', `display: block`)
-
         }
         // popupbox.setAttribute('style', `display: block;`)
     })
+
+    // vs computer settings
+
+    vscomputerbtn.addEventListener('click', ()=> {
+      gamescreen1.setAttribute('style', `display: none;`)
+      gamescreen2.setAttribute('style', `display: grid;`)
+      computertitle.innerText = 'Computer'
+      trackcomputermode = 1
+      console.log(trackcomputermode)
+      decideTurn.style.color = RandomRGB()
+      startclickcounter ++
+      if (startclickcounter == 1){
+            shuffle(luckyDuckDeckArray)
+            popupboximage.src=`${luckyDuckDeckCardBack[0].img}`
+            popupbox.setAttribute('style', `display: block`)
+        }
+      
+    })
+
     // loop to create imgs of original deck in div so players can view artwork.
     viewdeck.addEventListener('click', ()=> {
         deckgallery.setAttribute('style', `display: block;`)
@@ -633,8 +665,63 @@ document.addEventListener('DOMContentLoaded', () => {
     // cards are only clickable once loaded
     keepbtn.addEventListener(('click'), ()=> {
         moves +=1
-        if (moves == 1) {
+        
+        if (moves == 1 && trackcomputermode == 1) {
             playerpastcard.src = `${luckyDuckDeckArray[0].img}`
+            popupboximage.src=`${luckyDuckDeckArray[0].img}`
+            playerpastcard.style.pointerEvents = 'auto';
+            playerpastcardinfo.innerText = luckyDuckDeckArray[0].description
+            decideTurn.innerText = `Computer's`
+            decideTurn.style.color = RandomRGB()
+            popupbox.setAttribute('style', `display: block`)
+            movedisplay.innerText = 'Past'
+            P1PastCard.src = `${luckyDuckDeckArray[0].img}`
+            P1PastValue.innerText = `${luckyDuckDeckArray[0].number}`
+            P1PastResult =`${luckyDuckDeckArray[0].number}`
+            P1TotalLuck -= luckyDuckDeckArray[0].number
+            keepbtn.style.pointerEvents = 'none'
+            shufflebtn.style.pointerEvents = 'none'
+            computermode();
+            if (computermode() == 1) {
+              let computerShuffle1 = setInterval(function() {
+              decideTurn.innerText = `Computer chose to shuffle card`;
+              computerpastcard.src = `${luckyDuckDeckArray[1].img}`;
+              computerpastcard.style.pointerEvents = 'auto';
+              computerpastcardinfo.innerText = luckyDuckDeckArray[1].description;
+              decideTurn.style.color = RandomRGB();
+              movedisplay.innerText = 'Present';
+              P2PastCard.src = `${luckyDuckDeckArray[1].img}`;
+              P2PastValue.innerText = `${luckyDuckDeckArray[1].number}`;
+              P2PastResult =`${luckyDuckDeckArray[1].number}`;
+              P2TotalLuck -= luckyDuckDeckArray[1].number;
+              clearInterval(computerShuffle1)
+            }, 3000)
+            
+              keepbtn.style.pointerEvents = 'auto'
+              shufflebtn.style.pointerEvents = 'auto'
+              // setTimeout(function(), 3500)
+            } else if (computermode() == 2) {
+              let computerKeep1 = setInterval(function(){
+                decideTurn.innerText = `Computer chose to keep card`
+                playerpresentcard.src = `${luckyDuckDeckArray[2].img}`
+              popupboximage.src=`${luckyDuckDeckArray[2].img}`
+              playerpresentcard.style.pointerEvents = 'auto';
+              playerpresentcardinfo.innerText = luckyDuckDeckArray[2].description
+              decideTurn.style.color = RandomRGB()
+              movedisplay.innerText = 'Present'
+              P1PresentCard.src = `${luckyDuckDeckArray[2].img}`
+              P1PresentValue.innerText = `${luckyDuckDeckArray[2].number}`
+              P1PresentResult =`${luckyDuckDeckArray[2].number}`
+              P1TotalLuck += luckyDuckDeckArray[2].number
+                clearInterval(computerKeep1)
+            }, 3000)
+              keepbtn.style.pointerEvents = 'auto'
+              shufflebtn.style.pointerEvents = 'auto'
+              // setTimeout(function(), 3500)
+              
+            }
+        } else if (moves == 1) {
+          playerpastcard.src = `${luckyDuckDeckArray[0].img}`
             popupboximage.src=`${luckyDuckDeckArray[0].img}`
             playerpastcard.style.pointerEvents = 'auto';
             playerpastcardinfo.innerText = luckyDuckDeckArray[0].description
@@ -646,7 +733,6 @@ document.addEventListener('DOMContentLoaded', () => {
             P1PastValue.innerText = `${luckyDuckDeckArray[0].number}`
             P1PastResult =`${luckyDuckDeckArray[0].number}`
             P1TotalLuck -= luckyDuckDeckArray[0].number
-            
         } else if (moves == 2) {
             computerpastcard.src = `${luckyDuckDeckArray[1].img}`
             popupboximage.src=`${luckyDuckDeckArray[1].img}`
