@@ -1,10 +1,82 @@
 //Deck of Lucky Duck Tarot Cards
 let luckyDuckDeckArray = [
+     {
+        // IMG SOURCE: 
+        number: 0,
+        img: './media/./0.jpeg',
+        description:`The start of a new journey ofen begins with naivety, beginner's luck and unlimited potential.`,
+      },
+      {
+        // IMG SOURCE: 
+        number: 1,
+        img: './media/./1.jpeg',
+        description:`Learn to hone your innate gifts to "break-free" and grow as an individual.`,
+      },
+    //   {
+    //     // IMG SOURCE: 
+    //     number: 2,
+    //     img: './media/./2.jpeg',
+    //     description:`Trust your instincts and intuition. Only you can determine what is right or wrong.`,
+    //   },
+    //   {
+    //     // IMG SOURCE: 
+    //     number: 3,
+    //     img: './media/./3.jpeg',
+    //     description:`A sign of major change or dfficulties...that will ultimately alter the direction of your life.`,
+    //   },
+    //   {
+    //     // IMG SOURCE: 
+    //     number: 4,
+    //     img: './media/./4.jpeg',
+    //     description:`Dedication - Focus - Confidence. What may have seemed impossible is becoming a reality.`,
+    //   },
+    //   {
+    //     // IMG SOURCE: 
+    //     number: 5,
+    //     img: './media/./5.jpeg',
+    //     description:`A change of mentality and taking responsibility. Growing up.`,
+    //   },
+    //   {
+    //     // IMG SOURCE: 
+    //     number: 6,
+    //     img: './media/./6.jpeg',
+    //     description:`Open communication and raw honesty is the key to a healthy relationship.`,
+    //   },
+    //   {
+    //     // IMG SOURCE: 
+    //     number: 7,
+    //     img: './media/./7.jpeg',
+    //     description:`New or old relationships. They're meant to impart knowledge and different experiences.`,
+    //   },
+    //   {
+    //     // IMG SOURCE: 
+    //     number: 8,
+    //     img: './media/./8.jpeg',
+    //     description:`A time of introspection, education, or practicing patience.`,
+    //   },
+    //   {
+    //     // IMG SOURCE: 
+    //     number: 9,
+    //     img: './media/./9.jpeg',
+    //     description:`You must close one door to open another. Let go of what is no longer serving you.`,
+    //   },
+    //   {
+    //     // IMG SOURCE: 
+    //     number: 10,
+    //     img: './media/./10.jpeg',
+    //     description:`You are exactly where you're meant to be. Reflect on the past to grasp the reachable future.`,
+    //   },
+    //   {
+    //     // IMG SOURCE: 
+    //     number: 11,
+    //     img: './media/./11.jpeg',
+    //     description:`The end is just the beginning. Take what you've learned and embark on a new journey.`,
+    //   },
     {
         // IMG SOURCE: https://twitter.com/zruedella/status/1313685121086689282
       number: 12,
       img: './media/./12.jpeg',
-      description:`Are you diving into your passions? Follow your desires. Don't be afraid - be like Duck Fieri!`,
+      description:`Are you diving into your passions? Follow your dreams. Don't be afraid - be like Duck Fieri!`,
     },
     {
         // IMG SOURCE: https://www.pinterest.com/pin/reaction-photos--685884218246681370/
