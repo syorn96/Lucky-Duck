@@ -1,31 +1,37 @@
 //Deck of Lucky Duck Tarot Cards
 let luckyDuckDeckArray = [
     {
+        // IMG SOURCE: https://twitter.com/zruedella/status/1313685121086689282
       number: 12,
       img: './media/./12.jpeg',
       description:`Are you diving into your passions? Follow your desires. Don't be afraid - be like Duck Fieri!`,
     },
     {
+        // IMG SOURCE: https://www.pinterest.com/pin/reaction-photos--685884218246681370/
       number: 13,
       img: './media/./13.jpeg',
       description:`Are your duckling needs being met? Sometimes you have to fight for what you quackin' want.`,
     },
     {
+        // IMG SOURCE: https://www.pinterest.com/pin/695595104961696433/
       number: 14,
       img: './media/./14.jpeg',
       description:`It's not that duckin' serious. Learn to take a waddle back and QOL! Strive to be above the other birds. QUACK OUT LOUD!`,
     },
     {
+        // IMG SOURCE: https://twitter.com/goose_stir/status/1447998810521837569
       number: 15,
       img: './media/./15.jpg',
       description:`Clearly you know what you duckin' want. It's just a matter of quacking it verbally into existence.`,
     },
     {
+        // IMG SOURCE: https://www.facebook.com/UntitledGooseMemes/photos/a.125287848872569/444785073589510/?type=3
       number: 16,
       img: './media/./16.jpg',
       description:`Do you find yourself not fitting in? Or is there someone that rubs you the wrong way? Don't let your anger or disappointment be the cause of your downfall.`,
     },
     {
+        // IMG SOURCE: https://www.amazon.com/Peace-Never-Option-Goose-Notebook/dp/B08NWZCRVJ
       number: 17,
       img: './media/./17.jpg',
       description:'Conflicts between other ducks may arise. Reconsider before the consequences are dire.',
@@ -41,31 +47,37 @@ let luckyDuckDeckArray = [
     //     description:'',
     //   },
       {
+        // IMG SOURCE: https://www.pinterest.com/pin/670473463268707974/
         number: 20,
         img: './media/./20.jpeg',
         description:'You may be blanketed with sadness either by choice or natural causes. Let the storm pass.',
       },
       {
+        // IMG SOURCE: https://www.kindpng.com/imgv/iioTmix_shook-psyduck-duck-pokemon-omg-yellow-drawn-pokemon/
         number: 21,
         img: './media/./21.jpeg',
         description:`Confusion is just a state of mind. Recollect your duckin' thoughts and gain clarity.`,
       },
       {
+        // IMG SOURCE: https://imgflip.com/memetemplate/213228225/Screaming-Duck-2
         number: 22,
         img: './media/./22.jpeg',
         description:`Big duck energy never quacks down.`,
       },
       {
+        // IMG SOURCE: https://z-upload.facebook.com/farfa11a/posts/1725364527863110
         number: 23,
         img: './media/./23.jpeg',
         description:`A lover duck may be waddling into your life!`,
       },
       {
+        // IMG SOURCE: https://www.pinterest.com/pin/688769336753774520/
         number: 24,
         img: './media/./24.jpeg',
         description:`Who said ducks can't chill? It's time to consider that trip.`,
       },
       {
+        // IMG SOURCE: https://imgflip.com/memetemplate/194424215/SMILE-DUCK
         number: 25,
         img: './media/./25.jpeg',
         description:`A happy duck is the best kind of duck. Other's may appreciate your light-hearted presence and loud quacks.`,
@@ -81,31 +93,38 @@ let luckyDuckDeckArray = [
     //     description:``,
     //   },
       {
+        // IMG SOURCE: https://pixabay.com/photos/duck-mallard-drake-bird-water-bird-3319107/
         number: 28,
         img: './media/./28.jpeg',
         description:`The dive for survival, may leave your butt-quack vulnerable. Be wary of your pond environment.`,
       },
       {
+        // IMG SOURCE: https://www.pinterest.com/pin/mokkaquillart--1038431626550525947/
         number: 29,
         img: './media/./29.jpeg',
         description:`Investment is just luck and some skill. That risk you've been pond-ering? It's time to take flight and make it happen.`,
       },
       {
+        // IMG SOURCE: https://www.reddit.com/r/photoshopbattles/comments/2ukipw/psbattle_duck_wearing_a_bow_tie/
         number: 30,
         img: './media/./30.jpeg',
         description:`Some things can only be learned through eggs-perience. A mentor duck of some sorts will fly into your life.`,
       },
       {
+        // IMG SOURCE: https://picsart.com/i/sticker-340193481043211
         number: 31,
         img: './media/./31.jpeg',
         description:`Boundaries aren't meant to be waddled across. Show the other ducks that you're putting your flipper down.`
       },
       {
+        //  IMG SOURCE: https://picsart.com/i/sticker-326497007105211
         number: 32,
         img: './media/./32.jpeg',
         description:`Take time to consider if certain habits are supporting your duck goals or drowning you down...`
       },
       {
+        // IMG SOURCE: https://www.pinterest.com/pin/457326537170393192/
+        // IMG SOURCE: https://i.imgur.com/AmbqClS.jpeg
         number: 33,
         img: './media/./33.jpeg',
         description:`A like minded duck will be entering your life. They'll appreciate your "quarkiness".`
@@ -121,20 +140,53 @@ let luckyDuckDeckArray = [
     //     description:``
     //   },
       {
+        // IMG SOURCE: https://wallpapercave.com/w/wp3364096
         number: 36,
         img: './media/./36.jpeg',
         description:`The river's current might be too strong, but just keep swimming duckling. The other side of the river bank is just a few more paddles.`
       },
       {
+        // IMG SOURCE: https://www.reddit.com/r/aww/comments/8vsc6i/a_duck_and_a_dog_snuggling/
         number: 37,
         img: './media/./37.jpeg',
         description:`This person may not be related by duck blood, but they're considered part of your nest. Let them know how much you appreciate their presence.`
       },
       {
+        // IMG SOURCE: https://www.boredpanda.com/blog/wp-content/uploads/2019/10/B2uum6BnoSh-1-png__700.jpg
         number: 38,
         img: './media/./38.jpeg',
-        description:`"Oh, ducky,you should go and love yourself..." - DUCKIN BEIBER. There's no need to compare yourself to other ducks, that's just quacktalk.`
+        description:`There's no need to compare yourself to other ducks, that's just quacktalk."Oh, ducky, you should go and love yourself..." - DUCKIN BIEBER.`
       },
+      {
+        // IMG SOURCE: https://www.reddit.com/r/MadeMeSmile/comments/hp6q2i/day_2_of_posting_cute_ducks/
+        number: 39,
+        img: './media/./38.jpeg',
+        description:`Is there something you've been shy about? Ask and you shall receive. Muster up the courage to just qu-ask...`
+      },
+      {
+        // IMG SOURCE: https://www.reddit.com/r/aww/comments/ezdig9/duckling_with_inner_tube/
+        number: 40,
+        img: './media/./40.jpeg',
+        description:`This is your message to just have fun and enjoy your life Duckling!`
+      },
+      {
+        // IMG SOURCE: https://www.boredpanda.com/blog/wp-content/uploads/2019/10/wholesome-cute-duck-pics-5da03e4cdeb76__700.jpg
+        number: 41,
+        img: './media/./41.jpeg',
+        description:`You've been working hard Duckling. You deserve to rest and take care of your duckling needs.`
+      },
+    //   {
+    //     // IMG SOURCE: 
+    //     number: 42,
+    //     img: './media/./42.jpeg',
+    //     description:``
+    //   },
+    //   {
+    //     // IMG SOURCE: 
+    //     number: 43,
+    //     img: './media/./43.jpeg',
+    //     description:``
+    //   },
   ]
 
 // fortunes sources: https://fortuneandframe.com/apps/fortunes/ff-originals
