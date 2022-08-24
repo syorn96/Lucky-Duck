@@ -136,9 +136,11 @@ let luckyDuckDeckArray = [
         description:`"Oh, ducky,you should go and love yourself..." - DUCKIN BEIBER. There's no need to compare yourself to other ducks, that's just quacktalk.`
       },
   ]
-// fortunes source: https://fortuneandframe.com/apps/fortunes/ff-originals
+
+// fortunes sources: https://fortuneandframe.com/apps/fortunes/ff-originals
 // https://www.wisesayings.com/duck-quotes/
 // https://kidadl.com/funnies/puns/best-duck-puns-to-send-you-quacking
+// fortunes to give the luckier duck at the end of game.
 let luckyduckfortune = [
     `"Change comes from embracing the future, not fighting your past."`,
     `"Set yourself up to experience what you love."`,
@@ -176,7 +178,7 @@ let luckyduckfortune = [
 // cloneddeck used for deck gallery, so cards show up in chronological order
   let clonedLuckyDeck = luckyDuckDeckArray.slice()
 
- // function to shuffle array on restart
+ // function to shuffle array
  function shuffle(array) {
     array.sort(() => Math.random() - 0.5);
   }
@@ -184,6 +186,8 @@ let luckyduckfortune = [
 //Load HTML before retrieving data
 document.addEventListener('DOMContentLoaded', () => {
     //variables for gameplay
+    let mainaudio = document.getElementById('mainaudio')
+    let fortuneaudio = document.getElementById('fortuneaudio')
     let body = document.querySelector('#body')
     let gamescreen1 = document.querySelector('#game-screen1')
     let gamescreen2 = document.querySelector('#game-screen2')
@@ -225,6 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // load library of card gallery before clicking viewdeckgallerybtn
     createViewDeck();
+
     // returning to screen 1 from viewdeck screen 
     let return2start = document.querySelector('#return2start') 
     let menu2 = document.querySelector('.BotR3')
@@ -271,8 +276,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let decideTurn2 = document.querySelector('#turncounter2')
     let movedisplay = document.querySelector('#turndisplay')
     let placeholdercard = document.querySelector('#placeholdercard')
+
     // move tracker
     let moves = 0
+
     // shuffle and keep button
     let shufflebtn = document.querySelector('#shufflebtn')
     let keepbtn = document.querySelector('#keepbtn')
@@ -329,6 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let displayloser = document.querySelector('#displayloser')
     let winningplayerfortune = document.querySelector('#winningplayerfortune')
     let returntoresults = document.querySelector('#returntoresults')
+
 
     //   player 1 and player 2, text-color change
     const RandomRGB = () => {
@@ -436,6 +444,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resultsbtn.setAttribute('style', `display: none`)
         shufflebtn.setAttribute('style', `display: inline-block`)
         keepbtn.setAttribute('style', `display: inline-block`)
+        fortunebtn.setAttribute('style', 'display: inline-block')
 
     })
     // How to play on screen 1
@@ -482,6 +491,7 @@ document.addEventListener('DOMContentLoaded', () => {
         decideTurn.style.color = RandomRGB()
         decideTurn2.style.color = RandomRGB()
     })
+
     // return to screen 1
     return2start.addEventListener('click', () => {
         gamescreen1.setAttribute('style', `display: block`)
@@ -489,6 +499,7 @@ document.addEventListener('DOMContentLoaded', () => {
         decideTurn.style.color = RandomRGB()
         decideTurn2.style.color = RandomRGB()
     })
+
     // return button for the PopUpcard viewer
     returnbtn.addEventListener(('click'), ()=> {
         popupbox.setAttribute('style', `display: none`)
@@ -506,7 +517,6 @@ document.addEventListener('DOMContentLoaded', () => {
             decideTurn.innerText = `Player 2's`
             decideTurn.style.color = RandomRGB()
             popupbox.setAttribute('style', `display: block`)
-            popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Past'
             P1PastCard.src = `${luckyDuckDeckArray[0].img}`
             P1PastValue.innerText = `${luckyDuckDeckArray[0].number}`
@@ -521,7 +531,6 @@ document.addEventListener('DOMContentLoaded', () => {
             decideTurn.innerText = `Player 1's`
             decideTurn.style.color = RandomRGB()
             popupbox.setAttribute('style', `display: block`)
-            popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Present'
             P2PastCard.src = `${luckyDuckDeckArray[1].img}`
             P2PastValue.innerText = `${luckyDuckDeckArray[1].number}`
@@ -536,7 +545,6 @@ document.addEventListener('DOMContentLoaded', () => {
             decideTurn.innerText = `Player 2's`
             decideTurn.style.color = RandomRGB()
             popupbox.setAttribute('style', `display: block`)
-            popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Present'
             P1PresentCard.src = `${luckyDuckDeckArray[2].img}`
             P1PresentValue.innerText = `${luckyDuckDeckArray[2].number}`
@@ -551,7 +559,6 @@ document.addEventListener('DOMContentLoaded', () => {
             decideTurn.innerText = `Player 1's`
             decideTurn.style.color = RandomRGB()
             popupbox.setAttribute('style', `display: block`)
-            popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Future'
             P2PresentCard.src = `${luckyDuckDeckArray[3].img}`
             P2PresentValue.innerText = `${luckyDuckDeckArray[3].number}`
@@ -566,7 +573,6 @@ document.addEventListener('DOMContentLoaded', () => {
             decideTurn.innerText = `Player 2's`
             decideTurn.style.color = RandomRGB()
             popupbox.setAttribute('style', `display: block`)
-            popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Future'
             P1FutureCard.src = `${luckyDuckDeckArray[4].img}`
             P1FutureValue.innerText = `${luckyDuckDeckArray[4].number}`
@@ -589,7 +595,8 @@ document.addEventListener('DOMContentLoaded', () => {
             P2FutureValue.innerText = `${luckyDuckDeckArray[5].number}`
             P2FutureResult =`${luckyDuckDeckArray[5].number}`
             P2TotalLuck += luckyDuckDeckArray[5].number
-
+            P2TotalLuck = 0
+            P1TotalLuck = 0
             // display each players total luck on screen 3
             P2TotalValue.innerText = P2TotalLuck
             P1TotalValue.innerText = P1TotalLuck
@@ -600,7 +607,8 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (P1TotalLuck < P2TotalLuck) {
                 GameResults.innerText = "Player 2 is a Luckier Duck!"
             } else if (P1TotalLuck == P2TotalLuck){
-                GameResults.innerText = `It's a Draw. Must be fate!`
+                GameResults.innerText = `It's a Draw. Must be fate! Play Again!`
+                fortunebtn.setAttribute('style', 'display: none')
             }
             // only display game results, get rid of shuffle and keep btn
             popupbox.setAttribute('style', 'display: block')
@@ -621,7 +629,6 @@ document.addEventListener('DOMContentLoaded', () => {
             decideTurn.innerText = `Player 2's`
             decideTurn.style.color = RandomRGB()
             popupbox.setAttribute('style', `display: block`)
-            popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Past'
             P1PastCard.src = `${luckyDuckDeckArray[6].img}`
             P1PastValue.innerText = `${luckyDuckDeckArray[6].number}`
@@ -636,7 +643,6 @@ document.addEventListener('DOMContentLoaded', () => {
             decideTurn.innerText = `Player 1's`
             decideTurn.style.color = RandomRGB()
             popupbox.setAttribute('style', `display: block;`)
-            popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Present'
             P2PastCard.src = `${luckyDuckDeckArray[7].img}`
             P2PastValue.innerText = `${luckyDuckDeckArray[7].number}`
@@ -651,7 +657,6 @@ document.addEventListener('DOMContentLoaded', () => {
             decideTurn.innerText = `Player 2's`
             decideTurn.style.color = RandomRGB()
             popupbox.setAttribute('style', `display: block`)
-            popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Present'
             P1PresentCard.src = `${luckyDuckDeckArray[8].img}`
             P1PresentValue.innerText = `${luckyDuckDeckArray[8].number}`
@@ -666,7 +671,6 @@ document.addEventListener('DOMContentLoaded', () => {
             decideTurn.innerText = `Player 1's`
             decideTurn.style.color = RandomRGB()
             popupbox.setAttribute('style', `display: block`)
-            popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Future'
             P2PresentCard.src = `${luckyDuckDeckArray[9].img}`
             P2PresentValue.innerText = `${luckyDuckDeckArray[9].number}`
@@ -681,7 +685,6 @@ document.addEventListener('DOMContentLoaded', () => {
             decideTurn.innerText = `Player 2's`
             decideTurn.style.color = RandomRGB()
             popupbox.setAttribute('style', `display: block`)
-            popupboximage.setAttribute('style', `display: inline-block`)
             movedisplay.innerText = 'Future'
             P1FutureCard.src = `${luckyDuckDeckArray[10].img}`
             P1FutureValue.innerText = `${luckyDuckDeckArray[10].number}`
@@ -716,10 +719,13 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (P1TotalLuck < P2TotalLuck) {
                 GameResults.innerText = "Player 2 is a Luckier Duck!"
             } else if (P1TotalLuck == P2TotalLuck){
-                GameResults.innerText = `It's a Draw. Must be fate!`
+                GameResults.innerText = `It's a Draw. Must be fate! Play Again!`
+                fortunebtn.setAttribute('style', 'display: none')
             }
             popupbox.setAttribute('style', 'display: block')
             resultsbtn.setAttribute('style', `display: inline-block`)
+
+            // remove shuffle and keep buttons on turn 6
             shufflebtn.setAttribute('style', `display: none`)
             keepbtn.setAttribute('style', `display: none`)
         }
@@ -813,6 +819,8 @@ document.addEventListener('DOMContentLoaded', () => {
         gamescreen4.setAttribute('style', `display: block`)
         gamescreen3.setAttribute('style', `display: none`)
         postgameview.setAttribute('style', `display: none`)
+        fortuneaudio.play()
+        mainaudio.pause()
         if (P1TotalLuck > P2TotalLuck) {
             displaywinner.innerText = "Player 1 Fortune"
             displayloser.innerText = "Player 2 Fortune"
@@ -829,11 +837,17 @@ document.addEventListener('DOMContentLoaded', () => {
     returntoresults.addEventListener('click', ()=> {
         gamescreen4.setAttribute('style', `display: none`)
         gamescreen3.setAttribute('style', `display: block`)
+        fortuneaudio.pause()
+        fortuneaudio.currentTime = 0
+        mainaudio.play()
     })
 
     escapefortunebtn.addEventListener('click', ()=> {
         gamescreen4.setAttribute('style', `display: none`)
         gamescreen1.setAttribute('style', `display: absolute`)
+        fortuneaudio.pause()
+        fortuneaudio.currentTime = 0
+        mainaudio.play()
     })
 })
 
