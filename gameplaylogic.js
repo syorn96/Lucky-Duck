@@ -141,7 +141,7 @@ let computerModeTurnK3 = () => {
             decideTurn2.style.color = randomRGB()
             moveDisplay.innerText = ""
             placeHolderCard.innerText = ""
-            resultsbtn.setAttribute('style', `display: inline-block`)
+            resultsBtn.setAttribute('style', `display: inline-block`)
             shuffleBtn.setAttribute('style', `display: none`)
             keepBtn.setAttribute('style', `display: none`)
             clearInterval(gameover)
@@ -176,7 +176,7 @@ let computerModeTurnK3 = () => {
             decideTurn2.style.color = randomRGB()
             moveDisplay.innerText = ""
             placeHolderCard.innerText = ""
-            resultsbtn.setAttribute('style', `display: inline-block`)
+            resultsBtn.setAttribute('style', `display: inline-block`)
             shuffleBtn.setAttribute('style', `display: none`)
             keepBtn.setAttribute('style', `display: none`)
             clearInterval(gameover)
@@ -285,7 +285,7 @@ let keepTurn6 = () => {
 
         // only display game results, get rid of shuffle and keep btn
         popUpBox.setAttribute('style', 'display: block')
-        resultsbtn.setAttribute('style', `display: inline-block`)
+        resultsBtn.setAttribute('style', `display: inline-block`)
         shuffleBtn.setAttribute('style', `display: none`)
         keepBtn.setAttribute('style', `display: none`)
 }
@@ -431,7 +431,7 @@ let computerModeTurnS3 = () => {
             decideTurn2.style.color = randomRGB()
             moveDisplay.innerText = ""
             placeHolderCard.innerText = ""
-            resultsbtn.setAttribute('style', `display: inline-block`)
+            resultsBtn.setAttribute('style', `display: inline-block`)
             shuffleBtn.setAttribute('style', `display: none`)
             keepBtn.setAttribute('style', `display: none`)
             clearInterval(gameover)
@@ -467,7 +467,7 @@ let computerModeTurnS3 = () => {
             decideTurn2.style.color = randomRGB()
             moveDisplay.innerText = ""
             placeHolderCard.innerText = ""
-            resultsbtn.setAttribute('style', `display: inline-block`)
+            resultsBtn.setAttribute('style', `display: inline-block`)
             shuffleBtn.setAttribute('style', `display: none`)
             keepBtn.setAttribute('style', `display: none`)
             clearInterval(gameover)
@@ -570,7 +570,7 @@ let shuffleTurn6 = () => {
         p1TotalValue.innerText = p1TotalLuck
 
         popUpBox.setAttribute('style', 'display: block')
-        resultsbtn.setAttribute('style', `display: inline-block`)
+        resultsBtn.setAttribute('style', `display: inline-block`)
 
         // remove shuffle and keep buttons on turn 6
         shuffleBtn.setAttribute('style', `display: none`)

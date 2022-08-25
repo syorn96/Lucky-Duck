@@ -152,7 +152,7 @@ const shuffle = array => {
         shuffle(luckyDuckDeckArray)
         shuffle(luckyDuckFortuneArray)
         shuffle(availableComputerFortunesArray)
-        resultsbtn.setAttribute('style', `display: none`)
+        resultsBtn.setAttribute('style', `display: none`)
         shuffleBtn.setAttribute('style', `display: inline-block`)
         keepBtn.setAttribute('style', `display: inline-block`)
         fortuneBtn.setAttribute('style', 'display: inline-block')
