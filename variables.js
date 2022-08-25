@@ -1,5 +1,7 @@
 // GAMEPLAY VARIABLES 
     //variables for audio and gameplay screens
+    
+
     let mainGameAudio = document.getElementById('mainaudio')
     let fortuneAudio = document.getElementById('fortuneaudio')
     let body = document.querySelector('#body')
