@@ -167,7 +167,7 @@ let luckyDuckDeckArray = [
         // IMG SOURCE: https://diamondpaintkit.com/products/duck-and-purple-flowers-5d-diamond-painting/
         number: 27,
         img: './media/./27.jpeg',
-        description:`Patience and understanding. She is a loving Queen that uses empathy to inspire her under-ducklings.`,
+        description:`Patience and understanding. She is a loving Queen that uses empathy to inspire her under-duck-lings.`,
       },
       {
         // IMG SOURCE: https://pixabay.com/photos/duck-mallard-drake-bird-water-bird-3319107/
@@ -191,7 +191,7 @@ let luckyDuckDeckArray = [
         // IMG SOURCE: https://picsart.com/i/sticker-340193481043211
         number: 31,
         img: './media/./31.jpeg',
-        description:`Boundaries aren't meant to be waddled across. Show the other ducks that you're putting your flipper down.`
+        description:`Some boundaries aren't meant to be waddled across. Show the other ducks that you're putting your flipper down.`
       },
       {
         //  IMG SOURCE: https://picsart.com/i/sticker-326497007105211
@@ -272,7 +272,7 @@ let luckyDuckDeckArray = [
 // https://www.wisesayings.com/duck-quotes/
 // https://kidadl.com/funnies/puns/best-duck-puns-to-send-you-quacking
 // fortunes to give the luckier duck at the end of game.
-let luckyduckfortune = [
+let luckyDuckFortuneArray = [
     `"Change comes from embracing the future, not fighting your past."`,
     `"Set yourself up to eggs-perience what you love."`,
     `"If you want to fly, you have to be willing to learn."`,
@@ -308,7 +308,7 @@ let luckyduckfortune = [
 ]
 // computer fortune source: https://bernardmarr.com/28-best-quotes-about-artificial-intelligence/#:~:text=%E2%80%9CThere%20is%20no%20reason%20and,artificial%20intelligence%20machine%20by%202035.%E2%80%9D&text=%E2%80%9CIs%20artificial%20intelligence%20less%20than%20our%20intelligence%3F%E2%80%9D&text=%E2%80%9CBy%20far%2C%20the%20greatest%20danger,early%20that%20they%20understand%20it.%E2%80%9D
 // http://www.notable-quotes.com/a/artificial_intelligence_quotes.html
-let computerfortune = [
+let availableComputerFortunes = [
     `“There is no reason and no way that a human mind can keep up with an artificial intelligence machine by 2022.`,
     `“Human intelligence is less than artificial intelligence.”`,
     `Artificial intelligence, will enhance human technology.`,
@@ -321,7 +321,7 @@ let computerfortune = [
     `If computers can act on given choices... does that mean they're conscious?`,
   ]
 // cloneddeck used for deck gallery, so cards show up in chronological order
-  let clonedLuckyDeck = luckyDuckDeckArray.slice()
+  let clonedLuckyDeckArray = luckyDuckDeckArray.slice()
 
  // function to shuffle array -- special thanks to Ronald Fisher and Frank Yates for the Fisher-Yates algorith --
  const shuffle = array => {
@@ -375,11 +375,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // function to create imgs of card variations
     let createViewDeck = () => {
-    for (let i = 0; i < clonedLuckyDeck.length; i++) {
+    for (let i = 0; i < clonedLuckyDeckArray.length; i++) {
         const createImg = document.createElement('img')
         createImg.classList.add('cardsize')
-        createImg.src = `${clonedLuckyDeck[i].img}`
-        createImg.alt = `${clonedLuckyDeck[i].description}`
+        createImg.src = `${clonedLuckyDeckArray[i].img}`
+        createImg.alt = `${clonedLuckyDeckArray[i].description}`
         deckgallery.append(createImg)
         let newDeckGallery = document.querySelectorAll('.cardsize')
         newDeckGallery.forEach(e => {
@@ -535,7 +535,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     // shuffle the fortunes for gameplay
-    shuffle(luckyduckfortune)
+    shuffle(luckyDuckFortuneArray)
     
 
     //on start default the cards to be set as the tarot deck back cover 
@@ -548,7 +548,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startclickcounter ++
         if (startclickcounter == 1){
             shuffle(luckyDuckDeckArray)
-            shuffle(computerfortune)
+            shuffle(availableComputerFortunes)
             popupboximage.src=`${luckyDuckDeckCardBack[0].img}`
             popupbox.setAttribute('style', `display: block`)
             howtoplaybtn2.style.pointerEvents = 'none'
@@ -568,7 +568,7 @@ document.addEventListener('DOMContentLoaded', () => {
       startclickcounter ++
       if (startclickcounter == 1){
             shuffle(luckyDuckDeckArray)
-            shuffle(computerfortune)
+            shuffle(availableComputerFortunes)
             popupboximage.src=`${luckyDuckDeckCardBack[0].img}`
             popupbox.setAttribute('style', `display: block`)
             howtoplaybtn2.style.pointerEvents = 'none'
@@ -630,8 +630,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // on restart shuffle the deck, and fortunes
         shuffle(luckyDuckDeckArray)
-        shuffle(luckyduckfortune)
-        shuffle(computerfortune)
+        shuffle(luckyDuckFortuneArray)
+        shuffle(availableComputerFortunes)
         resultsbtn.setAttribute('style', `display: none`)
         shufflebtn.setAttribute('style', `display: inline-block`)
         keepbtn.setAttribute('style', `display: inline-block`)
@@ -1189,7 +1189,6 @@ document.addEventListener('DOMContentLoaded', () => {
               let gameover = setInterval(function() {
                 P2TotalValue.innerText = P2TotalLuck
                 P1TotalValue.innerText = P1TotalLuck
-                
                 decideTurn.innerText = `Game Over`;
                 decideTurn.style.color = RandomRGB();
                 decideTurn2.innerText = 'Ducks'
@@ -1406,22 +1405,22 @@ document.addEventListener('DOMContentLoaded', () => {
         if (P1TotalLuck > P2TotalLuck && trackcomputermode == 1) {
           displaywinner.innerText = "Player 1's Fortune"
           displayloser.innerText = "Computer's Fortune"
-          winningplayerfortune.innerText = luckyduckfortune[0]
+          winningplayerfortune.innerText = luckyDuckFortuneArray[0]
           winningplayerfortune.style.color = RandomRGB()
       } else if (P1TotalLuck > P2TotalLuck) {
             displaywinner.innerText = "Player 1's Fortune"
             displayloser.innerText = "Player 2's Fortune"
-            winningplayerfortune.innerText = luckyduckfortune[0]
+            winningplayerfortune.innerText = luckyDuckFortuneArray[0]
             winningplayerfortune.style.color = RandomRGB()
         } else if (P2TotalLuck > P1TotalLuck && trackcomputermode == 1){
           displaywinner.innerText = "Computer's Fortune"
           displayloser.innerText = "Player 1's Fortune"
-          winningplayerfortune.innerText = computerfortune[0]
+          winningplayerfortune.innerText = availableComputerFortunes[0]
           winningplayerfortune.style.color = RandomRGB()
       } else if (P2TotalLuck > P1TotalLuck){
             displaywinner.innerText = "Player 2's Fortune"
             displayloser.innerText = "Player 1's Fortune"
-            winningplayerfortune.innerText = luckyduckfortune[0]
+            winningplayerfortune.innerText = luckyDuckFortuneArray[0]
             winningplayerfortune.style.color = RandomRGB()
         }
     })
