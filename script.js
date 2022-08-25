@@ -344,13 +344,15 @@ document.addEventListener('DOMContentLoaded', () => {
     let computertitle = document.querySelector('#computertitle')
     let trackcomputermode = 0
     
-    // how to play screens
-    let howtoplaybtn = document.querySelector('#HTPbtn')
-    let howtoplaybtn2 = document.querySelector('#HTPbtn2')
+    // how to play on screen 1
     let howtoplayscreen = document.querySelector('#howtoplay')
     let exitHTP = document.querySelector('#exith2p')
+    let howtoplaybtn = document.querySelector('#HTPbtn')
+
+    // how to play on screen 2
     let howtoplayscreen2 = document.querySelector('#howtoplay2')
     let exitHTP2 = document.querySelector('#exith2p2')
+    let howtoplaybtn2 = document.querySelector('#HTPbtn2')
 
     // variables for view deck gallery
     let viewdeck = document.querySelector('#viewdeck')
@@ -405,6 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
     playerfuturecard.style.pointerEvents = 'none';
     let playerfuturecardinfo = document.querySelector('#PlayerCard3info')
 
+    //variables for player 2/computer card selection + set cards to no click function
     // *** originally game was meant to be played vs computer, computer and player 2 share the same variables ***
     let computerpastcard = document.querySelector('#computercard1')
     computerpastcard.style.pointerEvents = 'none';
@@ -443,7 +446,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let P1PastCard = document.querySelector('#P1PastCard')
     let P1FutureCard = document.querySelector('#P1FutureCard')
 
-    // player 2 card's
+    // player 2/computer card's
     let P2PresentCard = document.querySelector('#P2PresentCard')
     let P2PastCard = document.querySelector('#P2PastCard')
     let P2FutureCard = document.querySelector('#P2FutureCard')
@@ -454,7 +457,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let P1FutureValue = document.querySelector('#P1FutureValue')
     let P1TotalValue = document.querySelector('#P1TotalValue')
 
-    // player 2 values from card
+    // player 2/computer values from card
     let P2PresentValue = document.querySelector('#P2PresentValue')
     let P2PastValue = document.querySelector('#P2PastValue')
     let P2FutureValue = document.querySelector('#P2FutureValue')
@@ -489,7 +492,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let returntoresults = document.querySelector('#returntoresults')
 
 
-    //   player 1 and player 2, text-color change
+    // for player 1 and player 2/computer, text-color change
     const RandomRGB = () => {
         let r = Math.floor(Math.random() * 255);
         let g = Math.floor(Math.random() * 255);
@@ -669,7 +672,7 @@ document.addEventListener('DOMContentLoaded', () => {
         decideTurn2.style.color = RandomRGB()
     })
 
-    // return to screen 1
+    // return to screen 1 from screen 2
     return2start.addEventListener('click', () => {
         gamescreen1.setAttribute('style', `display: block`)
         gamescreen2.setAttribute('style', `display: none`)
@@ -683,7 +686,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     // game logic dependent on keep button
-    // cards are only clickable once loaded
+    // cards are only clickable/viewable once loaded
     keepbtn.addEventListener(('click'), ()=> {
         moves +=1
         let c = computermode();
