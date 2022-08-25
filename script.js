@@ -1,47 +1,48 @@
-//Deck of Lucky Duck Tarot Cards
+//Deck of Lucky Duck Tarot Cards with sources.
+// all cards were made using PicsArt App, I do not own these images.
 let luckyDuckDeckArray = [
      {
-        // IMG SOURCE: 
+        // IMG SOURCE: https://www.pngmart.com/image/tag/dolan-duck-meme
         number: 0,
         img: './media/./0.jpeg',
         description:`The start of a new journey often begins with naivety, beginner's luck and unlimited potential.`,
       },
       {
-        // IMG SOURCE: 
+        // IMG SOURCE: https://www.pinterest.com/pin/528750812509005581/
         number: 1,
         img: './media/./1.jpeg',
         description:`Learn to take action and hone your innate gifts to "break-free" and grow as an individual.`,
       },
       {
-        // IMG SOURCE: 
+        // IMG SOURCE: https://picsart.com/i/sticker-271672940015211
         number: 2,
         img: './media/./2.jpeg',
         description:`Trust your instincts and intuition to determine what is right or wrong.`,
       },
       {
-        // IMG SOURCE: 
+        // IMG SOURCE: https://gamejolt.com/p/another-new-channel-to-fight-the-blessed-images-cursed-duck-images-yg4yr94s
         number: 3,
         img: './media/./3.jpeg',
         description:`A sign of major change, conflict or dfficulties...that will ultimately alter the direction of your life.`,
       },
-    //   {
-    //     // IMG SOURCE: 
-    //     number: 4,
-    //     img: './media/./4.jpeg',
-    //     description:`Dedication - Focus - Confidence. What may have seemed impossible is becoming a reality.`,
-    //   },
-    //   {
-    //     // IMG SOURCE: 
-    //     number: 5,
-    //     img: './media/./5.jpeg',
-    //     description:`A change of mentality and taking responsibility. Growing up.`,
-    //   },
-    //   {
-    //     // IMG SOURCE: 
-    //     number: 6,
-    //     img: './media/./6.jpeg',
-    //     description:`Open communication and raw honesty is the key to a healthy relationship.`,
-    //   },
+      {
+        // IMG SOURCE: https://i.pinimg.com/736x/10/eb/94/10eb945230265c4db95c8243df4bfd3f.jpg
+        number: 4,
+        img: './media/./4.jpeg',
+        description:`Dedication - Focus - Confidence. What may have seemed impossible is becoming a reality.`,
+      },
+      {
+        // IMG SOURCE: https://cdn.shopify.com/s/files/1/0303/1279/2203/products/H76a08f3f007c4c7ba34bbbc10c1958e2W_1024x1024@2x.jpg?v=1587300368
+        number: 5,
+        img: './media/./5.jpeg',
+        description:`A change of mentality and taking responsibility. Growing up.`,
+      },
+      {
+        // IMG SOURCE: https://imgur.com/gallery/hFyGPNU
+        number: 6,
+        img: './media/./6.jpeg',
+        description:`Open communication and raw honesty is the key to a healthy relationship.`,
+      },
     //   {
     //     // IMG SOURCE: 
     //     number: 7,
