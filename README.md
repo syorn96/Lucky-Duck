@@ -2,6 +2,7 @@
 ### Test your luck with an original Lucky Duck Tarot Deck for a chance to receive a fortune!
 
 #### Game Idea
+### Link to game: https://syorn96.github.io/Lucky-Duck/
 Players: Two.
 
 Game modes: Player 1 vs Player 2, or Player 1 vs. Computer.
