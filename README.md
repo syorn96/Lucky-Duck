@@ -1,5 +1,5 @@
 # Lucky-Duck
-### Test your luck with an original Lucky Duck Tarot Deck and a chance to receive a fortune!
+### Test your luck with an original Lucky Duck Tarot Deck for a chance to receive a fortune!
 
 #### Game Idea
 Players: Two.
@@ -31,7 +31,10 @@ There will be 8 (Moody memes) Water Duck cards: 6 Water Ducks + 1 Water Duck Kin
 There will be 8 (Witty memes) Air Duck cards: 6 Air Ducks+ 1 Air Duck King + 1 Air Duck Queen.
 
 There will be 8 (Cute memes) Earth Duck cards: 6 Earth Ducks + 1 Earth Duck King + 1 Earth Duck Queen.
-*** All the cards were made using the PicsArt App. I do not own these pictures. Source links can be found in my script.js file. ***
+
+*** All the cards were made using the PicsArt App. I do not own these pictures. Source links can be found in my array.js file. ***
+*** I do not own any audio or media files. Source links can be found in my index.html file. ***
+
 ### Tech Stack
 * DOM Manipulation. 
 * Arrays to retreive Duck Tarot Card, description, and number value.
