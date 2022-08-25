@@ -43,24 +43,24 @@ let luckyDuckDeckArray = [
         img: './media/./6.jpeg',
         description:`Open communication and raw honesty is the key to a healthy relationship.`,
       },
-    //   {
-    //     // IMG SOURCE: 
-    //     number: 7,
-    //     img: './media/./7.jpeg',
-    //     description:`New or old relationships. They're meant to impart knowledge and different perspectives.`,
-    //   },
-    //   {
-    //     // IMG SOURCE: 
-    //     number: 8,
-    //     img: './media/./8.jpeg',
-    //     description:`A time of introspection, education, or practicing patience.`,
-    //   },
-    //   {
-    //     // IMG SOURCE: 
-    //     number: 9,
-    //     img: './media/./9.jpeg',
-    //     description:`You must close one door to open another. Let go of what is no longer serving you.`,
-    //   },
+      {
+        // IMG SOURCE: https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F24%2F2022%2F04%2F04%2FGettyImages-1303386917-2000.jpg&q=60
+        number: 7,
+        img: './media/./7.jpeg',
+        description:`New or old relationships. They're meant to impart knowledge and different perspectives.`,
+      },
+      {
+        // IMG SOURCE: https://pixabay.com/photos/couch-sofa-duck-fun-stuffed-animal-788533/
+        number: 8,
+        img: './media/./8.jpeg',
+        description:`A time of introspection, education, or practicing patience.`,
+      },
+      {
+        // IMG SOURCE: https://imgflip.com/memetemplate/275732129/Here-Lies-Spongebob-Tombstone
+        number: 9,
+        img: './media/./9.jpeg',
+        description:`You must close one door to open another. Let go of what is no longer serving you.`,
+      },
     //   {
     //     // IMG SOURCE: 
     //     number: 10,
@@ -562,7 +562,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-    // loop to create imgs of original deck in div so players can view artwork.
+    // view deck gallery for players to view card artworks.
     viewdeck.addEventListener('click', ()=> {
         deckgallery.setAttribute('style', `display: block;`)
         gamescreen1.setAttribute('style', `display: none;`)
@@ -1338,7 +1338,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //on click, set the popupbox view to a random card from the tarot deck
     // acts like a deck of cards for players to play with
     luckyducktarotdeck.addEventListener('click', ()=> {
-        x = Math.floor(Math.random() * 21)
+        x = Math.floor(Math.random() * 44)
         popupboximage.src =`${luckyDuckDeckArray[x].img}`
         popupbox.setAttribute('style', `display: block`)
     })
