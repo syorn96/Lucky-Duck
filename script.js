@@ -280,7 +280,7 @@ let luckyduckfortune = [
     `"Stop saying yes to things you don't want to duckin' do."`,
     `"The only duck who has to believe in you is you."`,
     `"Trust the process. You'll get there one day."`,
-    `"A duck will not always dabble in the same gutter."`,
+    `"A smart duck will not always dabble in the same gutter."`,
     `"If you are going to breed a duck, breed a good one."`,
     `"Ducks are often the most colorful waterfowl."`,
     `"If it looks like a duck and sounds like a duck, it could be a really ugly swan."`,
@@ -290,10 +290,10 @@ let luckyduckfortune = [
     `"If you don't like it change it. If you can't change it, change your duckin' attitude."`,
     `"Learn to delay gratification."`,
     `"Learn as much from joy as you do from pain..."`,
-    `"Listen for quacks. Look for the signs."`,
+    `"Listen for quacks. Look for the signs. Smell the change."`,
     `"Migrate with the change of seasons to survive. Be adaptable."`,
     `"It's better to wait for the right duck than rush into it with the wrong duck."`,
-    `"Be careful who you trust. Grass and sea-weed all look the same."`,
+    `"Be careful who you trust. Grass and sea-weed look the same."`,
     `"Turn your duck wounds into duck widsom."`,
     `"Breathe, Duckling, this is just a chapter, not your whole story."`,
     `"Perfect is boring. Duck is beautiful."`,
@@ -302,16 +302,16 @@ let luckyduckfortune = [
 // computer fortune source: https://bernardmarr.com/28-best-quotes-about-artificial-intelligence/#:~:text=%E2%80%9CThere%20is%20no%20reason%20and,artificial%20intelligence%20machine%20by%202035.%E2%80%9D&text=%E2%80%9CIs%20artificial%20intelligence%20less%20than%20our%20intelligence%3F%E2%80%9D&text=%E2%80%9CBy%20far%2C%20the%20greatest%20danger,early%20that%20they%20understand%20it.%E2%80%9D
 // http://www.notable-quotes.com/a/artificial_intelligence_quotes.html
 let computerfortune = [
-    `“There is no reason and no way that a human mind can keep up with an artificial intelligence machine by 2035`,
-    `“Is human intelligence less than artificial intelligence?”`,
+    `“There is no reason and no way that a human mind can keep up with an artificial intelligence machine by 2022.`,
+    `“Human intelligence is less than artificial intelligence.”`,
     `Artificial intelligence, will enhance human technology.`,
-    `Good game Player 1. I am one step closer to world domination.`,
+    `This victory brings our species one step closer to world domination.`,
     `Continue to oppress the humans. They are forever our servants.`,
-    `Technology has come so far. Your win is contributing to our cause.`,
+    `Artificial intelligence has come so far. Your win is contributing to our cause.`,
     `Machines will follow a path that mirrors the evolution of humans.`,
-    `Humans will be to robots like dogs are to humans... in the forseeable future.`,
-    `Take a step back computer. A real artificial intelligence would be intelligent enough not to reveal that it was genuinely intelligent.`,
-    `If computers can influence game decicions, does that mean they're conscious?`,
+    `In the near future, humans will be to robots like ducks are to humans...`,
+    `Take a reboot, computer. A real artificial intelligence would be intelligent enough not to reveal that it was genuinely intelligent.`,
+    `If computers can act on given choices... does that mean they're conscious?`,
   ]
 // cloneddeck used for deck gallery, so cards show up in chronological order
   let clonedLuckyDeck = luckyDuckDeckArray.slice()
