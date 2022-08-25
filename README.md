@@ -20,7 +20,7 @@ Both Players will each have 3 turns; one for their past card, present card, and 
 During each turn, the current player will decide if they want to switch their card with a random card from the deck, or keep the card they currently have.
 Once a turn has passed the player can no longer trade their card and the turn's card will be revealed.
 
-The deck will consists of 44 cards. Each card will be a Duck meme with it's type, number, illustration and a description.
+The deck will consists of 44 cards. Each card will be a Duck meme with it's type, number, illustration and a description. 
 
 There will be 12 Major Arcana cards representing a Duck’s life.
 
@@ -31,7 +31,7 @@ There will be 8 (Moody memes) Water Duck cards: 6 Water Ducks + 1 Water Duck Kin
 There will be 8 (Witty memes) Air Duck cards: 6 Air Ducks+ 1 Air Duck King + 1 Air Duck Queen.
 
 There will be 8 (Cute memes) Earth Duck cards: 6 Earth Ducks + 1 Earth Duck King + 1 Earth Duck Queen.
-
+*** All the cards were made using the PicsArt App. I do not own these pictures. Source links can be found in my script.js file. ***
 ### Tech Stack
 * DOM Manipulation. 
 * Arrays to retreive Duck Tarot Card, description, and number value.

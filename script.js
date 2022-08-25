@@ -109,16 +109,18 @@ let luckyDuckDeckArray = [
       img: './media/./17.jpg',
       description:'Conflicts between other ducks may arise. Reconsider before the consequences are dire.',
     },
-    // {
-    //     number: 18,
-    //     img: './media/./18.jpeg',
-    //     description:'',
-    //   },
-    //   {
-    //     number: 19,
-    //     img: './media/./19.jpeg',
-    //     description:'',
-    //   },
+    {
+      // IMG SOURCE: https://www.meme-arsenal.com/en/create/template/2467321
+        number: 18,
+        img: './media/./18.jpeg',
+        description:'Destruction - Charisma - Power - Protection. This King uses his strength to destroy the unnecessary.',
+      },
+      {
+        // IMG SOURCE: https://www.pinterest.com/pin/cuteness--460915343115985884/
+        number: 19,
+        img: './media/./19.jpeg',
+        description:'This passionate Empress is a force to reckon with. Her beauty and power attracts those around her.',
+      },
       {
         // IMG SOURCE: https://www.pinterest.com/pin/670473463268707974/
         number: 20,
@@ -155,15 +157,16 @@ let luckyDuckDeckArray = [
         img: './media/./25.jpeg',
         description:`A happy duck is the best kind of duck. Other's may appreciate your light-hearted presence and loud quacks.`,
       },
-    //   {
-    //     number: 26,
-    //     img: './media/./26.jpeg',
-    //     description:``,
-    //   },
+      {
+        // IMG SOURCE:
+        number: 26,
+        img: './media/./26.jpeg',
+        description:`A master of analyzing situations and acts accordingly. This King values honesty over manipulation.`,
+      },
     //   {
     //     number: 27,
     //     img: './media/./27.jpeg',
-    //     description:``,
+    //     description:`Patience and understanding. She is a loving Queen that uses empathy to inspire her under-ducklings.`,
     //   },
       {
         // IMG SOURCE: https://pixabay.com/photos/duck-mallard-drake-bird-water-bird-3319107/
@@ -205,12 +208,12 @@ let luckyDuckDeckArray = [
     //   {
     //     number: 34,
     //     img: './media/./34.jpeg',
-    //     description:``
+    //     description:`A respectable King that is well versed in language, sciences and philosophy. He travels to expand his wings and quench his thirst for knowledge.`
     //   },
     //   {
     //     number: 35,
     //     img: './media/./35.jpeg',
-    //     description:``
+    //     description:`Freedom - Politics - Education. This dignified Queen values equality and lives up to her ideals.`
     //   },
       {
         // IMG SOURCE: https://wallpapercave.com/w/wp3364096
@@ -252,13 +255,13 @@ let luckyDuckDeckArray = [
     //     // IMG SOURCE: 
     //     number: 42,
     //     img: './media/./42.jpeg',
-    //     description:``
+    //     description:`A charming Emperor of wealth, networking, and business. His playful nature is a entertaining to be around.`
     //   },
     //   {
     //     // IMG SOURCE: 
     //     number: 43,
     //     img: './media/./43.jpeg',
-    //     description:``
+    //     description:`A self-made Queen, who fancies only the best that life can offer. She manifests her dreams into reality.`
     //   },
   ]
 
@@ -397,7 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ]
 
-    //variables for card selection + set cards to no click function
+    //variables for card selection + set cards to cards to unable to click
     let playerpastcard = document.querySelector('#playercard1')
     playerpastcard.style.pointerEvents = 'none';
     let playerpastcardinfo = document.querySelector('#PlayerCard1info')
@@ -408,7 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
     playerfuturecard.style.pointerEvents = 'none';
     let playerfuturecardinfo = document.querySelector('#PlayerCard3info')
 
-    //variables for player 2/computer card selection + set cards to no click function
+    //variables for player2/computer card selection + set cards to unable to click
     // *** originally game was meant to be played vs computer, computer and player 2 share the same variables ***
     let computerpastcard = document.querySelector('#computercard1')
     computerpastcard.style.pointerEvents = 'none';
@@ -543,7 +546,6 @@ document.addEventListener('DOMContentLoaded', () => {
             howtoplaybtn2.style.pointerEvents = 'none'
             return2start.style.pointerEvents = 'none'
         }
-        // popupbox.setAttribute('style', `display: block;`)
     })
 
     // vs computer settings
@@ -575,7 +577,7 @@ document.addEventListener('DOMContentLoaded', () => {
         viewCardDescription.innerText = 'Lucky Duck Tarot Card Design'
     })
     
-    // return btn to actual main menu
+    // return btn to return main menu from view deck gallery
     escapeDeckGallery.addEventListener('click', ()=> {
         deckgallery.setAttribute('style', `display: none;`)
         viewDeckGallery.setAttribute('style', `display: none;`)
@@ -601,7 +603,7 @@ document.addEventListener('DOMContentLoaded', () => {
         computerpastcardinfo.innerText = ""
         computerpresentcardinfo.innerText = ""
         computerfuturecardinfo.innerText = ""
-        // on restart reset the ability to view cards
+        // on restart reset the ability to click/view cards
         playerpastcard.style.pointerEvents = 'none';
         playerpresentcard.style.pointerEvents = 'none';
         playerfuturecard.style.pointerEvents = 'none';
@@ -609,19 +611,16 @@ document.addEventListener('DOMContentLoaded', () => {
         computerpresentcard.style.pointerEvents = 'none';
         computerfuturecard.style.pointerEvents = 'none';
 
-        // on restart set the player1 and player 2 TotalLuck to 0
+        // on restart restart move# and the player1/player 2 TotalLuck to 0
         decideTurn.innerText = `Player 1's`
-        decideTurn.style.color = `rgb(255, 255, 255)`
-        decideTurn2.style.color = `rgb(255, 255, 255)`
         P1TotalLuck = 0
         P2TotalLuck = 0
         moves = 0
-        // if (moves < 0) {
-        //     moves = 0
-        // }
         decideTurn2.innerText = ''
         movedisplay.innerText = 'Past';
         placeholdercard.innerText = "Card"
+
+        // on restart shuffle the deck, and fortunes
         shuffle(luckyDuckDeckArray)
         shuffle(luckyduckfortune)
         shuffle(computerfortune)
@@ -632,7 +631,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startgamebtn.style.pointerEvents = 'auto';
         vscomputerbtn.style.pointerEvents = 'auto';
     })
-    // How to play on screen 1
+    // How to playbtn on screen 1
     howtoplaybtn.addEventListener('click', ()=> {
         gamescreen1.setAttribute('style', `display: none`)
         howtoplayscreen.setAttribute('style', `display: block`)
@@ -685,7 +684,7 @@ document.addEventListener('DOMContentLoaded', () => {
         decideTurn2.style.color = RandomRGB()
     })
 
-    // return button for the PopUpcard viewer
+    // return button for the PopUpCard viewer
     returnbtn.addEventListener(('click'), ()=> {
         popupbox.setAttribute('style', `display: none`)
         howtoplaybtn2.style.pointerEvents = 'auto'
@@ -697,7 +696,8 @@ document.addEventListener('DOMContentLoaded', () => {
     keepbtn.addEventListener(('click'), ()=> {
         moves +=1
         let c = computermode();
-// computer will choose either shuffle or keep after player 1's 1st turn.
+
+        // computer will choose either shuffle or keep after player 1's 1st turn.
         if (moves == 1 && trackcomputermode == 1) {
             playerpastcard.src = `${luckyDuckDeckArray[0].img}`
             popupboximage.src=`${luckyDuckDeckArray[0].img}`
@@ -705,7 +705,6 @@ document.addEventListener('DOMContentLoaded', () => {
             playerpastcardinfo.innerText = luckyDuckDeckArray[0].description
             decideTurn.innerText = `Computer's`
             decideTurn.style.color = RandomRGB()
-            // popupbox.setAttribute('style', `display: block`)
             movedisplay.innerText = 'Past'
             P1PastCard.src = `${luckyDuckDeckArray[0].img}`
             P1PastValue.innerText = `${luckyDuckDeckArray[0].number}`
@@ -752,47 +751,46 @@ document.addEventListener('DOMContentLoaded', () => {
             
         } else if (moves == 1) {
           playerpastcard.src = `${luckyDuckDeckArray[0].img}`
-            popupboximage.src=`${luckyDuckDeckArray[0].img}`
-            playerpastcard.style.pointerEvents = 'auto';
-            playerpastcardinfo.innerText = luckyDuckDeckArray[0].description
-            decideTurn.innerText = `Player 2's`
-            decideTurn.style.color = RandomRGB()
-            popupbox.setAttribute('style', `display: block`)
-            movedisplay.innerText = 'Past'
-            P1PastCard.src = `${luckyDuckDeckArray[0].img}`
-            P1PastValue.innerText = `${luckyDuckDeckArray[0].number}`
-            P1PastResult =`${luckyDuckDeckArray[0].number}`
-            P1TotalLuck -= luckyDuckDeckArray[0].number
+          popupboximage.src=`${luckyDuckDeckArray[0].img}`
+          playerpastcard.style.pointerEvents = 'auto';
+          playerpastcardinfo.innerText = luckyDuckDeckArray[0].description
+          decideTurn.innerText = `Player 2's`
+          decideTurn.style.color = RandomRGB()
+          popupbox.setAttribute('style', `display: block`)
+          movedisplay.innerText = 'Past'
+          P1PastCard.src = `${luckyDuckDeckArray[0].img}`
+          P1PastValue.innerText = `${luckyDuckDeckArray[0].number}`
+          P1PastResult =`${luckyDuckDeckArray[0].number}`
+          P1TotalLuck -= luckyDuckDeckArray[0].number
         } else if (moves == 2) {
-            computerpastcard.src = `${luckyDuckDeckArray[1].img}`
-            popupboximage.src=`${luckyDuckDeckArray[1].img}`
-            computerpastcard.style.pointerEvents = 'auto';
-            computerpastcardinfo.innerText = luckyDuckDeckArray[1].description
-            decideTurn.innerText = `Player 1's`
-            decideTurn.style.color = RandomRGB()
-            popupbox.setAttribute('style', `display: block`)
-            movedisplay.innerText = 'Present'
-            P2PastCard.src = `${luckyDuckDeckArray[1].img}`
-            P2PastValue.innerText = `${luckyDuckDeckArray[1].number}`
-            P2PastResult =`${luckyDuckDeckArray[1].number}`
-            P2TotalLuck -= luckyDuckDeckArray[1].number
+          computerpastcard.src = `${luckyDuckDeckArray[1].img}`
+          popupboximage.src=`${luckyDuckDeckArray[1].img}`
+          computerpastcard.style.pointerEvents = 'auto';
+          computerpastcardinfo.innerText = luckyDuckDeckArray[1].description
+          decideTurn.innerText = `Player 1's`
+          decideTurn.style.color = RandomRGB()
+          popupbox.setAttribute('style', `display: block`)
+          movedisplay.innerText = 'Present'
+          P2PastCard.src = `${luckyDuckDeckArray[1].img}`
+          P2PastValue.innerText = `${luckyDuckDeckArray[1].number}`
+          P2PastResult =`${luckyDuckDeckArray[1].number}`
+          P2TotalLuck -= luckyDuckDeckArray[1].number
 
             // computer will choose either shuffle or keep after player 1's 2nd turn.
         } else if (moves == 3 && trackcomputermode == 1) {
-          playerpresentcard.src = `${luckyDuckDeckArray[2].img}`
-          popupboximage.src=`${luckyDuckDeckArray[2].img}`
-          playerpresentcard.style.pointerEvents = 'auto';
-          playerpresentcardinfo.innerText = luckyDuckDeckArray[2].description
-          decideTurn.innerText = `Computer's`
-          decideTurn.style.color = RandomRGB()
-          // popupbox.setAttribute('style', `display: block`)
-          movedisplay.innerText = 'Present'
-          P1PresentCard.src = `${luckyDuckDeckArray[2].img}`
-          P1PresentValue.innerText = `${luckyDuckDeckArray[2].number}`
-          P1PresentResult =`${luckyDuckDeckArray[2].number}`
-          P1TotalLuck += luckyDuckDeckArray[2].number
-          keepbtn.style.pointerEvents = 'none'
-          shufflebtn.style.pointerEvents = 'none'
+            playerpresentcard.src = `${luckyDuckDeckArray[2].img}`
+            popupboximage.src=`${luckyDuckDeckArray[2].img}`
+            playerpresentcard.style.pointerEvents = 'auto';
+            playerpresentcardinfo.innerText = luckyDuckDeckArray[2].description
+            decideTurn.innerText = `Computer's`
+            decideTurn.style.color = RandomRGB()
+            movedisplay.innerText = 'Present'
+            P1PresentCard.src = `${luckyDuckDeckArray[2].img}`
+            P1PresentValue.innerText = `${luckyDuckDeckArray[2].number}`
+            P1PresentResult =`${luckyDuckDeckArray[2].number}`
+            P1TotalLuck += luckyDuckDeckArray[2].number
+            keepbtn.style.pointerEvents = 'none'
+            shufflebtn.style.pointerEvents = 'none'
           if (c == 1) {
             let computerShuffle1 = setInterval(function() {
               decideTurn.innerText = `Computer chose to shuffle card.`;
@@ -865,7 +863,6 @@ document.addEventListener('DOMContentLoaded', () => {
           playerfuturecardinfo.innerText = luckyDuckDeckArray[4].description
           decideTurn.innerText = `Computer's`
           decideTurn.style.color = RandomRGB()
-          // popupbox.setAttribute('style', `display: block`)
           movedisplay.innerText = 'Future'
           P1FutureCard.src = `${luckyDuckDeckArray[4].img}`
           P1FutureValue.innerText = `${luckyDuckDeckArray[4].number}`
@@ -893,7 +890,6 @@ document.addEventListener('DOMContentLoaded', () => {
               let gameover = setInterval(function() {
                 P2TotalValue.innerText = P2TotalLuck
                 P1TotalValue.innerText = P1TotalLuck
-                
                 decideTurn.innerText = `Game Over`;
                 decideTurn.style.color = RandomRGB();
                 decideTurn2.innerText = 'Ducks'
@@ -925,15 +921,10 @@ document.addEventListener('DOMContentLoaded', () => {
               keepbtn.style.pointerEvents = 'none'
               shufflebtn.style.pointerEvents = 'none'
               moves += 1
-              // if (P1TotalLuck > P2TotalLuck && trackcomputermode == 1) {
-              //     GameResults.innerText = "Player 1 is a Luckier Duck!"
-              //   } else if (P1TotalLuck < P2TotalLuck && trackcomputermode == 1) {
-              //     GameResults.innerText = "Computer is a Luckier Duck!"
-              //   }
+            
               let gameover = setInterval(function() {
                 P2TotalValue.innerText = P2TotalLuck
                 P1TotalValue.innerText = P1TotalLuck
-                
                 decideTurn.innerText = `Game Over`;
                 decideTurn.style.color = RandomRGB();
                 decideTurn2.innerText = 'Ducks'
@@ -983,15 +974,6 @@ document.addEventListener('DOMContentLoaded', () => {
             P2TotalValue.innerText = P2TotalLuck
             P1TotalValue.innerText = P1TotalLuck
 
-            // condition for win/loss/draw
-            // if (P1TotalLuck > P2TotalLuck) {
-            //     GameResults.innerText = "Player 1 is a Luckier Duck!"
-            // }else if (P1TotalLuck < P2TotalLuck) {
-            //     GameResults.innerText = "Player 2 is a Luckier Duck!"
-            // } else if (P1TotalLuck == P2TotalLuck){
-            //     GameResults.innerText = `It's a Draw. Must be fate! Play Again!`
-            //     fortunebtn.setAttribute('style', 'display: none')
-            // }
             // only display game results, get rid of shuffle and keep btn
             popupbox.setAttribute('style', 'display: block')
             resultsbtn.setAttribute('style', `display: inline-block`)
@@ -1013,7 +995,6 @@ document.addEventListener('DOMContentLoaded', () => {
           playerpastcardinfo.innerText = luckyDuckDeckArray[6].description
           decideTurn.innerText = `Computer's`
           decideTurn.style.color = RandomRGB()
-          // popupbox.setAttribute('style', `display: block`)
           movedisplay.innerText = 'Past'
           P1PastCard.src = `${luckyDuckDeckArray[6].img}`
           P1PastValue.innerText = `${luckyDuckDeckArray[6].number}`
@@ -1085,6 +1066,7 @@ document.addEventListener('DOMContentLoaded', () => {
             P2PastValue.innerText = `${luckyDuckDeckArray[7].number}`
             P2PastResult =`${luckyDuckDeckArray[7].number}`
             P2TotalLuck -= luckyDuckDeckArray[7].number
+
             // computer will choose either shuffle or keep after player 1's 2rd turn.
         } else if (moves == 3 && trackcomputermode == 1) {
           playerpresentcard.src = `${luckyDuckDeckArray[8].img}`
@@ -1093,7 +1075,6 @@ document.addEventListener('DOMContentLoaded', () => {
           playerpresentcardinfo.innerText = luckyDuckDeckArray[8].description
           decideTurn.innerText = `Computer's`
           decideTurn.style.color = RandomRGB()
-          // popupbox.setAttribute('style', `display: block`)
           movedisplay.innerText = 'Present'
           P1PresentCard.src = `${luckyDuckDeckArray[8].img}`
           P1PresentValue.innerText = `${luckyDuckDeckArray[8].number}`
@@ -1164,7 +1145,8 @@ document.addEventListener('DOMContentLoaded', () => {
             P2PresentValue.innerText = `${luckyDuckDeckArray[9].number}`
             P2PresentResult =`${luckyDuckDeckArray[9].number}`
             P2TotalLuck +=luckyDuckDeckArray[9].number
-            // computer will choose either shuffle or keep after playe 1's 3rd turn.
+
+            // computer will choose either shuffle or keep after player 1's 3rd turn.
         } else if (moves == 5 && trackcomputermode == 1) {
           playerfuturecard.src = `${luckyDuckDeckArray[10].img}`
           popupboximage.src=`${luckyDuckDeckArray[10].img}`
@@ -1172,7 +1154,6 @@ document.addEventListener('DOMContentLoaded', () => {
           playerfuturecardinfo.innerText = luckyDuckDeckArray[10].description
           decideTurn.innerText = `Computer's`
           decideTurn.style.color = RandomRGB()
-          // popupbox.setAttribute('style', `display: block`)
           movedisplay.innerText = 'Future'
           P1FutureCard.src = `${luckyDuckDeckArray[10].img}`
           P1FutureValue.innerText = `${luckyDuckDeckArray[10].number}`
@@ -1232,11 +1213,7 @@ document.addEventListener('DOMContentLoaded', () => {
               keepbtn.style.pointerEvents = 'none'
               shufflebtn.style.pointerEvents = 'none'
               moves += 1
-              // if (P1TotalLuck > P2TotalLuck && trackcomputermode == 1) {
-              //     GameResults.innerText = "Player 1 is a Luckier Duck!"
-              //   } else if (P1TotalLuck < P2TotalLuck && trackcomputermode == 1) {
-              //     GameResults.innerText = "Computer is a Luckier Duck!"
-              //   }
+      
               let gameover = setInterval(function() {
                 P2TotalValue.innerText = P2TotalLuck
                 P1TotalValue.innerText = P1TotalLuck
@@ -1292,15 +1269,6 @@ document.addEventListener('DOMContentLoaded', () => {
             P2TotalValue.innerText = P2TotalLuck
             P1TotalValue.innerText = P1TotalLuck
 
-            // win conditions
-            // if (P1TotalLuck > P2TotalLuck) {
-            //     GameResults.innerText = "Player 1 is a Luckier Duck!"
-            // } else if (P1TotalLuck < P2TotalLuck) {
-            //     GameResults.innerText = "Player 2 is a Luckier Duck!"
-            // } else if (P1TotalLuck == P2TotalLuck){
-            //     GameResults.innerText = `It's a Draw. Must be fate! Play Again!`
-            //     fortunebtn.setAttribute('style', 'display: none')
-            // }
             popupbox.setAttribute('style', 'display: block')
             resultsbtn.setAttribute('style', `display: inline-block`)
 
@@ -1316,7 +1284,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gamescreen3.setAttribute('style', `display: block`)
         postgameview.setAttribute('style', `display: block`)
 
-        // conditional if vscomputer mode was played
+        // when gameresultsbtn is clicked, display winner on results screen 3
         if (P1TotalLuck > P2TotalLuck && trackcomputermode == 1) {
             GameResults.innerText = "Player 1 is a Luckier Duck!"
           } else if (P1TotalLuck > P2TotalLuck) {
