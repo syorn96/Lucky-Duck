@@ -698,7 +698,7 @@ document.addEventListener('DOMContentLoaded', () => {
             playerpastcardinfo.innerText = luckyDuckDeckArray[0].description
             decideTurn.innerText = `Computer's`
             decideTurn.style.color = RandomRGB()
-            popupbox.setAttribute('style', `display: block`)
+            // popupbox.setAttribute('style', `display: block`)
             movedisplay.innerText = 'Past'
             P1PastCard.src = `${luckyDuckDeckArray[0].img}`
             P1PastValue.innerText = `${luckyDuckDeckArray[0].number}`
@@ -723,7 +723,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 shufflebtn.style.pointerEvents = 'auto'
                 moves += 1
                 clearInterval(computerShuffle1)
-                }, 5000)
+                }, 2000)
             } else if (c == 2) {
               let computerKeep1 = setInterval(function() {
                 decideTurn.innerText = `Computer chose to keep card.`;
@@ -740,7 +740,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 shufflebtn.style.pointerEvents = 'auto'
                 moves += 1
                 clearInterval(computerKeep1)
-                }, 5000)
+                }, 2000)
             }
             
         } else if (moves == 1) {
@@ -778,7 +778,7 @@ document.addEventListener('DOMContentLoaded', () => {
           playerpresentcardinfo.innerText = luckyDuckDeckArray[2].description
           decideTurn.innerText = `Computer's`
           decideTurn.style.color = RandomRGB()
-          popupbox.setAttribute('style', `display: block`)
+          // popupbox.setAttribute('style', `display: block`)
           movedisplay.innerText = 'Present'
           P1PresentCard.src = `${luckyDuckDeckArray[2].img}`
           P1PresentValue.innerText = `${luckyDuckDeckArray[2].number}`
@@ -802,7 +802,7 @@ document.addEventListener('DOMContentLoaded', () => {
               shufflebtn.style.pointerEvents = 'auto'
               moves += 1
               clearInterval(computerShuffle1)
-              }, 5000)
+              }, 2000)
           } else if (c == 2) {
             let computerKeep1 = setInterval(function(){
               decideTurn.innerText = `Computer chose to keep card.`
@@ -819,7 +819,7 @@ document.addEventListener('DOMContentLoaded', () => {
               shufflebtn.style.pointerEvents = 'auto'
               moves += 1
               clearInterval(computerKeep1)
-              }, 5000)
+              }, 2000)
           }
           
       } else if (moves == 3) {
@@ -858,7 +858,7 @@ document.addEventListener('DOMContentLoaded', () => {
           playerfuturecardinfo.innerText = luckyDuckDeckArray[4].description
           decideTurn.innerText = `Computer's`
           decideTurn.style.color = RandomRGB()
-          popupbox.setAttribute('style', `display: block`)
+          // popupbox.setAttribute('style', `display: block`)
           movedisplay.innerText = 'Future'
           P1FutureCard.src = `${luckyDuckDeckArray[4].img}`
           P1FutureValue.innerText = `${luckyDuckDeckArray[4].number}`
@@ -897,9 +897,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 shufflebtn.setAttribute('style', `display: none`)
                 keepbtn.setAttribute('style', `display: none`)
                 clearInterval(gameover)
-              },5000)
+              },2000)
               clearInterval(computerShuffle1)
-              }, 5000)
+              }, 2000)
           } else if (c == 2) {
             let computerKeep1 = setInterval(function(){
               decideTurn.innerText = `Computer chose to keep card.`
@@ -937,9 +937,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 shufflebtn.setAttribute('style', `display: none`)
                 keepbtn.setAttribute('style', `display: none`)
                 clearInterval(gameover)
-              },5000)
+              },2000)
               clearInterval(computerKeep1)
-              }, 5000) 
+              }, 2000) 
           }
           
       } else if (moves == 5) {
@@ -1006,7 +1006,7 @@ document.addEventListener('DOMContentLoaded', () => {
           playerpastcardinfo.innerText = luckyDuckDeckArray[6].description
           decideTurn.innerText = `Computer's`
           decideTurn.style.color = RandomRGB()
-          popupbox.setAttribute('style', `display: block`)
+          // popupbox.setAttribute('style', `display: block`)
           movedisplay.innerText = 'Past'
           P1PastCard.src = `${luckyDuckDeckArray[6].img}`
           P1PastValue.innerText = `${luckyDuckDeckArray[6].number}`
@@ -1031,7 +1031,7 @@ document.addEventListener('DOMContentLoaded', () => {
               shufflebtn.style.pointerEvents = 'auto'
               moves += 1
               clearInterval(computerShuffle1)
-              }, 5000)
+              }, 2000)
           } else if (c == 2) {
             let computerKeep1 = setInterval(function() {
               decideTurn.innerText = `Computer chose to keep card.`;
@@ -1048,7 +1048,7 @@ document.addEventListener('DOMContentLoaded', () => {
               shufflebtn.style.pointerEvents = 'auto'
               moves += 1
               clearInterval(computerKeep1)
-              }, 5000)
+              }, 2000)
           }
           
       } else if (moves == 1) {
@@ -1086,7 +1086,7 @@ document.addEventListener('DOMContentLoaded', () => {
           playerpresentcardinfo.innerText = luckyDuckDeckArray[8].description
           decideTurn.innerText = `Computer's`
           decideTurn.style.color = RandomRGB()
-          popupbox.setAttribute('style', `display: block`)
+          // popupbox.setAttribute('style', `display: block`)
           movedisplay.innerText = 'Present'
           P1PresentCard.src = `${luckyDuckDeckArray[8].img}`
           P1PresentValue.innerText = `${luckyDuckDeckArray[8].number}`
@@ -1110,7 +1110,7 @@ document.addEventListener('DOMContentLoaded', () => {
               shufflebtn.style.pointerEvents = 'auto'
               moves += 1
               clearInterval(computerShuffle1)
-              }, 5000)
+              }, 2000)
           } else if (c == 2) {
             let computerKeep1 = setInterval(function(){
               decideTurn.innerText = `Computer chose to keep card.`
@@ -1127,7 +1127,7 @@ document.addEventListener('DOMContentLoaded', () => {
               shufflebtn.style.pointerEvents = 'auto'
               moves += 1
               clearInterval(computerKeep1)
-              }, 5000)
+              }, 2000)
           }
           
       } else if (moves == 3) {
@@ -1165,7 +1165,7 @@ document.addEventListener('DOMContentLoaded', () => {
           playerfuturecardinfo.innerText = luckyDuckDeckArray[10].description
           decideTurn.innerText = `Computer's`
           decideTurn.style.color = RandomRGB()
-          popupbox.setAttribute('style', `display: block`)
+          // popupbox.setAttribute('style', `display: block`)
           movedisplay.innerText = 'Future'
           P1FutureCard.src = `${luckyDuckDeckArray[10].img}`
           P1FutureValue.innerText = `${luckyDuckDeckArray[10].number}`
@@ -1204,9 +1204,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 shufflebtn.setAttribute('style', `display: none`)
                 keepbtn.setAttribute('style', `display: none`)
                 clearInterval(gameover)
-              },5000)
+              },2000)
               clearInterval(computerShuffle1)
-              }, 5000)
+              }, 2000)
           } else if (c == 2) {
             let computerKeep1 = setInterval(function(){
               decideTurn.innerText = `Computer chose to keep card.`
@@ -1244,9 +1244,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 shufflebtn.setAttribute('style', `display: none`)
                 keepbtn.setAttribute('style', `display: none`)
                 clearInterval(gameover)
-              },5000)
+              },2000)
               clearInterval(computerKeep1)
-              }, 5000) 
+              }, 2000) 
           }
           
       } else if (moves == 5) {
