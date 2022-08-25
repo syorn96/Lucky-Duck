@@ -61,18 +61,18 @@ let luckyDuckDeckArray = [
         img: './media/./9.jpeg',
         description:`You must close one door to open another. Let go of what is no longer serving you.`,
       },
-    //   {
-    //     // IMG SOURCE: 
-    //     number: 10,
-    //     img: './media/./10.jpeg',
-    //     description:`You are exactly where you're meant to be. Reflect on the past to grasp the reachable future.`,
-    //   },
-    //   {
-    //     // IMG SOURCE: 
-    //     number: 11,
-    //     img: './media/./11.jpeg',
-    //     description:`The end is just the beginning. Take what you've learned and embark on a new journey.`,
-    //   },
+      {
+        // IMG SOURCE: https://www.gettyimages.com.au/photos/white-goose
+        number: 10,
+        img: './media/./10.jpeg',
+        description:`You are exactly where you're meant to be. Reflect on the past to grasp the reachable future.`,
+      },
+      {
+        // IMG SOURCE: https://poultryscience.org/get/files/image/galleries/White-duck-on-white.jpg
+        number: 11,
+        img: './media/./11.jpeg',
+        description:`The end is just the beginning. Take what you've learned and embark on a new journey.`,
+      },
     {
         // IMG SOURCE: https://twitter.com/zruedella/status/1313685121086689282
       number: 12,
@@ -540,6 +540,8 @@ document.addEventListener('DOMContentLoaded', () => {
             shuffle(computerfortune)
             popupboximage.src=`${luckyDuckDeckCardBack[0].img}`
             popupbox.setAttribute('style', `display: block`)
+            howtoplaybtn2.style.pointerEvents = 'none'
+            return2start.style.pointerEvents = 'none'
         }
         // popupbox.setAttribute('style', `display: block;`)
     })
@@ -559,6 +561,8 @@ document.addEventListener('DOMContentLoaded', () => {
             shuffle(computerfortune)
             popupboximage.src=`${luckyDuckDeckCardBack[0].img}`
             popupbox.setAttribute('style', `display: block`)
+            howtoplaybtn2.style.pointerEvents = 'none'
+            return2start.style.pointerEvents = 'none'
         }
     })
 
@@ -684,6 +688,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // return button for the PopUpcard viewer
     returnbtn.addEventListener(('click'), ()=> {
         popupbox.setAttribute('style', `display: none`)
+        howtoplaybtn2.style.pointerEvents = 'auto'
+        return2start.style.pointerEvents = 'auto'
     })
 
     // game logic dependent on keep button
@@ -919,11 +925,11 @@ document.addEventListener('DOMContentLoaded', () => {
               keepbtn.style.pointerEvents = 'none'
               shufflebtn.style.pointerEvents = 'none'
               moves += 1
-              if (P1TotalLuck > P2TotalLuck && trackcomputermode == 1) {
-                  GameResults.innerText = "Player 1 is a Luckier Duck!"
-                } else if (P1TotalLuck < P2TotalLuck && trackcomputermode == 1) {
-                  GameResults.innerText = "Computer is a Luckier Duck!"
-                }
+              // if (P1TotalLuck > P2TotalLuck && trackcomputermode == 1) {
+              //     GameResults.innerText = "Player 1 is a Luckier Duck!"
+              //   } else if (P1TotalLuck < P2TotalLuck && trackcomputermode == 1) {
+              //     GameResults.innerText = "Computer is a Luckier Duck!"
+              //   }
               let gameover = setInterval(function() {
                 P2TotalValue.innerText = P2TotalLuck
                 P1TotalValue.innerText = P1TotalLuck
@@ -978,14 +984,14 @@ document.addEventListener('DOMContentLoaded', () => {
             P1TotalValue.innerText = P1TotalLuck
 
             // condition for win/loss/draw
-            if (P1TotalLuck > P2TotalLuck) {
-                GameResults.innerText = "Player 1 is a Luckier Duck!"
-            }else if (P1TotalLuck < P2TotalLuck) {
-                GameResults.innerText = "Player 2 is a Luckier Duck!"
-            } else if (P1TotalLuck == P2TotalLuck){
-                GameResults.innerText = `It's a Draw. Must be fate! Play Again!`
-                fortunebtn.setAttribute('style', 'display: none')
-            }
+            // if (P1TotalLuck > P2TotalLuck) {
+            //     GameResults.innerText = "Player 1 is a Luckier Duck!"
+            // }else if (P1TotalLuck < P2TotalLuck) {
+            //     GameResults.innerText = "Player 2 is a Luckier Duck!"
+            // } else if (P1TotalLuck == P2TotalLuck){
+            //     GameResults.innerText = `It's a Draw. Must be fate! Play Again!`
+            //     fortunebtn.setAttribute('style', 'display: none')
+            // }
             // only display game results, get rid of shuffle and keep btn
             popupbox.setAttribute('style', 'display: block')
             resultsbtn.setAttribute('style', `display: inline-block`)
@@ -1226,11 +1232,11 @@ document.addEventListener('DOMContentLoaded', () => {
               keepbtn.style.pointerEvents = 'none'
               shufflebtn.style.pointerEvents = 'none'
               moves += 1
-              if (P1TotalLuck > P2TotalLuck && trackcomputermode == 1) {
-                  GameResults.innerText = "Player 1 is a Luckier Duck!"
-                } else if (P1TotalLuck < P2TotalLuck && trackcomputermode == 1) {
-                  GameResults.innerText = "Computer is a Luckier Duck!"
-                }
+              // if (P1TotalLuck > P2TotalLuck && trackcomputermode == 1) {
+              //     GameResults.innerText = "Player 1 is a Luckier Duck!"
+              //   } else if (P1TotalLuck < P2TotalLuck && trackcomputermode == 1) {
+              //     GameResults.innerText = "Computer is a Luckier Duck!"
+              //   }
               let gameover = setInterval(function() {
                 P2TotalValue.innerText = P2TotalLuck
                 P1TotalValue.innerText = P1TotalLuck
@@ -1287,14 +1293,14 @@ document.addEventListener('DOMContentLoaded', () => {
             P1TotalValue.innerText = P1TotalLuck
 
             // win conditions
-            if (P1TotalLuck > P2TotalLuck) {
-                GameResults.innerText = "Player 1 is a Luckier Duck!"
-            } else if (P1TotalLuck < P2TotalLuck) {
-                GameResults.innerText = "Player 2 is a Luckier Duck!"
-            } else if (P1TotalLuck == P2TotalLuck){
-                GameResults.innerText = `It's a Draw. Must be fate! Play Again!`
-                fortunebtn.setAttribute('style', 'display: none')
-            }
+            // if (P1TotalLuck > P2TotalLuck) {
+            //     GameResults.innerText = "Player 1 is a Luckier Duck!"
+            // } else if (P1TotalLuck < P2TotalLuck) {
+            //     GameResults.innerText = "Player 2 is a Luckier Duck!"
+            // } else if (P1TotalLuck == P2TotalLuck){
+            //     GameResults.innerText = `It's a Draw. Must be fate! Play Again!`
+            //     fortunebtn.setAttribute('style', 'display: none')
+            // }
             popupbox.setAttribute('style', 'display: block')
             resultsbtn.setAttribute('style', `display: inline-block`)
 
@@ -1312,10 +1318,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // conditional if vscomputer mode was played
         if (P1TotalLuck > P2TotalLuck && trackcomputermode == 1) {
-          GameResults.innerText = "Player 1 is a Luckier Duck!"
-        } else if (P1TotalLuck < P2TotalLuck && trackcomputermode == 1) {
-          GameResults.innerText = "Computer is a Luckier Duck!"
-        }
+            GameResults.innerText = "Player 1 is a Luckier Duck!"
+          } else if (P1TotalLuck > P2TotalLuck) {
+            GameResults.innerText = "Player 1 is a Luckier Duck!"
+          } else if (P1TotalLuck < P2TotalLuck && trackcomputermode == 1) {
+            GameResults.innerText = "Computer is a Luckier Duck!"
+          } else if (P1TotalLuck < P2TotalLuck) {
+            GameResults.innerText = "Player 2 is a Luckier Duck!"
+          } else if (P1TotalLuck == P2TotalLuck){
+            GameResults.innerText = `It's a Draw. Must be fate! Play Again!`
+            fortunebtn.setAttribute('style', 'display: none')
+          }
         postgameviewimg.src = luckyDuckDeckCardBack[0].img
     })
     // return to screen 1 from screen 3
@@ -1347,26 +1360,38 @@ document.addEventListener('DOMContentLoaded', () => {
     playerpastcard.addEventListener('click', ()=> {
         popupboximage.src = playerpastcard.src
         popupbox.setAttribute('style', `display: block`)
+        howtoplaybtn2.style.pointerEvents = 'none'
+        return2start.style.pointerEvents = 'none'
     })
     playerpresentcard.addEventListener('click', ()=> {
         popupboximage.src = playerpresentcard.src
         popupbox.setAttribute('style', `display: block`)
+        howtoplaybtn2.style.pointerEvents = 'none'
+        return2start.style.pointerEvents = 'none'
     })
     playerfuturecard.addEventListener('click', ()=> {
         popupboximage.src = playerfuturecard.src
         popupbox.setAttribute('style', `display: block`)
+        howtoplaybtn2.style.pointerEvents = 'none'
+        return2start.style.pointerEvents = 'none'
     })
     computerpastcard.addEventListener('click', ()=> {
         popupboximage.src = computerpastcard.src
         popupbox.setAttribute('style', `display: block`)
+        howtoplaybtn2.style.pointerEvents = 'none'
+        return2start.style.pointerEvents = 'none'
     })
     computerpresentcard.addEventListener('click', ()=> {
         popupboximage.src = computerpresentcard.src
         popupbox.setAttribute('style', `display: block`)
+        howtoplaybtn2.style.pointerEvents = 'none'
+        return2start.style.pointerEvents = 'none'
     })
     computerfuturecard.addEventListener('click', ()=> {
         popupboximage.src = computerfuturecard.src
         popupbox.setAttribute('style', `display: block`)
+        howtoplaybtn2.style.pointerEvents = 'none'
+        return2start.style.pointerEvents = 'none'
     })
 
     //Postgame click images to view in displayer
