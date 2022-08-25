@@ -1,10 +1,14 @@
 # Lucky-Duck
-### Test your Lucky-Ducky with an original Lucky Duck Tarot Deck!
+### Test your luck with an original Lucky Duck Tarot Deck and a chance to receive a fortune!
 
 #### Game Idea
 Players: Two.
 
-Play against another person to see who is the Luckier Duck and receive a fortune.
+Game modes: Player 1 vs Player 2, or Player 1 vs. Computer.
+
+Play against another person or computer to see who is the Luckier Duck.
+The player with the highest Total Luck is the winner and will receive a fortune!
+
 At the start of the game, two players are given 3 random Lucky Duck Tarot cards faced down.
 Each card represents their past, present, and future respectively.
 The Luckier Duck is the player with the highest Total Luck calculated by subtracting the Present's card value with the Past's card value, and adding the Future's card value.
@@ -16,19 +20,17 @@ Both Players will each have 3 turns; one for their past card, present card, and 
 During each turn, the current player will decide if they want to switch their card with a random card from the deck, or keep the card they currently have.
 Once a turn has passed the player can no longer trade their card and the turn's card will be revealed.
 
-The player with the highest Total Luck is the Luckier Duck and will receive a fortune!
-
-The deck will consists of 44 cards. Each card will be a Duck meme with it's type, number, and a description.
+The deck will consists of 44 cards. Each card will be a Duck meme with it's type, number, illustration and a description.
 
 There will be 12 Major Arcana cards representing a Duck’s life.
 
-There will be 8 Fire Duck cards: 6 Fire Ducks (Popular memes) + 1 Fire Duck King + 1 Fire Duck Queen
+There will be 8 (Popular memes) Fire Duck cards: 6 Fire Ducks  + 1 Fire Duck King + 1 Fire Duck Queen.
 
-There will be 8 Water Duck cards: 6 Water Ducks (Emotional memes) + 1 Water Duck King + 1 Water Duck Queen
+There will be 8 (Moody memes) Water Duck cards: 6 Water Ducks + 1 Water Duck King + 1 Water Duck Queen.
 
-There will be 8 Air Duck cards: 6 Air Ducks (Witty memes) + 1 Air Duck King + 1 Air Duck Queen
+There will be 8 (Witty memes) Air Duck cards: 6 Air Ducks+ 1 Air Duck King + 1 Air Duck Queen.
 
-There will be 8 Earth Duck cards: 6 Earth Ducks (Cute memes) + 1 Earth Duck King + 1 Earth Duck Queen
+There will be 8 (Cute memes) Earth Duck cards: 6 Earth Ducks + 1 Earth Duck King + 1 Earth Duck Queen.
 
 ### Tech Stack
 * DOM Manipulation. 
