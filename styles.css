@@ -357,7 +357,7 @@ audio {
     width: 450px;
     height: 650px;
     margin-left: 65vw;
-    margin-top: -66vh;
+    margin-top: -70vh;
     display: none;
 }
 #postgameviewimg {
@@ -381,13 +381,14 @@ audio {
 /* this is the screen/block that will populate all card variations */
 #deckgallery {
     display: none;
-    width: 65vw
+    width: 45vw;
+    margin-left: 10vw ;
 }
 /* div that will display cards selected */
 #viewDeckGallery {
     display: none;
-    margin-left: 63.5vw;
-    margin-top: -40vh;
+    margin-left: 55vw;
+    margin-top: -70vh;
 }
 #viewDeckGalleryImg {
     border-radius: 25px;
