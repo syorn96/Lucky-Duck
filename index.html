@@ -8,13 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-    <script src="./script.js"></script>
-    <script src="./screen1.js"></script>
+    <script src="./arrays.js" defer></script>
+    <script src="./variables.js" defer></script>
+    <script src="./gameplaylogic.js" defer></script>
     <title>Lucky Duck</title>
 </head>
 <body id="body">
     <!-- Kazoo Audio Source https://joeybabcock.me/blog/music/kahoot-music-mp3s/ -->
-    <audio id="mainaudio" loop controls>
+    <audio id="mainaudio" autoplay loop controls>
         <source src="./media/lobby-classic-game.mp3" type="audio/mp3">
         Your browser does not support the audio element.
       </audio>
@@ -207,5 +208,7 @@
         <button id="returntoresults" class="btn">Return to Results</button>
         </div>
     </div>
+    <script src="./functions.js" defer ></script>
+    <script src="./eventlisteners.js" defer ></script>
 </body>
 </html>
