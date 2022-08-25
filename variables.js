@@ -90,7 +90,7 @@
     let keepBtn = document.querySelector('#keepbtn')
 
     // variables for post-game results & screen 3 usage
-    let resultsbtn = document.querySelector('#resultsbtn')
+    let resultsBtn = document.querySelector('#resultsbtn')
 
     // player 1 card's
     let p1PresentCard = document.querySelector('#P1PresentCard')

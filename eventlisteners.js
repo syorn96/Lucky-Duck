@@ -126,7 +126,7 @@ shuffleBtn.addEventListener(('click'), ()=> {
 })
 
 //gameResults btn that appears with game over
-resultsbtn.addEventListener('click', ()=> {
+resultsBtn.addEventListener('click', ()=> {
     gameScreen2.setAttribute('style', `display: none`)
     gameScreen3.setAttribute('style', `display: block`)
     postGameView.setAttribute('style', `display: block`)
