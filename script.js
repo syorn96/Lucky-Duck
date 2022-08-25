@@ -329,7 +329,7 @@ let computerfortune = [
 
 //Load HTML before retrieving data
 document.addEventListener('DOMContentLoaded', () => {
-    //variables for gameplay
+    //variables for audio and gameplay screens
     let mainaudio = document.getElementById('mainaudio')
     let fortuneaudio = document.getElementById('fortuneaudio')
     let body = document.querySelector('#body')
@@ -405,7 +405,7 @@ document.addEventListener('DOMContentLoaded', () => {
     playerfuturecard.style.pointerEvents = 'none';
     let playerfuturecardinfo = document.querySelector('#PlayerCard3info')
 
-    // originally game was meant to be played vs computer, computer is now variable for player 2***
+    // *** originally game was meant to be played vs computer, computer and player 2 share the same variables ***
     let computerpastcard = document.querySelector('#computercard1')
     computerpastcard.style.pointerEvents = 'none';
     let computerpastcardinfo = document.querySelector('#CompCard1info')
@@ -466,7 +466,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let P1FutureResult = null
     let P1TotalLuck = 0
 
-    // varibles for player 2 to use for total luck calculation
+    // varibles for player 2//computer to use for total luck calculation
     let P2PastResult = null
     let P2PresentResult = null
     let P2FutureResult = null
@@ -501,6 +501,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let vw = 100
     let vh = 100
     let clickcounter = 0
+
+    // variables to keep track how many times start and view gallery btns are clicked on
     let startclickcounter = 0
     let galleryclickcounter = 0
     body.addEventListener('click', ()=> {
@@ -685,7 +687,7 @@ document.addEventListener('DOMContentLoaded', () => {
     keepbtn.addEventListener(('click'), ()=> {
         moves +=1
         let c = computermode();
-
+// computer will choose either shuffle or keep after player 1's 1st turn.
         if (moves == 1 && trackcomputermode == 1) {
             playerpastcard.src = `${luckyDuckDeckArray[0].img}`
             popupboximage.src=`${luckyDuckDeckArray[0].img}`
@@ -764,7 +766,8 @@ document.addEventListener('DOMContentLoaded', () => {
             P2PastValue.innerText = `${luckyDuckDeckArray[1].number}`
             P2PastResult =`${luckyDuckDeckArray[1].number}`
             P2TotalLuck -= luckyDuckDeckArray[1].number
-            
+
+            // computer will choose either shuffle or keep after player 1's 2nd turn.
         } else if (moves == 3 && trackcomputermode == 1) {
           playerpresentcard.src = `${luckyDuckDeckArray[2].img}`
           popupboximage.src=`${luckyDuckDeckArray[2].img}`
@@ -844,6 +847,7 @@ document.addEventListener('DOMContentLoaded', () => {
             P2PresentResult =`${luckyDuckDeckArray[3].number}`
             P2TotalLuck +=luckyDuckDeckArray[3].number
             
+            //computer will choose either shuffle or keep after player 1's 3rd turn.
         } else if (moves == 5 && trackcomputermode == 1) {
           playerfuturecard.src = `${luckyDuckDeckArray[4].img}`
           popupboximage.src=`${luckyDuckDeckArray[4].img}`
@@ -985,11 +989,13 @@ document.addEventListener('DOMContentLoaded', () => {
             keepbtn.setAttribute('style', `display: none`)
         } 
     })
+
     // game logic dependent on shuffle button
     // cards are only clickable once loaded
     shufflebtn.addEventListener(('click'), ()=> {
         moves +=1
         let c = computermode();
+        // computer will choose either shuffle or keep after player 1's 1st turn.
         if (moves == 1 && trackcomputermode == 1) {
           playerpastcard.src = `${luckyDuckDeckArray[6].img}`
           popupboximage.src=`${luckyDuckDeckArray[6].img}`
@@ -1069,7 +1075,7 @@ document.addEventListener('DOMContentLoaded', () => {
             P2PastValue.innerText = `${luckyDuckDeckArray[7].number}`
             P2PastResult =`${luckyDuckDeckArray[7].number}`
             P2TotalLuck -= luckyDuckDeckArray[7].number
-            
+            // computer will choose either shuffle or keep after player 1's 2rd turn.
         } else if (moves == 3 && trackcomputermode == 1) {
           playerpresentcard.src = `${luckyDuckDeckArray[8].img}`
           popupboximage.src=`${luckyDuckDeckArray[8].img}`
@@ -1148,7 +1154,7 @@ document.addEventListener('DOMContentLoaded', () => {
             P2PresentValue.innerText = `${luckyDuckDeckArray[9].number}`
             P2PresentResult =`${luckyDuckDeckArray[9].number}`
             P2TotalLuck +=luckyDuckDeckArray[9].number
-            
+            // computer will choose either shuffle or keep after playe 1's 3rd turn.
         } else if (moves == 5 && trackcomputermode == 1) {
           playerfuturecard.src = `${luckyDuckDeckArray[10].img}`
           popupboximage.src=`${luckyDuckDeckArray[10].img}`
@@ -1294,11 +1300,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-    //game results btn
+    //gameresults btn that appears with game over
     resultsbtn.addEventListener('click', ()=> {
         gamescreen2.setAttribute('style', `display: none`)
         gamescreen3.setAttribute('style', `display: block`)
         postgameview.setAttribute('style', `display: block`)
+
+        // conditional if vscomputer mode was played
         if (P1TotalLuck > P2TotalLuck && trackcomputermode == 1) {
           GameResults.innerText = "Player 1 is a Luckier Duck!"
         } else if (P1TotalLuck < P2TotalLuck && trackcomputermode == 1) {
@@ -1324,6 +1332,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     
     //on click, set the popupbox view to a random card from the tarot deck
+    // acts like a deck of cards for players to play with
     luckyducktarotdeck.addEventListener('click', ()=> {
         x = Math.floor(Math.random() * 21)
         popupboximage.src =`${luckyDuckDeckArray[x].img}`
@@ -1382,7 +1391,7 @@ document.addEventListener('DOMContentLoaded', () => {
         postgameview.setAttribute('style', `display: block`)
     })
 
-    // Fortunes Page
+    // Fortunes Page (screen 4)
     fortunebtn.addEventListener('click', ()=>{
         gamescreen4.setAttribute('style', `display: block`)
         gamescreen3.setAttribute('style', `display: none`)
@@ -1411,7 +1420,7 @@ document.addEventListener('DOMContentLoaded', () => {
             winningplayerfortune.style.color = RandomRGB()
         }
     })
-
+// return to screen 3 from screen 4
     returntoresults.addEventListener('click', ()=> {
         gamescreen4.setAttribute('style', `display: none`)
         gamescreen3.setAttribute('style', `display: block`)
@@ -1419,7 +1428,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fortuneaudio.currentTime = 0
         mainaudio.play()
     })
-
+// return to screen 1 (main page) from screen 4
     escapefortunebtn.addEventListener('click', ()=> {
         gamescreen4.setAttribute('style', `display: none`)
         gamescreen1.setAttribute('style', `display: absolute`)
