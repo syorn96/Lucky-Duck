@@ -576,6 +576,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // on restart reset game to default settings
     restartgamebtn.addEventListener('click', ()=>{
         startclickcounter = 0
+        trackcomputermode = 0
         //  on restart set the cards to default
         playerpastcard.src = `${luckyDuckDeckCardBack[0].img}` 
         playerpresentcard.src = `${luckyDuckDeckCardBack[0].img}` 
@@ -672,7 +673,6 @@ document.addEventListener('DOMContentLoaded', () => {
         gamescreen2.setAttribute('style', `display: none`)
         decideTurn.style.color = RandomRGB()
         decideTurn2.style.color = RandomRGB()
-        trackcomputermode = 0
     })
 
     // return button for the PopUpcard viewer
@@ -718,7 +718,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 shufflebtn.style.pointerEvents = 'auto'
                 moves += 1
                 clearInterval(computerShuffle1)
-                }, 4000)
+                }, 5000)
             } else if (c == 2) {
               let computerKeep1 = setInterval(function() {
                 decideTurn.innerText = `Computer chose to keep card.`;
@@ -735,7 +735,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 shufflebtn.style.pointerEvents = 'auto'
                 moves += 1
                 clearInterval(computerKeep1)
-                }, 4000)
+                }, 5000)
             }
             
         } else if (moves == 1) {
@@ -796,7 +796,7 @@ document.addEventListener('DOMContentLoaded', () => {
               shufflebtn.style.pointerEvents = 'auto'
               moves += 1
               clearInterval(computerShuffle1)
-              }, 4000)
+              }, 5000)
           } else if (c == 2) {
             let computerKeep1 = setInterval(function(){
               decideTurn.innerText = `Computer chose to keep card.`
@@ -813,7 +813,7 @@ document.addEventListener('DOMContentLoaded', () => {
               shufflebtn.style.pointerEvents = 'auto'
               moves += 1
               clearInterval(computerKeep1)
-              }, 4000)
+              }, 5000)
           }
           
       } else if (moves == 3) {
@@ -890,9 +890,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 shufflebtn.setAttribute('style', `display: none`)
                 keepbtn.setAttribute('style', `display: none`)
                 clearInterval(gameover)
-              },3000)
+              },5000)
               clearInterval(computerShuffle1)
-              }, 4000)
+              }, 5000)
           } else if (c == 2) {
             let computerKeep1 = setInterval(function(){
               decideTurn.innerText = `Computer chose to keep card.`
@@ -930,9 +930,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 shufflebtn.setAttribute('style', `display: none`)
                 keepbtn.setAttribute('style', `display: none`)
                 clearInterval(gameover)
-              },3000)
+              },5000)
               clearInterval(computerKeep1)
-              }, 4000) 
+              }, 5000) 
           }
           
       } else if (moves == 5) {
@@ -1022,7 +1022,7 @@ document.addEventListener('DOMContentLoaded', () => {
               shufflebtn.style.pointerEvents = 'auto'
               moves += 1
               clearInterval(computerShuffle1)
-              }, 4000)
+              }, 5000)
           } else if (c == 2) {
             let computerKeep1 = setInterval(function() {
               decideTurn.innerText = `Computer chose to keep card.`;
@@ -1039,7 +1039,7 @@ document.addEventListener('DOMContentLoaded', () => {
               shufflebtn.style.pointerEvents = 'auto'
               moves += 1
               clearInterval(computerKeep1)
-              }, 4000)
+              }, 5000)
           }
           
       } else if (moves == 1) {
@@ -1101,7 +1101,7 @@ document.addEventListener('DOMContentLoaded', () => {
               shufflebtn.style.pointerEvents = 'auto'
               moves += 1
               clearInterval(computerShuffle1)
-              }, 4000)
+              }, 5000)
           } else if (c == 2) {
             let computerKeep1 = setInterval(function(){
               decideTurn.innerText = `Computer chose to keep card.`
@@ -1118,7 +1118,7 @@ document.addEventListener('DOMContentLoaded', () => {
               shufflebtn.style.pointerEvents = 'auto'
               moves += 1
               clearInterval(computerKeep1)
-              }, 4000)
+              }, 5000)
           }
           
       } else if (moves == 3) {
@@ -1195,9 +1195,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 shufflebtn.setAttribute('style', `display: none`)
                 keepbtn.setAttribute('style', `display: none`)
                 clearInterval(gameover)
-              },3000)
+              },5000)
               clearInterval(computerShuffle1)
-              }, 4000)
+              }, 5000)
           } else if (c == 2) {
             let computerKeep1 = setInterval(function(){
               decideTurn.innerText = `Computer chose to keep card.`
@@ -1235,9 +1235,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 shufflebtn.setAttribute('style', `display: none`)
                 keepbtn.setAttribute('style', `display: none`)
                 clearInterval(gameover)
-              },3000)
+              },5000)
               clearInterval(computerKeep1)
-              }, 4000) 
+              }, 5000) 
           }
           
       } else if (moves == 5) {
