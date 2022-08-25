@@ -1,8 +1,6 @@
 // FUNCTIONS
 
 // function to shuffle array -- special thanks to Ronald Fisher and Frank Yates for the Fisher-Yates algorith --
-mainGameAudio.play();
-
 const shuffle = array => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -11,7 +9,8 @@ const shuffle = array => {
       array[j] = temp;
     }
   }
-
+  mainGameAudio.pause();
+  mainGameAudio.play();
   //function to randomize computer choices (either 1 or 2)
   function computermode() {
     c = Math.ceil(Math.random() * 2)

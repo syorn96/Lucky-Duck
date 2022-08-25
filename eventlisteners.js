@@ -2,6 +2,7 @@
     // onclick duplicate body background
 body.addEventListener('click', ()=> {
     duplicateBackground();
+    mainGameAudio.play();
 })
 
 
