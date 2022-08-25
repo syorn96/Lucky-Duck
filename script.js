@@ -158,16 +158,17 @@ let luckyDuckDeckArray = [
         description:`A happy duck is the best kind of duck. Other's may appreciate your light-hearted presence and loud quacks.`,
       },
       {
-        // IMG SOURCE:
+        // IMG SOURCE: https://pbs.twimg.com/media/D6mj7-cWAAEqkG8?format=jpg&name=900x900
         number: 26,
         img: './media/./26.jpeg',
         description:`A master of analyzing situations and acts accordingly. This King values honesty over manipulation.`,
       },
-    //   {
-    //     number: 27,
-    //     img: './media/./27.jpeg',
-    //     description:`Patience and understanding. She is a loving Queen that uses empathy to inspire her under-ducklings.`,
-    //   },
+      {
+        // IMG SOURCE: https://diamondpaintkit.com/products/duck-and-purple-flowers-5d-diamond-painting/
+        number: 27,
+        img: './media/./27.jpeg',
+        description:`Patience and understanding. She is a loving Queen that uses empathy to inspire her under-ducklings.`,
+      },
       {
         // IMG SOURCE: https://pixabay.com/photos/duck-mallard-drake-bird-water-bird-3319107/
         number: 28,
@@ -205,16 +206,18 @@ let luckyDuckDeckArray = [
         img: './media/./33.jpeg',
         description:`A like minded duck will be entering your life. They'll appreciate your "quarkiness".`
       },
-    //   {
-    //     number: 34,
-    //     img: './media/./34.jpeg',
-    //     description:`A respectable King that is well versed in language, sciences and philosophy. He travels to expand his wings and quench his thirst for knowledge.`
-    //   },
-    //   {
-    //     number: 35,
-    //     img: './media/./35.jpeg',
-    //     description:`Freedom - Politics - Education. This dignified Queen values equality and lives up to her ideals.`
-    //   },
+      {
+        // IMG SOURCE: https://blogs.massaudubon.org/branchingoutatbroadmoor/wp-content/uploads/sites/16/2017/11/mallard-head-on-STC-640x640.jpg
+        number: 34,
+        img: './media/./34.jpeg',
+        description:`A respectable King that is well versed in language, science and philosophy. He travels to expand his wings and quench his thirst for knowledge.`
+      },
+      {
+        // IMG SOURCE: https://ctl.s6img.com/society6/img/5KD3dyfoGSTW1PEH5vagkQjyPFk/w_1500/prints/~artwork/s6-original-art-uploads/society6/uploads/misc/a47ae03f9c1443e2945f1b10014a7fa8/~~/male-mallard-duck-prints.jpg
+        number: 35,
+        img: './media/./35.jpeg',
+        description:`Freedom - Politics - Education. This dignified Queen values equality and lives up to her ideals.`
+      },
       {
         // IMG SOURCE: https://wallpapercave.com/w/wp3364096
         number: 36,
@@ -231,7 +234,7 @@ let luckyDuckDeckArray = [
         // IMG SOURCE: https://www.boredpanda.com/blog/wp-content/uploads/2019/10/B2uum6BnoSh-1-png__700.jpg
         number: 38,
         img: './media/./38.jpeg',
-        description:`There's no need to compare yourself to other ducks, that's just quacktalk."Oh, ducky, you should go and love yourself..." - DUCKIN BIEBER.`
+        description:`There's no need to compare yourself to other ducks, that's just quacktalk."Oh, ducky, you should go and love yourself..." - D Bieber.`
       },
       {
         // IMG SOURCE: https://www.reddit.com/r/MadeMeSmile/comments/hp6q2i/day_2_of_posting_cute_ducks/
@@ -251,18 +254,18 @@ let luckyDuckDeckArray = [
         img: './media/./41.jpeg',
         description:`You've been working hard Duckling. You deserve to rest and take care of your duckling needs.`
       },
-    //   {
-    //     // IMG SOURCE: 
-    //     number: 42,
-    //     img: './media/./42.jpeg',
-    //     description:`A charming Emperor of wealth, networking, and business. His playful nature is a entertaining to be around.`
-    //   },
-    //   {
-    //     // IMG SOURCE: 
-    //     number: 43,
-    //     img: './media/./43.jpeg',
-    //     description:`A self-made Queen, who fancies only the best that life can offer. She manifests her dreams into reality.`
-    //   },
+      {
+        // IMG SOURCE: https://www.animalspot.net/wp-content/uploads/2015/07/Hooded-Merganser-Pictures.jpg
+        number: 42,
+        img: './media/./42.jpeg',
+        description:`A charming Emperor of wealth, networking, and business. His playful nature is entertaining to be around.`
+      },
+      {
+        // IMG SOURCE: https://images5.alphacoders.com/877/thumb-1920-877733.jpg
+        number: 43,
+        img: './media/./43.jpeg',
+        description:`A self-made Queen, who fancies only the best that life can offer. She manifests her dreams into reality.`
+      },
   ]
 
 // fortunes sources: https://fortuneandframe.com/apps/fortunes/ff-originals
@@ -320,12 +323,16 @@ let computerfortune = [
 // cloneddeck used for deck gallery, so cards show up in chronological order
   let clonedLuckyDeck = luckyDuckDeckArray.slice()
 
- // function to shuffle array
- function shuffle(array) {
-    array.sort(() => Math.random() - 0.5);
+ // function to shuffle array -- special thanks to Ronald Fisher and Frank Yates for the Fisher-Yates algorith --
+ const shuffle = array => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
   }
-
-  //function for computer mode
+}
+  //function to randomize computer choices (either 1 or 2)
   function computermode() {
     c = Math.ceil(Math.random() * 2)
     return c
@@ -529,6 +536,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // shuffle the fortunes for gameplay
     shuffle(luckyduckfortune)
+    
 
     //on start default the cards to be set as the tarot deck back cover 
     startgamebtn.addEventListener('click', ()=> {
