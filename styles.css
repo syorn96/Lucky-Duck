@@ -61,12 +61,13 @@
 }
 
 #game-screen1 {
+    display: none;
     position: absolute;
     margin-top: 75vh;
     height: 50vh;
     width: 20vh;
-    display: none;
     margin-left: -11vw;
+    
 }
 
 #howtoplay {

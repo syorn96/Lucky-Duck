@@ -156,9 +156,9 @@ resultsBtn.addEventListener('click', ()=> {
 })
 // return to screen 1 from screen 3
 return2Menu.addEventListener('click',()=> {
-    gameScreen1.setAttribute('style', `display: absolute`)
-    gameScreen3.setAttribute('style', `display: none`)
-    postGameView.setAttribute('style', `display: none`)
+    gameScreen3.setAttribute('style', `display: none;`)
+    gameScreen1.setAttribute('style', `display: block`)
+    postGameView.setAttribute('style', `display: none;`)
     decideTurn.style.color = randomRGB()
     decideTurn2.style.color = randomRGB()
 })
@@ -271,7 +271,7 @@ returnToResults.addEventListener('click', ()=> {
 // return to screen 1 (main page) from screen 4
 escapeFortuneBtn.addEventListener('click', ()=> {
     gameScreen4.setAttribute('style', `display: none`)
-    gameScreen1.setAttribute('style', `display: absolute`)
+    gameScreen1.setAttribute('style', `display: block`)
     fortuneAudio.pause()
     fortuneAudio.currentTime = 0
     mainGameAudio.play()
