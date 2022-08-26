@@ -34,8 +34,7 @@ const shuffle = array => {
             })
         }
     }
-    // load library of card gallery before clicking viewdeckgallerybtn
-    createViewDeck();
+   
 
     // shuffle the fortunes for gameplay
     shuffle(luckyDuckFortuneArray);
@@ -66,12 +65,15 @@ const shuffle = array => {
 
     // start game button actions
     let startGame = () => {
-        gameScreen1.setAttribute('style', `display: none;`)
-        gameScreen2.setAttribute('style', `display: grid;`)
-        decideTurn.style.color = randomRGB()
-        computerTitle.innerText = 'Player 2'
+        gameScreen1.setAttribute('style', `display: none;`);
+        gameScreen2.setAttribute('style', `display: grid;`);
+        decideTurn.style.color = randomRGB();
+        computerTitle.innerText = 'Player 2';
         vsComputerBtn.style.pointerEvents = 'none';
-        startClickCounter ++
+        startClickCounter ++;
+        viewCardInGame.forEach(e => {
+            e.style.pointerEvents = 'none';
+        })
         if (startClickCounter == 1){
             shuffle(luckyDuckDeckArray)
             shuffle(availableComputerFortunesArray)
@@ -117,27 +119,15 @@ const shuffle = array => {
     let restartMode = () => {
         startClickCounter = 0
         trackComputerMode = 0
-        //  on restart set the cards to default
-        playerPastCard.src = `${luckyDuckDeckCardBack[0].img}` 
-        playerPresentCard.src = `${luckyDuckDeckCardBack[0].img}` 
-        playerFutureCard.src = `${luckyDuckDeckCardBack[0].img}` 
-        computerPastCard.src = `${luckyDuckDeckCardBack[0].img}` 
-        computerPresentCard.src = `${luckyDuckDeckCardBack[0].img}` 
-        computerFutureCard.src = `${luckyDuckDeckCardBack[0].img}`
-        // on restart set the descriptions to default
-        playerPastCardInfo.innerText = ""
-        playerPresentCardInfo.innerText = ""
-        playerFutureCardInfo.innerText = ""
-        computerPastCardInfo.innerText = ""
-        computerPresentCardInfo.innerText = ""
-        computerFutureCardInfo.innerText = ""
-        // on restart reset the ability to click/view cards
-        playerPastCard.style.pointerEvents = 'none';
-        playerPresentCard.style.pointerEvents = 'none';
-        playerFutureCard.style.pointerEvents = 'none';
-        computerPastCard.style.pointerEvents = 'none';
-        computerPresentCard.style.pointerEvents = 'none';
-        computerFutureCard.style.pointerEvents = 'none';
+       
+        // on restart set cards and descriptions to default
+        cardInfo.forEach(e => {
+            e.innerText = ""
+        })
+        viewCardInGame.forEach(e => {
+            e.style.pointerEvents = 'none';
+            e.src = `${luckyDuckDeckCardBack[0].img}`
+        })
 
         // on restart restart move# and the player1/player 2 TotalLuck to 0
         decideTurn.innerText = `Player 1's`
@@ -162,12 +152,11 @@ const shuffle = array => {
 
     let howToPlay2 = () => {
         howToPlayScreen2.setAttribute('style', `display: block`)
-        playerPastCardInfo.setAttribute('style', `display: none`)
-        playerPresentCardInfo.setAttribute('style', `display: none`)
-        playerFutureCardInfo.setAttribute('style', `display: none`)
-        computerPastCardInfo.setAttribute('style', `display: none`)
-        computerPresentCardInfo.setAttribute('style', `display: none`)
-        computerFutureCardInfo.setAttribute('style', `display: none`)
+        
+        cardInfo.forEach(e => {
+            e.setAttribute('style', `display: none`)
+        })
+
         luckyDuckTarotDeck.setAttribute('style', `display: none`)
         turnContainer.setAttribute('style', `display: none`)
         menu2.setAttribute('style', `display: none`)
@@ -177,12 +166,9 @@ const shuffle = array => {
     let escHowtoPlay2 = () => {
         howToPlayScreen2.setAttribute('style', `display: none`)
         gameScreen2.setAttribute('style', `display: grid`)
-        playerPastCardInfo.setAttribute('style', `display: block`)
-        playerPresentCardInfo.setAttribute('style', `display: block`)
-        playerFutureCardInfo.setAttribute('style', `display: block`)
-        computerPastCardInfo.setAttribute('style', `display: block`)
-        computerPresentCardInfo.setAttribute('style', `display: block`)
-        computerFutureCardInfo.setAttribute('style', `display: block`)
+        cardInfo.forEach(e => {
+            e.setAttribute('style', `display: block`)
+        })
         luckyDuckTarotDeck.setAttribute('style', `display: block`)
         turnContainer.setAttribute('style', `display: block`)
         menu2.setAttribute('style', `display: block`)
@@ -190,6 +176,19 @@ const shuffle = array => {
         decideTurn.style.color = randomRGB()
         decideTurn2.style.color = randomRGB()
     }
+
+    let disableBtns = () => {
+        keepBtn.style.pointerEvents = 'none'
+        shuffleBtn.style.pointerEvents = 'none'
+        howToPlayBtn2.style.pointerEvents = 'none'
+        return2Start.style.pointerEvents = 'none'
+      }
+    let enableBtns = () => {
+        keepBtn.style.pointerEvents = 'auto'
+        shuffleBtn.style.pointerEvents = 'auto'
+        howToPlayBtn2.style.pointerEvents = 'auto'
+        return2Start.style.pointerEvents = 'auto'
+      }
 
     let disableHtpAndReturn = () => {
         popUpBox.setAttribute('style', `display: block`)

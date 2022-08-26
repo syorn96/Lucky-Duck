@@ -10,8 +10,7 @@ let computerModeTurnK1 = () => {
         p1PastValue.innerText = `${luckyDuckDeckArray[0].number}`
         p1PastResult =`${luckyDuckDeckArray[0].number}`
         p1TotalLuck -= luckyDuckDeckArray[0].number
-        keepBtn.style.pointerEvents = 'none'
-        shuffleBtn.style.pointerEvents = 'none'
+        disableBtns();
         
         if (c == 1) {
           let computerShuffle1 = setInterval(function() {
@@ -25,8 +24,7 @@ let computerModeTurnK1 = () => {
             p2PastValue.innerText = `${luckyDuckDeckArray[7].number}`;
             p2PastResult =`${luckyDuckDeckArray[7].number}`;
             p2TotalLuck -= luckyDuckDeckArray[7].number;
-            keepBtn.style.pointerEvents = 'auto'
-            shuffleBtn.style.pointerEvents = 'auto'
+            enableBtns();
             moves += 1
             clearInterval(computerShuffle1)
             }, 2000)
@@ -42,8 +40,7 @@ let computerModeTurnK1 = () => {
             p2PastValue.innerText = `${luckyDuckDeckArray[1].number}`;
             p2PastResult =`${luckyDuckDeckArray[1].number}`;
             p2TotalLuck -= luckyDuckDeckArray[1].number;
-            keepBtn.style.pointerEvents = 'auto'
-            shuffleBtn.style.pointerEvents = 'auto'
+            enableBtns();
             moves += 1
             clearInterval(computerKeep1)
             }, 2000)
@@ -62,8 +59,7 @@ let computerModeTurnK2 = () => {
         p1PresentValue.innerText = `${luckyDuckDeckArray[2].number}`
         p1PresentResult =`${luckyDuckDeckArray[2].number}`
         p1TotalLuck += luckyDuckDeckArray[2].number
-        keepBtn.style.pointerEvents = 'none'
-        shuffleBtn.style.pointerEvents = 'none'
+        disableBtns();
       if (c == 1) {
         let computerShuffle1 = setInterval(function() {
           decideTurn.innerText = `Computer chose to shuffle card.`;
@@ -76,8 +72,7 @@ let computerModeTurnK2 = () => {
           p2PresentValue.innerText = `${luckyDuckDeckArray[9].number}`;
           p2PresentResult =`${luckyDuckDeckArray[9].number}`;
           p2TotalLuck += luckyDuckDeckArray[9].number;
-          keepBtn.style.pointerEvents = 'auto'
-          shuffleBtn.style.pointerEvents = 'auto'
+          enableBtns();
           moves += 1
           clearInterval(computerShuffle1)
           }, 2000)
@@ -93,8 +88,7 @@ let computerModeTurnK2 = () => {
           p2PresentValue.innerText = `${luckyDuckDeckArray[3].number}`;
           p2PresentResult =`${luckyDuckDeckArray[3].number}`;
           p2TotalLuck += luckyDuckDeckArray[3].number;
-          keepBtn.style.pointerEvents = 'auto'
-          shuffleBtn.style.pointerEvents = 'auto'
+          enableBtns();
           moves += 1
           clearInterval(computerKeep1)
           }, 2000)
@@ -113,8 +107,7 @@ let computerModeTurnK3 = () => {
       p1FutureValue.innerText = `${luckyDuckDeckArray[4].number}`
       p1FutureResult =`${luckyDuckDeckArray[4].number}`
       p1TotalLuck += luckyDuckDeckArray[4].number
-      keepBtn.style.pointerEvents = 'none'
-      shuffleBtn.style.pointerEvents = 'none'
+      disableBtns ();
       if (c == 1) {
         let computerShuffle1 = setInterval(function() {
           decideTurn.innerText = `Computer chose to shuffle card.`;
@@ -128,8 +121,7 @@ let computerModeTurnK3 = () => {
           p2FutureValue.innerText = `${luckyDuckDeckArray[11].number}`;
           p2FutureResult =`${luckyDuckDeckArray[11].number}`;
           p2TotalLuck += luckyDuckDeckArray[11].number;
-          keepBtn.style.pointerEvents = 'none'
-          shuffleBtn.style.pointerEvents = 'none'
+          disableBtns();
           moves += 1
           
           let gameover = setInterval(function() {
@@ -144,6 +136,7 @@ let computerModeTurnK3 = () => {
             resultsBtn.setAttribute('style', `display: inline-block`)
             shuffleBtn.setAttribute('style', `display: none`)
             keepBtn.setAttribute('style', `display: none`)
+            enableBtns();
             clearInterval(gameover)
           },2000)
           clearInterval(computerShuffle1)
@@ -163,8 +156,7 @@ let computerModeTurnK3 = () => {
           p2TotalLuck += luckyDuckDeckArray[5].number;
           p2TotalValue.innerText = p2TotalLuck
           p1TotalValue.innerText = p1TotalLuck
-          keepBtn.style.pointerEvents = 'none'
-          shuffleBtn.style.pointerEvents = 'none'
+          disableBtns();
           moves += 1
         
           let gameover = setInterval(function() {
@@ -179,6 +171,7 @@ let computerModeTurnK3 = () => {
             resultsBtn.setAttribute('style', `display: inline-block`)
             shuffleBtn.setAttribute('style', `display: none`)
             keepBtn.setAttribute('style', `display: none`)
+            enableBtns();
             clearInterval(gameover)
           },2000)
           clearInterval(computerKeep1)
@@ -302,8 +295,7 @@ let computerModeTurnS1 = () => {
       p1PastValue.innerText = `${luckyDuckDeckArray[6].number}`
       p1PastResult =`${luckyDuckDeckArray[6].number}`
       p1TotalLuck -= luckyDuckDeckArray[6].number
-      keepBtn.style.pointerEvents = 'none'
-      shuffleBtn.style.pointerEvents = 'none'
+      disableBtns();
       
       if (c == 1) {
         let computerShuffle1 = setInterval(function() {
@@ -317,8 +309,7 @@ let computerModeTurnS1 = () => {
           p2PastValue.innerText = `${luckyDuckDeckArray[7].number}`;
           p2PastResult =`${luckyDuckDeckArray[7].number}`;
           p2TotalLuck -= luckyDuckDeckArray[7].number;
-          keepBtn.style.pointerEvents = 'auto'
-          shuffleBtn.style.pointerEvents = 'auto'
+          enableBtns();
           moves += 1
           clearInterval(computerShuffle1)
           }, 2000)
@@ -334,8 +325,7 @@ let computerModeTurnS1 = () => {
           p2PastValue.innerText = `${luckyDuckDeckArray[1].number}`;
           p2PastResult =`${luckyDuckDeckArray[1].number}`;
           p2TotalLuck -= luckyDuckDeckArray[1].number;
-          keepBtn.style.pointerEvents = 'auto'
-          shuffleBtn.style.pointerEvents = 'auto'
+          enableBtns();
           moves += 1
           clearInterval(computerKeep1)
           }, 2000)
@@ -353,8 +343,7 @@ let computerModeTurnS2 = () => {
       p1PresentValue.innerText = `${luckyDuckDeckArray[8].number}`
       p1PresentResult =`${luckyDuckDeckArray[8].number}`
       p1TotalLuck += luckyDuckDeckArray[8].number
-      keepBtn.style.pointerEvents = 'none'
-      shuffleBtn.style.pointerEvents = 'none'
+      disableBtns ();
       if (c == 1) {
         let computerShuffle1 = setInterval(function() {
           decideTurn.innerText = `Computer chose to shuffle card.`;
@@ -367,8 +356,7 @@ let computerModeTurnS2 = () => {
           p2PresentValue.innerText = `${luckyDuckDeckArray[9].number}`;
           p2PresentResult =`${luckyDuckDeckArray[9].number}`;
           p2TotalLuck += luckyDuckDeckArray[9].number;
-          keepBtn.style.pointerEvents = 'auto'
-          shuffleBtn.style.pointerEvents = 'auto'
+          enableBtns();
           moves += 1
           clearInterval(computerShuffle1)
           }, 2000)
@@ -384,8 +372,7 @@ let computerModeTurnS2 = () => {
           p2PresentValue.innerText = `${luckyDuckDeckArray[3].number}`;
           p2PresentResult =`${luckyDuckDeckArray[3].number}`;
           p2TotalLuck += luckyDuckDeckArray[3].number;
-          keepBtn.style.pointerEvents = 'auto'
-          shuffleBtn.style.pointerEvents = 'auto'
+          enableBtns();
           moves += 1
           clearInterval(computerKeep1)
           }, 2000)
@@ -403,8 +390,7 @@ let computerModeTurnS3 = () => {
       p1FutureValue.innerText = `${luckyDuckDeckArray[10].number}`
       p1FutureResult =`${luckyDuckDeckArray[10].number}`
       p1TotalLuck += luckyDuckDeckArray[10].number
-      keepBtn.style.pointerEvents = 'none'
-      shuffleBtn.style.pointerEvents = 'none'
+      disableBtns ();
       if (c == 1) {
         let computerShuffle1 = setInterval(function() {
           decideTurn.innerText = `Computer chose to shuffle card.`;
@@ -418,8 +404,7 @@ let computerModeTurnS3 = () => {
           p2FutureValue.innerText = `${luckyDuckDeckArray[11].number}`;
           p2FutureResult =`${luckyDuckDeckArray[11].number}`;
           p2TotalLuck += luckyDuckDeckArray[11].number;
-          keepBtn.style.pointerEvents = 'none'
-          shuffleBtn.style.pointerEvents = 'none'
+          disableBtns()
           moves += 1
           
           let gameover = setInterval(function() {
@@ -434,6 +419,7 @@ let computerModeTurnS3 = () => {
             resultsBtn.setAttribute('style', `display: inline-block`)
             shuffleBtn.setAttribute('style', `display: none`)
             keepBtn.setAttribute('style', `display: none`)
+            enableBtns();
             clearInterval(gameover)
           },2000)
           clearInterval(computerShuffle1)
@@ -453,8 +439,7 @@ let computerModeTurnS3 = () => {
           p2TotalLuck += luckyDuckDeckArray[5].number;
           p2TotalValue.innerText = p2TotalLuck
           p1TotalValue.innerText = p1TotalLuck
-          keepBtn.style.pointerEvents = 'none'
-          shuffleBtn.style.pointerEvents = 'none'
+          disableBtns();
           moves += 1
   
           let gameover = setInterval(function() {
@@ -470,6 +455,7 @@ let computerModeTurnS3 = () => {
             resultsBtn.setAttribute('style', `display: inline-block`)
             shuffleBtn.setAttribute('style', `display: none`)
             keepBtn.setAttribute('style', `display: none`)
+            enableBtns();
             clearInterval(gameover)
           },2000)
           clearInterval(computerKeep1)

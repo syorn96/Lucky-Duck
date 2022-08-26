@@ -52,31 +52,28 @@
 
     //variables for card selection + set cards to cards to unable to click
     let playerPastCard = document.querySelector('#playercard1')
-    playerPastCard.style.pointerEvents = 'none';
     let playerPastCardInfo = document.querySelector('#PlayerCard1info')
     let playerPresentCard = document.querySelector('#playercard2')
-    playerPresentCard.style.pointerEvents = 'none';
     let playerPresentCardInfo = document.querySelector('#PlayerCard2info')
     let playerFutureCard = document.querySelector('#playercard3')
-    playerFutureCard.style.pointerEvents = 'none';
     let playerFutureCardInfo = document.querySelector('#PlayerCard3info')
+
+    let cardInfo = document.querySelectorAll('.cardinfo')
 
     //variables for player2/computer card selection + set cards to unable to click
     // *** originally game was meant to be played vs computer, computer and player 2 share the same variables ***
     let computerPastCard = document.querySelector('#computercard1')
-    computerPastCard.style.pointerEvents = 'none';
     let computerPastCardInfo = document.querySelector('#CompCard1info')
     let computerPresentCard = document.querySelector('#computercard2')
-    computerPresentCard.style.pointerEvents = 'none';
     let computerPresentCardInfo = document.querySelector('#CompCard2info')
     let computerFutureCard = document.querySelector('#computercard3')
-    computerFutureCard.style.pointerEvents = 'none';
     let computerFutureCardInfo = document.querySelector('#CompCard3info')
 
     // variables for pop-up box
     let popUpBox = document.querySelector('#PopUpCard')
     let popUpBoxImage = document.querySelector('#PopUpCardImg')
     let returnBtn = document.getElementById('returnbtn')
+    let viewCardInGame = document.querySelectorAll('.viewCardInGame')
    
     // variables for turn display
     let turnContainer = document.querySelector('#turntracker')
@@ -135,6 +132,7 @@
     let postGameViewimg = document.querySelector('#postgameviewimg')
     let return2Menu = document.querySelector('#return2menu')
     let return2Game = document.querySelector('#return2game')
+    let viewCardResults = document.querySelectorAll('.viewCardResults')
     
     // fortune page, screen 4
     let fortuneBtn = document.querySelector('#fortunebtn')

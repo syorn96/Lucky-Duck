@@ -9,6 +9,8 @@ clickADuck.forEach(e => {
         mainGameAudio.play()
         gameScreen1.setAttribute('style', `display: block`)
         playMusic.setAttribute('style', `display: none`)
+    // load library of card gallery before any gameplay.
+        createViewDeck()
     })
 })
 
@@ -82,25 +84,25 @@ keepBtn.addEventListener(('click'), ()=> {
 
     // computer will choose either shuffle or keep after player 1's 1st turn.
     if (moves == 1 && trackComputerMode == 1) {
-        computerModeTurnK1();
-    } else if (moves == 1) {
-      keepTurn1();
-    } else if (moves == 2) {
-      keepTurn2();
+          computerModeTurnK1();
+        } else if (moves == 1) {
+          keepTurn1();
+        } else if (moves == 2) {
+          keepTurn2();
         // computer will choose either shuffle or keep after player 1's 2nd turn.
-    } else if (moves == 3 && trackComputerMode == 1) {
-        computerModeTurnK2();
-  } else if (moves == 3) {
-        keepTurn3();
-    } else if (moves == 4) {
-        keepTurn4();
+        } else if (moves == 3 && trackComputerMode == 1) {
+          computerModeTurnK2();
+        } else if (moves == 3) {
+          keepTurn3();
+        } else if (moves == 4) {
+          keepTurn4();
         //computer will choose either shuffle or keep after player 1's 3rd turn.
-    } else if (moves == 5 && trackComputerMode == 1) {
-      computerModeTurnK3();
-  } else if (moves == 5) {
-        keepTurn5();
-    } else if (moves == 6) {
-        keepTurn6();
+        } else if (moves == 5 && trackComputerMode == 1) {
+          computerModeTurnK3();
+        } else if (moves == 5) {
+          keepTurn5();
+        } else if (moves == 6) {
+          keepTurn6();
     } 
 })
 
@@ -111,25 +113,25 @@ shuffleBtn.addEventListener(('click'), ()=> {
     let c = computermode();
     // computer will choose either shuffle or keep after player 1's 1st turn.
     if (moves == 1 && trackComputerMode == 1) {
-      computerModeTurnS1();
-  } else if (moves == 1) {
-        shuffleTurn1();
-    } else if (moves == 2) {
-        shuffleTurn2();
+          computerModeTurnS1();
+        } else if (moves == 1) {
+          shuffleTurn1();
+        } else if (moves == 2) {
+          shuffleTurn2();
         // computer will choose either shuffle or keep after player 1's 2rd turn.
-    } else if (moves == 3 && trackComputerMode == 1) {
-      computerModeTurnS2();
-  } else if (moves == 3) {
-        shuffleTurn3();
-    } else if (moves == 4) {
-        shuffleTurn4();
+        } else if (moves == 3 && trackComputerMode == 1) {
+          computerModeTurnS2();
+        } else if (moves == 3) {
+          shuffleTurn3();
+        } else if (moves == 4) {
+          shuffleTurn4();
         // computer will choose either shuffle or keep after player 1's 3rd turn.
-    } else if (moves == 5 && trackComputerMode == 1) {
-      computerModeTurnS3();
-  } else if (moves == 5) {
-        shuffleTurn5();
-    } else if (moves == 6) {
-        shuffleTurn6();
+        } else if (moves == 5 && trackComputerMode == 1) {
+          computerModeTurnS3();
+        } else if (moves == 5) {
+          shuffleTurn5();
+        } else if (moves == 6) {
+          shuffleTurn6();
     }
 })
 
@@ -180,55 +182,20 @@ luckyDuckTarotDeck.addEventListener('click', ()=> {
 })
 
 // on click, display the selected image in the pop-up box
-playerPastCard.addEventListener('click', ()=> {
-    popUpBoxImage.src = playerPastCard.src
-    
-})
-playerPresentCard.addEventListener('click', ()=> {
-    popUpBoxImage.src = playerPresentCard.src
-    disableHtpAndReturn();
-})
-playerFutureCard.addEventListener('click', ()=> {
-    popUpBoxImage.src = playerFutureCard.src
-    disableHtpAndReturn();
-})
-computerPastCard.addEventListener('click', ()=> {
-    popUpBoxImage.src = computerPastCard.src
-    disableHtpAndReturn();
-})
-computerPresentCard.addEventListener('click', ()=> {
-    popUpBoxImage.src = computerPresentCard.src
-    disableHtpAndReturn();
-})
-computerFutureCard.addEventListener('click', ()=> {
-    popUpBoxImage.src = computerFutureCard.src
-    disableHtpAndReturn();
+viewCardInGame.forEach(e => {
+    e.addEventListener('click', ()=> {
+        popUpBoxImage.src = e.src
+        disableHtpAndReturn();
+    })
 })
 
 //Postgame click images to view in displayer
-p1PastCard.addEventListener('click', ()=> {
-    postGameViewimg.src = playerPastCard.src
-    postGameViewBlock();
-})
-p1PresentCard.addEventListener('click', ()=> {
-    postGameViewimg.src = playerPresentCard.src
-    postGameViewBlock();
-})
-p1FutureCard.addEventListener('click', ()=> {
-    postGameViewimg.src = playerFutureCard.src
-    postGameViewBlock();
-})
-p2PastCard.addEventListener('click', ()=> {
-    postGameViewimg.src = computerPastCard.src
-    postGameViewBlock();
-})
-p2PresentCard.addEventListener('click', ()=> {
-    postGameViewimg.src = computerPresentCard.src
-    postGameViewBlock();
-})
-p2FutureCard.addEventListener('click', ()=> {
-    postGameViewimg.src = computerFutureCard.src
-    postGameViewBlock();
+viewCardResults.forEach(e => {
+    e.addEventListener('click', ()=> {
+        postGameViewimg.src = e.src
+        postGameViewBlock();
+
+    })
 })
 
 // Fortunes Page (screen 4)

@@ -5,11 +5,10 @@
 }
 .middleduck {
     position: absolute;
-    margin-right: -6.7vw;
 }
 .rightduck {
     position: absolute;
-    margin-right: -38.5vw;
+    margin-right: -30vw;
 
 }
 #playmusic {
@@ -398,13 +397,17 @@ audio {
     border-radius: 10px;
 }
 
-.zoom:hover {
+.viewCardResults:hover {
     cursor: zoom-in;
 }
 /* class for cards in deckgallery */
 .cardsize {
     width: 100px;
     height: 150px;
+}
+
+.cardinfo {
+    font-size: 2vh;
 }
 .cardsize:hover {
     cursor:zoom-in;
