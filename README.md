@@ -34,9 +34,6 @@ There will be 8 (Witty memes) Air Duck cards: 6 Air Ducks+ 1 Air Duck King + 1 A
 
 There will be 8 (Cute memes) Earth Duck cards: 6 Earth Ducks + 1 Earth Duck King + 1 Earth Duck Queen.
 
-*** All the cards were made using the PicsArt App. I do not own these pictures. Source links can be found in my array.js file. ***
-*** I do not own any audio or media files. Source links can be found in my index.html file. ***
-
 ### Tech Stack
 * DOM Manipulation. 
 * Arrays to retreive Duck Tarot Card, description, and number value.
@@ -66,3 +63,8 @@ There will be 8 (Cute memes) Earth Duck cards: 6 Earth Ducks + 1 Earth Duck King
 ### Potential Roadblocks
 * Not able to create all Tarot cards?
 * Smooth animation between user interface.
+
+### DISCLAIMER:
+*** All the cards were made using the PicsArt App. I do not own these pictures. Source links can be found in my array.js file. ***
+
+*** I do not own any audio or media files. Source links can be found in my index.html file. ***
