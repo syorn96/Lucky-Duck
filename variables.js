@@ -1,7 +1,8 @@
 // GAMEPLAY VARIABLES 
     //variables for audio and gameplay screens
     
-
+    let playMusic = document.querySelector('#playmusic')
+    let clickADuck = document.querySelectorAll('.clickus')
     let mainGameAudio = document.getElementById('mainaudio')
     let fortuneAudio = document.getElementById('fortuneaudio')
     let body = document.querySelector('#body')

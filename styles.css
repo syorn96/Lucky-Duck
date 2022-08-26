@@ -1,3 +1,30 @@
+.leftduck {
+    margin-left: -30vw;
+    position: absolute;
+
+}
+.middleduck {
+    position: absolute;
+    margin-right: -6.7vw;
+}
+.rightduck {
+    position: absolute;
+    margin-right: -38.5vw;
+
+}
+#playmusic {
+    position: absolute;
+    width: 60vw;
+    height: 30vh;
+    margin-top: 40vh;
+    margin-left: 18vw;
+    font-size: 15vh;
+    color:rgba(0, 0, 0, 0.827);
+}
+
+.clickus:hover {
+    cursor: pointer;
+}
 .title {
     color: rgb(255, 251, 0);
     font-family: 'Shrikhand', sans-serif;
@@ -38,7 +65,7 @@
     margin-top: 75vh;
     height: 50vh;
     width: 20vh;
-    display: block;
+    display: none;
     margin-left: -11vw;
 }
 

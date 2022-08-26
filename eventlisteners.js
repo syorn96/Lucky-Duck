@@ -4,23 +4,28 @@ body.addEventListener('click', ()=> {
     duplicateBackground();
 })
 
+clickADuck.forEach(e => {
+    e.addEventListener('click', ()=> {
+        mainGameAudio.play()
+        gameScreen1.setAttribute('style', `display: block`)
+        playMusic.setAttribute('style', `display: none`)
+    })
+})
 
 //on start default the cards to be set as the tarot deck back cover 
 startGameBtn.addEventListener('click', ()=> {
     startGame();
-    mainGameAudio.play();
+    
 })
 
 // vs computer settings
 vsComputerBtn.addEventListener('click', ()=> {
   computerMode();
-  mainGameAudio.play();
 })
 
 // view deck gallery for players to view card artworks.
 viewDeck.addEventListener('click', ()=> {
     viewMode();
-    mainGameAudio.play();
 })
 
 // return btn to return main menu from view deck gallery
@@ -32,7 +37,6 @@ escapeDeckGallery.addEventListener('click', ()=> {
 // on restart reset game to default settings
 restartGameBtn.addEventListener('click', ()=>{
     restartMode();
-    mainGameAudio.play();
 })
 // How to playbtn on screen 1
 howToPlayBtn.addEventListener('click', ()=> {

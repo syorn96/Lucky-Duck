@@ -9,8 +9,7 @@ const shuffle = array => {
       array[j] = temp;
     }
   }
-  mainGameAudio.pause();
-  mainGameAudio.play();
+
   //function to randomize computer choices (either 1 or 2)
   function computermode() {
     c = Math.ceil(Math.random() * 2)
