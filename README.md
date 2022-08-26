@@ -68,6 +68,12 @@ There will be 8 (Cute memes) Earth Duck cards: 6 Earth Ducks + 1 Earth Duck King
 * Not able to create all Tarot cards?
 * Smooth animation between user and interface.
 
+### Post-project Reflection
+* I’m really proud of the cards I made. They’re all original in the sense that based on the imagery, I incorporated original tarot card meanings.
+* I'm also proud of all the event listeners and DOM Manipulation. When I first started the course, the Tic-Tac-Toe Project was by far the hardest thing to learn and wrap my head around. Now majority of my game is focused on 'clicks' with multiple events happening simultaneously.
+* For majority of my game, I wrote really repetitive code. I learned a bit more on how to DRY out my code, but I still have a long ways to go.
+
+
 ### DISCLAIMER:
 *** All the cards were made using the PicsArt App. I do not own these pictures. Source links can be found in my array.js file. ***
 
