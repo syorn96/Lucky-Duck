@@ -91,6 +91,9 @@ const shuffle = array => {
       trackComputerMode = 1
       decideTurn.style.color = randomRGB()
       startGameBtn.style.pointerEvents = 'none';
+      viewCardInGame.forEach(e => {
+        e.style.pointerEvents = 'none';
+      })
       startClickCounter ++
       if (startClickCounter == 1){
             shuffle(luckyDuckDeckArray)
@@ -199,3 +202,17 @@ const shuffle = array => {
     let postGameViewBlock = () => {
         postGameView.setAttribute('style', `display: block`)
     }
+
+    let gameIsOver = () => {
+        decideTurn.innerText = 'Game Over'
+        decideTurn2.innerText = 'Ducks'
+        decideTurn.style.color = randomRGB()
+        decideTurn2.style.color = randomRGB()
+        moveDisplay.innerText = ""
+        placeHolderCard.innerText = ""
+        resultsBtn.setAttribute('style', `display: inline-block`)
+        shuffleBtn.setAttribute('style', `display: none`)
+        keepBtn.setAttribute('style', `display: none`)
+        p2TotalValue.innerText = p2TotalLuck
+        p1TotalValue.innerText = p1TotalLuck
+        }

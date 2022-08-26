@@ -80,6 +80,7 @@ returnBtn.addEventListener(('click'), ()=> {
 // cards are only clickable/viewable once loaded
 keepBtn.addEventListener(('click'), ()=> {
     moves +=1
+    decideTurn.style.color = randomRGB()
     let c = computermode();
 
     // computer will choose either shuffle or keep after player 1's 1st turn.
@@ -110,6 +111,7 @@ keepBtn.addEventListener(('click'), ()=> {
 // cards are only clickable once loaded
 shuffleBtn.addEventListener(('click'), ()=> {
     moves +=1
+    decideTurn.style.color = randomRGB()
     let c = computermode();
     // computer will choose either shuffle or keep after player 1's 1st turn.
     if (moves == 1 && trackComputerMode == 1) {
@@ -205,26 +207,23 @@ fortuneBtn.addEventListener('click', ()=>{
     postGameView.setAttribute('style', `display: none`)
     fortuneAudio.play()
     mainGameAudio.pause()
+    winningPlayerFortune.style.color = randomRGB()
     if (p1TotalLuck > p2TotalLuck && trackComputerMode == 1) {
       displayWinner.innerText = "Player 1's Fortune"
       displayLoser.innerText = "Computer's Fortune"
       winningPlayerFortune.innerText = luckyDuckFortuneArray[0]
-      winningPlayerFortune.style.color = randomRGB()
   } else if (p1TotalLuck > p2TotalLuck) {
         displayWinner.innerText = "Player 1's Fortune"
         displayLoser.innerText = "Player 2's Fortune"
         winningPlayerFortune.innerText = luckyDuckFortuneArray[0]
-        winningPlayerFortune.style.color = randomRGB()
     } else if (p2TotalLuck > p1TotalLuck && trackComputerMode == 1){
       displayWinner.innerText = "Computer's Fortune"
       displayLoser.innerText = "Player 1's Fortune"
       winningPlayerFortune.innerText = availableComputerFortunesArray[0]
-      winningPlayerFortune.style.color = randomRGB()
   } else if (p2TotalLuck > p1TotalLuck){
         displayWinner.innerText = "Player 2's Fortune"
         displayLoser.innerText = "Player 1's Fortune"
         winningPlayerFortune.innerText = luckyDuckFortuneArray[0]
-        winningPlayerFortune.style.color = randomRGB()
     }
 })
 // return to screen 3 from screen 4
