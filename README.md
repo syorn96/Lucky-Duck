@@ -35,7 +35,9 @@ There will be 8 (Witty memes) Air Duck cards: 6 Air Ducks+ 1 Air Duck King + 1 A
 There will be 8 (Cute memes) Earth Duck cards: 6 Earth Ducks + 1 Earth Duck King + 1 Earth Duck Queen.
 
 ### Tech Stack
-* DOM Manipulation. 
+* DOM Manipulation
+* CSS
+* HTML5 
 * Arrays to retreive Duck Tarot Card, description, and number value.
 * Game logic to shuffle array and retrieve img, value or description based on array index. 
 * Winning logic to compare total luck value between players.
@@ -49,20 +51,22 @@ There will be 8 (Cute memes) Earth Duck cards: 6 Earth Ducks + 1 Earth Duck King
 ### MVP Goals
 * Create 20-30 original cards from duck memes.
 * Create turns for Player 1 and Player 2.
-* Render a start game screen (1) with game title, start button, how to play button, deck gallery button and restart buton.
+* Render game screen (1) with game title, start button, how to play button, deck gallery button and restart buton.
 * Render game screen (2) displaying the deck of cards in the center of screen and 3 cards each on left and right hand side of screen (player1 and player2).
-* Render another game screen (3) for comparing cards and results.
+* Render game screen (3) for comparing cards/results.
+* Render game screen (4) for results and fortunes.
 
 ### Stretch Goals
 * Animations for clicks.
 * Each card will display their artwork when clicked.
 * Render a game screen (4) that displays a fortune for the winning player.
-* Create all 44 Tarot Cards from stratch.
-* Create a vs computer game mode.
+* Create all 44 Tarot Cards.
+* Create a VS computer game mode.
+* Create a button for audio to play on start of game.
 
 ### Potential Roadblocks
 * Not able to create all Tarot cards?
-* Smooth animation between user interface.
+* Smooth animation between user and interface.
 
 ### DISCLAIMER:
 *** All the cards were made using the PicsArt App. I do not own these pictures. Source links can be found in my array.js file. ***
